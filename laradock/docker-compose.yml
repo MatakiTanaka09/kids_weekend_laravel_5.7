@@ -1,0 +1,117 @@
+version: '3'
+
+networks:
+  frontend:
+    driver: ${NETWORKS_DRIVER}
+  backend:
+    driver: ${NETWORKS_DRIVER}
+
+volumes:
+  postgres:
+    driver: ${VOLUMES_DRIVER}
+
+services:
+
+### PHP-FPM ##############################################
+    php-fpm:
+      build:
+        context: ./php-fpm
+        args:
+          - PHP_VERSION=${PHP_VERSION}
+      volumes:
+        - ./php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
+        - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
+      expose:
+        - "9000"
+      extra_hosts:
+        - "dockerhost:${DOCKER_HOST_IP}"
+      environment:
+        - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
+        - TZ=Asia/Tokyo
+      networks:
+        - backend
+
+### PHP Worker ############################################
+    php-worker:
+      build:
+        context: ./php-worker
+        args:
+          - PHP_VERSION=${PHP_VERSION}
+          - INSTALL_PGSQL=${PHP_WORKER_INSTALL_PGSQL}
+      tty: true
+      volumes:
+        - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
+#        - ./php-worker/supervisord.d:/etc/supervisord.d
+      #depends_on:
+          #- workspace
+      extra_hosts:
+        - "dockerhost:${DOCKER_HOST_IP}"
+      environment:
+        - TZ=Asia/Tokyo
+      networks:
+        - backend
+
+### NGINX Server #########################################
+    nginx:
+      build:
+        context: ./nginx
+        args:
+          - PHP_UPSTREAM_CONTAINER=${NGINX_PHP_UPSTREAM_CONTAINER}
+          - PHP_UPSTREAM_PORT=${NGINX_PHP_UPSTREAM_PORT}
+      volumes:
+        - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
+        - ${NGINX_HOST_LOG_PATH}:/var/log/nginx
+        - ${NGINX_SITES_PATH}:/etc/nginx/sites-available
+      ports:
+        - "${NGINX_HOST_HTTP_PORT}:80"
+        - "${NGINX_HOST_HTTPS_PORT}:443"
+      depends_on:
+          - php-fpm
+      environment:
+        - TZ=Asia/Tokyo
+      networks:
+        - frontend 
+        - backend
+### PostgreSQL ###########################################
+#    postgres:
+#      build: ./postgres
+#      volumes:
+#        - ./postgres/postgresql.conf:/etc/postgresql.conf
+#      #  - ${DATA_PATH_HOST}/postgres:/var/lib/postgresql/data
+#      ports:
+#        - "${POSTGRES_PORT}:5432"
+#      environment:
+#        - POSTGRES_DB=${POSTGRES_DB}
+#        - POSTGRES_USER=${POSTGRES_USER}
+#        - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+#        - TZ=${WORKSPACE_TIMEZONE}
+#      networks:
+#        - backend
+### MySQL ################################################
+    mysql:
+      build:
+        context: ./mysql
+        args:
+          - MYSQL_VERSION=${MYSQL_VERSION}
+      environment:
+        - MYSQL_DATABASE=${MYSQL_DATABASE}
+        - MYSQL_USER=${MYSQL_USER}
+        - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+        - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+        - TZ=${WORKSPACE_TIMEZONE}
+      volumes:
+        # - ${DATA_PATH_HOST}/mysql:/var/lib/mysql
+        - ${MYSQL_ENTRYPOINT_INITDB}:/docker-entrypoint-initdb.d
+      ports:
+        - "${MYSQL_PORT}:3306"
+      networks:
+        - backend
+### Redis ################################################
+    redis:
+      build: ./redis
+#      volumes:
+#      - ${DATA_PATH_HOST}/redis:/data
+      ports:
+      - "${REDIS_PORT}:6379"
+      networks:
+      - backend
