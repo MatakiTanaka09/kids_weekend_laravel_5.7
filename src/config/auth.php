@@ -99,4 +99,8 @@ return [
         ],
     ],
 
+    'admin-api' => [
+        'driver' => 'session',
+        'provider' => 'admins',
+    ],
 ];

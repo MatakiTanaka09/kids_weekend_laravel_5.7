@@ -11,6 +11,8 @@
 |
 */
 
+Auth::routes(['verify' => true]);
+
 Route::get('/{any}', function () {
     return view('index');
 })->where('any', '.*');

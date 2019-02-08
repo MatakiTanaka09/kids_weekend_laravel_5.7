@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Auth\AuthManager;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -18,22 +21,37 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+  use AuthenticatesUsers;
+  private $authManager;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
+  /**
+   * Where to redirect users after login.
+   *
+   * @var string
+   */
+  protected $redirectTo = '/home';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
+  /**
+   * Create a new controller instance.
+   *
+   * @return void
+   */
+  public function __construct(AuthManager $authManager)
+  {
+    $this->authManager = $authManager;
+    $this->middleware('guest')->except('logout');
+  }
+
+  public function login(Request $request): JsonResponse
+  {
+    $guard = $this->authManager->guard('api');
+    $token = $guard->attempt([
+      'email' =>  $request->get('email'),
+      'password'  =>  $request->get('password'),
+    ]);
+    if (!$token) {
+      return new JsonResponse(__('auth.failed'));
     }
+    return new JsonResponse($token);
+  }
 }
