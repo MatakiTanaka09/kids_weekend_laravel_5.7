@@ -20,9 +20,9 @@
               <a class="button is-primary">
                 <strong>Sign up</strong>
               </a>
-              <a class="button is-light">
+              <router-link to="/login" class="button is-light">
                 Log in
-              </a>
+              </router-link>
             </div>
           </div>
         </div>
@@ -32,18 +32,18 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        dropdownActive: false
-      }
-    },
-    methods: {
-      dropdownToggle() {
-        this.dropdownActive = !this.dropdownActive;
-      }
+    export default {
+        data() {
+            return {
+                dropdownActive: false,
+            }
+        },
+        methods: {
+            dropdownToggle() {
+                this.dropdownActive = !this.dropdownActive;
+            },
+        },
     }
-  }
 </script>
 
 <style lang="scss" scoped>

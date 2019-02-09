@@ -219,14 +219,20 @@
 </template>
 
 <script>
-  import TopHeader from "../components/home/TopHeader";
-  import TopFooter from "../components/home/TopFooter";
+    import TopHeader from "../components/home/TopHeader";
+    import TopFooter from "../components/home/TopFooter";
 
-  export default {
-    components: {
-      TopHeader,
-      TopFooter
-    }
+    export default {
+        components: {
+            TopHeader,
+            TopFooter
+        },
+        data() {
+            return {
+            }
+        },
+        methods: {
+        }
   }
 </script>
 
