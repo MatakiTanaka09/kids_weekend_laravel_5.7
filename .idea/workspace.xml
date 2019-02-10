@@ -3,16 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="9a8bbcf1-c134-4d3a-acff-bcd7b8364c8a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/src/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/components/ExampleComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/components/home/TopHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/home/TopHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/pages/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/pages/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/router/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +24,89 @@
     <favorites_list name="kidsweekend_laravel_5.7" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/js/pages/Register.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="61" column="42" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/js/router/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/js/pages/RegisterConfirmation.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/js/services/http.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/Auth/RegisterController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="87" selection-start-line="87" selection-end-line="87" />
+              <folding>
+                <element signature="e#45#58#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/js/store/modules/auth.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="32" selection-start-line="32" selection-end-line="35" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/routes/api.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/js/pages/Login.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,21 +118,43 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/package.json" />
         <option value="$PROJECT_DIR$/src/config/app.php" />
-        <option value="$PROJECT_DIR$/src/.env" />
-        <option value="$PROJECT_DIR$/src/routes/web.php" />
         <option value="$PROJECT_DIR$/src/resources/js/bootstrap.js" />
         <option value="$PROJECT_DIR$/src/resources/sass/app.scss" />
-        <option value="$PROJECT_DIR$/src/.editorconfig" />
-        <option value="$PROJECT_DIR$/src/resources/views/index.blade.php" />
         <option value="$PROJECT_DIR$/src/webpack.mix.js" />
-        <option value="$PROJECT_DIR$/src/resources/js/App.vue" />
-        <option value="$PROJECT_DIR$/src/resources/js/router/index.js" />
         <option value="$PROJECT_DIR$/src/resources/js/store/index.js" />
-        <option value="$PROJECT_DIR$/src/resources/js/store/modules/auth.js" />
-        <option value="$PROJECT_DIR$/src/resources/js/app.js" />
-        <option value="$PROJECT_DIR$/src/resources/js/pages/TheTop.vue" />
         <option value="$PROJECT_DIR$/src/resources/js/components/home/TheFooter.vue" />
         <option value="$PROJECT_DIR$/src/resources/js/components/home/TheHeader.vue" />
+        <option value="$PROJECT_DIR$/src/.editorconfig" />
+        <option value="$PROJECT_DIR$/src/config/auth.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Controllers/ApiController.php" />
+        <option value="$PROJECT_DIR$/src/.env" />
+        <option value="$PROJECT_DIR$/src/app/Notifications/CustomPasswordReset.php" />
+        <option value="$PROJECT_DIR$/src/resources/views/emails/resetpass.blade.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Controllers/Auth/ForgotPasswordController.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Controllers/Auth/ResetPasswordController.php" />
+        <option value="$PROJECT_DIR$/src/app/Notifications/VerifyEmail.php" />
+        <option value="$PROJECT_DIR$/src/config/frontend.php" />
+        <option value="$PROJECT_DIR$/src/app/User.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Controllers/Auth/VerificationController.php" />
+        <option value="$PROJECT_DIR$/src/resources/js/App.vue" />
+        <option value="$PROJECT_DIR$/src/resources/js/store/mutation-types.js" />
+        <option value="$PROJECT_DIR$/src/resources/views/index.blade.php" />
+        <option value="$PROJECT_DIR$/src/resources/js/app.js" />
+        <option value="$PROJECT_DIR$/src/resources/js/services/http.js" />
+        <option value="$PROJECT_DIR$/src/resources/js/components/auth/Login.vue" />
+        <option value="$PROJECT_DIR$/src/routes/web.php" />
+        <option value="$PROJECT_DIR$/src/resources/js/pages/TheTop.vue" />
+        <option value="$PROJECT_DIR$/src/app/Http/Controllers/Auth/LoginController.php" />
+        <option value="$PROJECT_DIR$/src/resources/js/components/home/TopHeader.vue" />
+        <option value="$PROJECT_DIR$/src/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Requests/RegisterFormRequest.php" />
+        <option value="$PROJECT_DIR$/src/app/Http/Controllers/Auth/RegisterController.php" />
+        <option value="$PROJECT_DIR$/src/routes/api.php" />
+        <option value="$PROJECT_DIR$/src/resources/js/store/modules/auth.js" />
+        <option value="$PROJECT_DIR$/src/resources/js/router/index.js" />
+        <option value="$PROJECT_DIR$/src/resources/js/pages/RegisterConfirmation.vue" />
+        <option value="$PROJECT_DIR$/src/resources/js/pages/Register.vue" />
+        <option value="$PROJECT_DIR$/src/resources/js/pages/Login.vue" />
       </list>
     </option>
   </component>
@@ -149,6 +250,10 @@
       <path value="$PROJECT_DIR$/src/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/src/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/src/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/src/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/src/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/src/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/src/vendor/tymon/jwt-auth" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -173,6 +278,148 @@
               <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
               <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="router" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Illuminate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Illuminate" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Illuminate" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+              <item name="Eloquent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Illuminate" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+              <item name="Eloquent" type="462c0819:PsiDirectoryNode" />
+              <item name="Relations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -214,19 +461,20 @@
       <updated>1548648454733</updated>
       <workItem from="1548648456290" duration="283000" />
       <workItem from="1548648862929" duration="1795000" />
-      <workItem from="1549535992838" duration="2241000" />
+      <workItem from="1549535992838" duration="18665000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4319000" />
+    <option name="totallyTimeSpent" value="25049000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2536349" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49927008" visible="true" weight="0.2536349" />
+      <window_info id="Favorites" order="1" sideWeight="0.5007299" side_tool="true" weight="0.2536349" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -237,7 +485,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32868218" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.41167882" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2919708" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -249,65 +497,16 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/laradock/env-example">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-445" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/assets/js/app.js" />
-    <entry file="file://$PROJECT_DIR$/src/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-480" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="66" column="10" lean-forward="true" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/container-login.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/laradock/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1592" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/.editorconfig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/views/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="82" column="18" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -325,50 +524,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/js/store/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/js/store/modules/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/js/components/home/TheHeader.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/js/components/home/TheFooter.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/js/components/home/TheHeader.vue" />
+    <entry file="file://$PROJECT_DIR$/src/resources/js/components/home/TheFooter.vue" />
     <entry file="file://$PROJECT_DIR$/src/vendor/laravel/framework/src/Illuminate/Contracts/Auth/MustVerifyEmail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/js/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/webpack.mix.js">
@@ -378,44 +538,309 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/js/app.js">
+    <entry file="file://$PROJECT_DIR$/src/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vendor/laravel/framework/src/Illuminate/Auth/TokenGuard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        <state relative-caret-position="9">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
-            <element signature="e#156#178#0" expanded="true" />
+            <element signature="e#35#63#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/js/App.vue">
+    <entry file="file://$PROJECT_DIR$/src/vendor/laravel/framework/src/Illuminate/Auth/AuthManager.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/.editorconfig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+        <state relative-caret-position="105">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/api.php">
+    <entry file="file://$PROJECT_DIR$/src/config/auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="4" selection-start-column="4" selection-end-column="4" />
+        <state relative-caret-position="236">
+          <caret line="103" column="7" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/js/pages/TheTop.vue">
+    <entry file="file://$PROJECT_DIR$/src/vendor/laravel/framework/src/Illuminate/Http/JsonResponse.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3525">
-          <caret line="235" column="12" lean-forward="true" selection-start-line="235" selection-start-column="12" selection-end-line="235" selection-end-column="12" />
+        <state relative-caret-position="60">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
-            <element signature="e#7980#8033#0" expanded="true" />
+            <element signature="e#35#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/ApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Notifications/CustomPasswordReset.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+          <folding>
+            <element signature="e#37#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/views/emails/resetpass.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/Auth/ForgotPasswordController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="e#45#81#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/Auth/ResetPasswordController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="89" column="4" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="4" />
+          <folding>
+            <element signature="e#45#81#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-89">
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        <state relative-caret-position="465">
+          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/frontend.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="83" selection-start-line="4" selection-start-column="83" selection-end-line="4" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Notifications/VerifyEmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#37#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/lang/en/auth.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="82" column="18" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/Auth/VerificationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#45#81#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+          <folding>
+            <element signature="e#23#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/js/components/auth/Login.vue" />
+    <entry file="file://$PROJECT_DIR$/src/resources/js/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/js/pages/TheTop.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/js/store/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/js/store/mutation-types.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding>
+            <element signature="e#181#203#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/js/components/home/TopHeader.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2014_10_12_100000_create_password_resets_table.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Requests/RegisterFormRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="64" column="48" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
+          <folding>
+            <element signature="e#45#81#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/js/services/http.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/js/store/modules/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="32" selection-start-line="32" selection-end-line="35" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="e#45#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/js/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/js/pages/RegisterConfirmation.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/js/pages/Register.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="61" column="42" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsTo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-379" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Relation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1199" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/js/pages/Login.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
         </state>
       </provider>
     </entry>

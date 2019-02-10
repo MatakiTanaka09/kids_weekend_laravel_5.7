@@ -16,3 +16,16 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(["middleware" => "api"], function () {
+    Route::post('/register', 'Auth\RegisterController@register');
+    Route::post('/login', 'Auth\LoginController@login');
+    Route::post("/password/email", "Auth\ForgotPasswordController@sendResetLinkEmail");
+    Route::post("/password/reset/{token}", "Auth\ResetPasswordController@reset");
+    Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
+    Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+
+    Route::group(['middleware' => ['jwt.auth']], function () {
+        Route::get('/home', 'ApiController@index');
+    });
+});
