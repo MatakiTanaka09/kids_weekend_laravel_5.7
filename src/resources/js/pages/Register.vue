@@ -2,7 +2,7 @@
     <section class="section">
         <div class="form__container">
             <form>
-                <p class="login__title">ログイン</p>
+                <p class="login__title">新規登録</p>
                 <div class="field">
                     <label class="label">メールアドレス</label>
                     <div class="control has-icons-left has-icons-right">
@@ -36,18 +36,30 @@
                         </span>
                     </div>
                 </div>
+                <div class="field">
+                    <label class="label">パスワード確認用</label>
+                    <div class="control has-icons-left">
+                        <input
+                            class="input"
+                            type="password"
+                            placeholder="半角英数"
+                            v-model="password_confirmation"
+                            @keyup.enter="login"
+                            required>
+
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </div>
+                </div>
                 <div class="btn__container">
-                    <button class="button is-block is-fullwidth" @click="handleLogin">
-                        ログインする
+                    <button class="button is-block is-fullwidth" @click="handleRegister">
+                        新規登録する
                     </button>
                 </div>
 
                 <div class="reset__password">
-                    <router-link to="/register">
-                        新規登録の方はこちら
-                    </router-link>
-                    <span>/</span>
-                    <a>パスワードを忘れた方</a>
+                    <router-link to="/login">新規登録済の方はこちら</router-link>
                 </div>
             </form>
         </div>
@@ -61,15 +73,16 @@
             return {
                 email: '',
                 password: '',
+                password_confirmation: ''
             }
         },
         methods: {
             ...mapActions({
-                login: 'auth/login'
+                register: 'auth/register'
             }),
-            async handleLogin() {
-                await this.login({email: this.email, password: this.password});
-                this.$router.push('/');
+            async handleRegister() {
+                await this.register({email: this.email, password: this.password, password_confirmation: this.password_confirmation});
+                this.$router.push('/register/confirmation');
             },
         }
     }
