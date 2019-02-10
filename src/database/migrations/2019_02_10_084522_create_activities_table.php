@@ -14,11 +14,17 @@ class CreateActivitiesTable extends Migration
     public function up()
     {
         Schema::create('activities', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->uuid('school_id');
+            $table->integer('category_id')->unsigned();
+            $table->boolean('activity_pub_status');
+            $table->string('activity_name');
+            $table->text('activity_detail');
+            $table->string('file_name')->nullable();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
