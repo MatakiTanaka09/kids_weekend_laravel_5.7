@@ -9,7 +9,7 @@ import App from './App.vue';
 import router from './router/';
 import store from './store/';
 import { sync } from 'vuex-router-sync';
-import VueProgressiveImage from 'vue-progressive-image'
+import VueProgressiveImage from 'vue-progressive-image';
 
 Vue.use(VueProgressiveImage, {
   blur: 30

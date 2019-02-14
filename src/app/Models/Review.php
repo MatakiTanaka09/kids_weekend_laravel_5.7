@@ -2,9 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Review extends Model
+class Review extends BaseUuid
 {
-    //
+    protected $table = 'reviews';
+
+    protected $guarded = [
+        'id',
+        'review_user_id',
+        'event_id'
+    ];
+
+    public function activities()
+    {
+        return $this->belongsTo('App\Models\Activity');
+    }
 }

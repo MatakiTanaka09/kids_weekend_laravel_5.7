@@ -15,8 +15,8 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('id');
-            $table->integer('activity_id')->unsigned();
+            $table->uuid('uuid');
+            $table->uuid('activity_id');
             $table->datetime('event_date');
             $table->datetime('event_start_time');
             $table->datetime('event_end_time');
@@ -34,6 +34,10 @@ class CreateEventsTable extends Migration
             $table->string('event_address2');
             $table->timestamps();
         });
+
+//        Schema::table('events', function($table) {
+//            $table->foreign('activity_id')->references('id')->on('activities');
+//        });
     }
     /**
      * Reverse the migrations.

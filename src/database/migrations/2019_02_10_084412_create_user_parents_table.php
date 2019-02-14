@@ -15,7 +15,7 @@ class CreateUserParentsTable extends Migration
     {
         Schema::create('userParents', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->uuid('id')->primary();
+            $table->uuid('uuid')->primary();
             $table->integer('user_id')->unsigned();
             $table->string('user_last_name',50);
             $table->string('user_first_name',50);
@@ -29,7 +29,7 @@ class CreateUserParentsTable extends Migration
             $table->string('u_state');
             $table->string('u_city');
             $table->string('u_address1');
-            $table->string('u_address2');
+            $table->string('u_address2')->nullable();
             $table->timestamps();
         });
 

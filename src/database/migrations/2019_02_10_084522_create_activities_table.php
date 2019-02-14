@@ -15,9 +15,9 @@ class CreateActivitiesTable extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('id');
+            $table->uuid('uuid')->primary();
             $table->uuid('school_id');
-            $table->integer('category_id')->unsigned();
+            $table->uuid('review_id');
             $table->boolean('activity_pub_status');
             $table->string('activity_name');
             $table->text('activity_detail');

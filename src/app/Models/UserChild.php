@@ -2,31 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Webpatser\Uuid\Uuid;
-
-class UserChild extends Model
+class UserChild extends BaseUuid
 {
     protected $table = 'userChildren';
-    public $incrementing = false;
-
 
     protected $guarded = [
-        'user_child_id',
+        'uuid',
         'user_parent_id'
     ];
 
-    public function books()
+    public function userParents()
     {
-        return $this->hasMany('App\Models\Book');
-    }
-
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            $model->{$model->getKeyName()} = Uuid::generate()->string;
-        });
+        return $this->belongsTo('App\Models\UserParent');
     }
 }

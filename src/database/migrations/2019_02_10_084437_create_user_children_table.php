@@ -15,20 +15,20 @@ class CreateUserChildrenTable extends Migration
     {
         Schema::create('userChildren', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->uuid('id')->primary();
+            $table->uuid('uuid')->primary();
             $table->uuid('user_parent_id');
-            $table->string('child_last_name');
-            $table->string('child_first_name');
-            $table->string('child_last_kana');
-            $table->string('child_first_kana');
+            $table->string('child_last_name', 50);
+            $table->string('child_first_name', 50);
+            $table->string('child_last_kana', 50);
+            $table->string('child_first_kana', 50);
             $table->integer('child_sex')->unsigned();
             $table->datetime('child_birth_day');
             $table->timestamps();
         });
 
-        Schema::table('userChildren', function($table) {
-            $table->foreign('user_parent_id')->references('id')->on('userParents')->onDelete('cascade')->onUpdate('cascade');
-        });
+//        Schema::table('userChildren', function($table) {
+//            $table->foreign('user_parent_id')->references('uuid')->on('userParents')->onDelete('cascade')->onUpdate('cascade');
+//        });
     }
     /**
      * Reverse the migrations.
