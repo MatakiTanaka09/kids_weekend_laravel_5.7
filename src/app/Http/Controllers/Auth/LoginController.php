@@ -68,7 +68,7 @@ class LoginController extends Controller
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
 
-        $user = User::where('email', $request->email)->select('name')->first();
+        $user = User::where('email', $request->email)->first();
         return response()->json(compact('user', 'token'));
     }
 }

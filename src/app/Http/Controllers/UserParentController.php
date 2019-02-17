@@ -7,15 +7,11 @@ use App\Models\UserParent;
 
 class UserParentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $userParents = UserParent::orderBy('created_at', 'desc')->get();
-        return view('userparents.index', ['userParents' => $userParents]);
+        return $userParents;
     }
 
     /**
