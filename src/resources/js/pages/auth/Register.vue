@@ -1,74 +1,81 @@
 <template>
-    <section class="section">
-        <div class="form__container">
-            <form>
-                <p class="login__title">新規登録</p>
-                <div class="field">
-                    <label class="label">メールアドレス</label>
-                    <div class="control has-icons-left has-icons-right">
-                        <input
-                            class="input"
-                            type="email"
-                            placeholder="半角英数"
-                            v-model="email"
-                            @keyup.enter="login"
-                            required
-                            autofocus>
+    <div>
+        <top-header></top-header>
+        <section class="section">
+            <div class="form__container">
+                <form>
+                    <p class="login__title">新規登録</p>
+                    <div class="field">
+                        <label class="label">メールアドレス</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input
+                                class="input"
+                                type="email"
+                                placeholder="半角英数"
+                                v-model="email"
+                                @keyup.enter="login"
+                                required
+                                autofocus>
 
-                        <span class="icon is-small is-left">
+                            <span class="icon is-small is-left">
                             <i class="fas fa-envelope"></i>
                         </span>
+                        </div>
                     </div>
-                </div>
-                <div class="field">
-                    <label class="label">パスワード</label>
-                    <div class="control has-icons-left">
-                        <input
-                            class="input"
-                            type="password"
-                            placeholder="半角英数"
-                            v-model="password"
-                            @keyup.enter="login"
-                            required>
+                    <div class="field">
+                        <label class="label">パスワード</label>
+                        <div class="control has-icons-left">
+                            <input
+                                class="input"
+                                type="password"
+                                placeholder="半角英数"
+                                v-model="password"
+                                @keyup.enter="login"
+                                required>
 
-                        <span class="icon is-small is-left">
+                            <span class="icon is-small is-left">
                             <i class="fas fa-lock"></i>
                         </span>
+                        </div>
                     </div>
-                </div>
-                <div class="field">
-                    <label class="label">パスワード確認用</label>
-                    <div class="control has-icons-left">
-                        <input
-                            class="input"
-                            type="password"
-                            placeholder="半角英数"
-                            v-model="password_confirmation"
-                            @keyup.enter="login"
-                            required>
+                    <div class="field">
+                        <label class="label">パスワード確認用</label>
+                        <div class="control has-icons-left">
+                            <input
+                                class="input"
+                                type="password"
+                                placeholder="半角英数"
+                                v-model="password_confirmation"
+                                @keyup.enter="login"
+                                required>
 
-                        <span class="icon is-small is-left">
+                            <span class="icon is-small is-left">
                             <i class="fas fa-lock"></i>
                         </span>
+                        </div>
                     </div>
-                </div>
-                <div class="btn__container">
-                    <button class="button is-block is-fullwidth" @click="handleRegister">
-                        新規登録する
-                    </button>
-                </div>
+                    <div class="btn__container">
+                        <button class="button is-block is-fullwidth" @click="handleRegister">
+                            新規登録する
+                        </button>
+                    </div>
 
-                <div class="reset__password">
-                    <router-link to="/login">新規登録済の方はこちら</router-link>
-                </div>
-            </form>
-        </div>
-    </section>
+                    <div class="reset__password">
+                        <router-link to="/login">新規登録済の方はこちら</router-link>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
 </template>
 
 <script>
+    import TopHeader from "../../components/presentations/common/header/TopHeader";
     import { mapActions } from 'vuex';
     export default {
+        components: {
+            TopHeader
+        },
         data() {
             return {
                 email: '',
@@ -90,6 +97,7 @@
 
 <style lang="scss" scoped>
     .section {
+        padding: 128px 24px;
         .form__container {
             @media screen and (min-width: 1024px) {
                 padding: 0 400px;
