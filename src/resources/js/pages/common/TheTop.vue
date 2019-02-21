@@ -1,8 +1,7 @@
 <template>
   <main>
-      <top-header></top-header>
       <section class="top">
-          <progressive-img class="top-image" src="http://placehold.jp/1280x560.png" />
+          <progressive-img class="top-image" src="./images/app_top_image.jpg" />
           <div class="top__content content_all_center">
               <h1 class="app__title top_content_title_color">こどもの好きを見つけよう</h1>
               <p class="top__content--detail">こどもの「やりたい」を好きなだけ体験できる新しい学びスタイル</p>
@@ -18,7 +17,6 @@
                   </router-link>
               </div>
           </div>
-          <div class="top__bottom_design"></div>
       </section>
       <section class="section section__about">
           <div class="has-text-centered">
@@ -26,10 +24,10 @@
           </div>
           <div class="app__about">
               <p class="app_about_text">
-                  <span>お子様の興味に合わせて、様々なジャンルの習い事やアクティビティを、</span><br>
-                  <span>年齢、場所、時間から簡単に検索し予約できるサービスです。</span><br>
-                  <span>一回参加型のアクティビティを中心に、興味のあるものを好きなだけ体験する中で、</span><br>
-                  <span>子供の「好き」や「好奇心」を広げます。</span><br>
+                  <span>お子様の興味に合わせて、様々なジャンルの習い事やアクティビティを、</span><br class="is-hidden-mobile">
+                  <span>年齢、場所、時間から簡単に検索し予約できるサービスです。</span><br><br class="is-hidden-desktop">
+                  <span>一回参加型のアクティビティを中心に、興味のあるものを好きなだけ体験する中で、</span><br class="is-hidden-mobile">
+                  <span>子供の「好き」や「好奇心」を広げます。</span><br><br class="is-hidden-desktop">
                   <span>kidsweekendは未来を生き抜く子供たちに新しい学びのカタチを提供します！</span>
               </p>
           </div>
@@ -43,8 +41,8 @@
                   <div class="column is-one-third">
                      <div class="section__howtouse_container_boxes">
                         <div class="section__howtouse_container_box">
-                            <progressive-img class="section__howtouse_container_image is-hidden-mobile" src="http://placehold.jp/214x300.png" />
-                            <progressive-img class="section__howtouse_container_image is-hidden-desktop" src="http://placehold.jp/325x300.png" />
+                            <progressive-img class="section__howtouse_container_image is-hidden-mobile" src="./images/sp_find_image.png" />
+                            <progressive-img class="section__howtouse_container_image is-hidden-desktop" src="./images/sp_find_image.png" />
                             <h3 class="section__howtouse_container--title">
                                 さがす
                             </h3>
@@ -58,8 +56,8 @@
                   <div class="column is-one-third">
                       <div class="section__howtouse_container_boxes">
                           <div class="section__howtouse_container_box">
-                              <progressive-img class="section__howtouse_container_image is-hidden-mobile" src="http://placehold.jp/214x300.png" />
-                              <progressive-img class="section__howtouse_container_image is-hidden-desktop" src="http://placehold.jp/325x300.png" />
+                              <progressive-img class="section__howtouse_container_image is-hidden-mobile" src="./images/sp_reserve_image.png" />
+                              <progressive-img class="section__howtouse_container_image is-hidden-desktop" src="./images/sp_reserve_image.png" />
                               <h3 class="section__howtouse_container--title">
                                   予約する
                               </h3>
@@ -73,8 +71,8 @@
                   <div class="column is-one-third">
                       <div class="section__howtouse_container_boxes">
                           <div class="section__howtouse_container_box">
-                              <progressive-img class="section__howtouse_container_image is-hidden-mobile" src="http://placehold.jp/214x300.png" />
-                              <progressive-img class="section__howtouse_container_image is-hidden-desktop" src="http://placehold.jp/325x300.png" />
+                              <progressive-img class="section__howtouse_container_image is-hidden-mobile" src="./images/sp_experience_image.png" />
+                              <progressive-img class="section__howtouse_container_image is-hidden-desktop" src="./images/sp_experience_image.png" />
                               <h3 class="section__howtouse_container--title">
                                   体験する
                               </h3>
@@ -110,32 +108,31 @@
           </div>
       </section>
       <section class="end">
-          <progressive-img class="end-image" src="http://placehold.jp/1280x560.png" />
+          <progressive-img class="end-image" src="./images/app_end_image.jpg" />
           <div class="end__content content_all_center">
               <h1 class="app__title end__content--title_color">今すぐこどもの好きを発見しよう</h1>
               <p class="end__content--detail">好きなだけ体験できる新しい学びスタイル</p>
-              <router-link to="/register" class="button button__end">
-                <strong class="button_end_text_color">新規登録</strong>
+              <router-link to="/register" class="button button__end is-hidden-mobile">
+                  <strong class="button_end_text_color">新規登録</strong>
               </router-link>
           </div>
+          <router-link to="/register" class="button button__end is-hidden-desktop">
+              <strong class="button_end_text_color">新規登録</strong>
+          </router-link>
       </section>
-      <top-footer></top-footer>
   </main>
 </template>
 
 <script>
-    import TopHeader from "../../components/presentations/common/header/TopHeader";
-    import TopFooter from "../../components/presentations/common/footer/TopFooter";
     import RecommendTopCardList from "../../components/presentations/modules/cards/recommends-top-card/RecommendsTopCardList";
 
     export default {
         components: {
-            TopHeader,
-            TopFooter,
             RecommendTopCardList
         },
         data() {
             return {
+                'top_image': '/images/app_top_image.jpg'
             }
         },
   }
@@ -144,48 +141,48 @@
 <style lang="scss" scoped>
     .top {
         position: relative;
-
         @media screen and (max-width: 767px){
-            margin-top: 84px;
+            margin-top: 63px;
         }
-
         .top-image {
             width: 100%;
             z-index: 99;
         }
-
         .top__content {
             font-weight: bold;
             font-family :Quicksand, sans-serif;
             z-index: 100;
-
             .app__title {
-                font-size: 36px;
+                font-size: 40px;
                 font-weight: bold;
-
                 @media screen and (max-width: 767px) {
-                    font-size: 24px;
+                    font-size: 23px;
                 }
             }
             &--detail {
                 color: white;
-                margin-bottom: 16px;
+                font-size: 18px;
+                margin-bottom: 35px;
+                @media screen and (max-width: 767px) {
+                    margin-bottom: 12px;
+                    font-size: 12px;
+                }
             }
             .top__search {
                 display: flex;
-
                 &--calendar_box {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    margin: 4px;
-                    height: 50px;
-                    width: 250px;
+                    margin: 2px;
+                    height: 53px;
+                    width: 290px;
                     background-color: white;
                     color: #01A0EA;
                     font-size: 18px;
                     @media screen and (max-width: 767px) {
                         width: 100px;
+                        height: 45px;
                         font-size: 8px;
                     }
                 }
@@ -193,14 +190,15 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    margin: 4px;
-                    height: 50px;
-                    width: 250px;
+                    margin: 2px;
+                    height: 53px;
+                    width: 260px;
                     background-color: white;
                     color: #01A0EA;
                     font-size: 18px;
                     @media screen and (max-width: 767px) {
                         width: 100px;
+                        height: 45px;
                         font-size: 8px;
                     }
                 }
@@ -209,25 +207,20 @@
                 color: white;
             }
             .button__top {
-                margin: 4px;
+                margin: 2px;
                 width: 150px;
-                height: 50px;
+                height: 53px;
                 background-color: #ffd046;
                 border: 2px solid #ffd046;
                 @media screen and (max-width: 767px) {
                     width: 75px;
+                    height: 45px;
                     font-size: 12px;
                 }
-
                 .button_top_text_color {
                     color: white;
                 }
             }
-        }
-        .top__bottom_design {
-            margin-top: -6px;
-            padding-bottom: 24px;
-            background-color: #32ad66;
         }
     }
     .content {
@@ -236,7 +229,6 @@
             color: #084887;
             padding: 16px 0;
             border-bottom: 1px solid #EBEBEB;
-
             .app_plan_basic_icon {
                 color: #03cea4;
                 margin-right: 16px;
@@ -253,10 +245,12 @@
         }
         .app__about {
             text-align: center;
-
             .app_about_text {
                 margin-bottom: 16px;
-                line-height: 24px;
+                line-height: 32px;
+                @media screen and (max-width: 767px) {
+                    font-size: 14px;
+                }
             }
         }
     }
@@ -264,34 +258,28 @@
         position: relative;
         background-color: #DCF5F2;
         padding-bottom: 64px;
-
         &_container {
             .columns {
                 @media screen and (min-width: 1280px) {
                     margin: 0 auto;
                     max-width: 980px;
                     width: 100%;
-
                     .column.is-one-third {
                         text-align: center;
-
                         .section__howtouse_container_boxes {
                             text-align: center;
-
                             .section__howtouse_container--image {
                                 border-radius: 8px;
                             }
-
                             .section__howtouse_container--title {
                                 font-weight: bold;
                                 color: #3f9ae5;
-                                font-size: 24px;
-                                margin-bottom: 8px;
+                                font-size: 21px;
+                                margin: 8px 0;
                             }
-
                             .section__howtouse_container--description {
                                 color: #7a7a7a;
-                                font-size: 12px;
+                                font-size: 13px;
                             }
                         }
                     }
@@ -299,7 +287,6 @@
                 @media screen and (max-width: 767px) {
                     .column.is-one-third {
                         text-align: center;
-
                         .section__howtouse_container_boxes {
                             text-align: center;
                         }
@@ -339,24 +326,19 @@
         }
         .app__activity {
             text-align: center;
-
             .column.is-one-third {
                 text-align: center;
-
                 .activity__container {
                     text-align: left;
                     width: 100%;
                     color: #7a7a7a;
                     font-size: 12px;
-
                     .activity_container_images {
                         position: relative;
                         text-align: center;
-
                         &--image {
                             border-radius: 8px;
                         }
-
                         &--title {
                             position: absolute;
                             bottom: 48px;
@@ -397,11 +379,9 @@
                     border: 2px solid lawngreen;
                     border-radius: 4px;
                     font-weight: bold;
-
                     @media screen and (max-width: 767px) {
                         width: 100%;
                     }
-
                     &:hover {
                         opacity: 0.7;
                     }
@@ -411,26 +391,25 @@
     }
     .end {
         position: relative;
-
+        text-align: center;
         .end-image {
             width: 100%;
             z-index: 99;
         }
-
         .end__content {
             padding: 24px;
             font-weight: bold;
             font-family :Quicksand, sans-serif;
             z-index: 100;
+            width: 100%;
             @media screen and (max-width: 767px) {
                 padding: 0px;
             }
-
             .app__title {
-                font-size: 36px;
+                font-size: 40px;
                 margin-bottom: 8px;
                 @media screen and (max-width: 767px) {
-                    font-size: 16px;
+                    font-size: 23px;
                 }
             }
             &--title_color {
@@ -439,23 +418,37 @@
             }
             &--detail {
                 color: white;
-                margin-bottom: 16px;
+                font-size: 18px;
+                margin-bottom: 35px;
                 @media screen and (max-width: 767px) {
+                    margin-bottom: 12px;
                     font-size: 12px;
                 }
             }
             .button__end {
                 width: 350px;
-                height: 50px;
+                height: 36px;
                 background-color: #F29208;
                 border: 2px solid #F29208;
                 @media screen and (max-width: 767px) {
                     width: 300px;
                 }
-
                 .button_end_text_color {
                     color: white;
                 }
+            }
+        }
+        .button__end {
+            width: 350px;
+            height: 36px;
+            background-color: #F29208;
+            border: 2px solid #F29208;
+            @media screen and (max-width: 767px) {
+                width: 300px;
+                margin-top: 8px;
+            }
+            .button_end_text_color {
+                color: white;
             }
         }
     }
@@ -473,7 +466,6 @@
         font-size: 36px;
         color: #2B2B7C;
         font-weight: bolder;
-
         &::before {
             width: 50%;
             content: '';
@@ -483,7 +475,6 @@
             left: 25%;
             border-bottom: 2px solid #2B2B7C;
         }
-
         @media screen and (max-width: 768px) {
             font-size: 20px;
         }
@@ -498,31 +489,5 @@
         transform: translate(-50%,-50%);
         margin:0;
         padding:0;
-    }
-    @media screen and (max-width: 768px) {
-        .top-content,
-        .end-content {
-            top: 50%;
-            width: 100%;
-            padding: 0px 18px;
-        }
-        .title-expand {
-            font-size: 15px;
-            color: white;
-        }
-        .btn-start-now {
-            width: 175px;
-        }
-        .button_category_display {
-            width: 100%;
-        }
-        .about-text {
-            line-height: 32px;
-        }
-    }
-    header {
-        @media screen and (max-width: 768px) {
-            margin-top: -84px;
-        }
     }
 </style>

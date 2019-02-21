@@ -3,14 +3,15 @@
         <recommends-top-card
             class="is-hidden-mobile"
             v-for="n in 9" :key="n"
-            :event-id="n"
-            :event-time=eventTime
-            :event-category=eventCategory
-            :event-title=eventTitle
-            :event-date-time=eventDateTime
-            :event-price=eventPrice
-            :event-place=eventPlace
-            :event-min-age=eventMinAge
+            :event-id=n
+            :event-image-path="eventImagePath[n % 3]"
+            :event-time="eventTime"
+            :event-category="eventCategory"
+            :event-title="eventTitle"
+            :event-date-time="eventDateTime"
+            :event-price="eventPrice"
+            :event-place="eventPlace"
+            :event-min-age="eventMinAge"
         ></recommends-top-card>
         <swiper
             :options="swiperOption"
@@ -18,14 +19,15 @@
             <swiper-slide v-for="n in 5" :key="n">
                 <recommends-top-card
                     class="is-hidden-desktop"
-                    :event-id="n"
-                    :event-time=eventTime
-                    :event-category=eventCategory
-                    :event-title=eventTitle
-                    :event-date-time=eventDateTime
-                    :event-price=eventPrice
-                    :event-place=eventPlace
-                    :event-min-age=eventMinAge
+                    :event-id=n
+                    :event-image-path="eventImagePath[n % 3]"
+                    :event-time="eventTime"
+                    :event-category="eventCategory"
+                    :event-title="eventTitle"
+                    :event-date-time="eventDateTime"
+                    :event-price="eventPrice"
+                    :event-place="eventPlace"
+                    :event-min-age="eventMinAge"
                 ></recommends-top-card>
                 </swiper-slide>
                 <div class="swiper-pagination" slot="pagination"></div>
@@ -42,6 +44,11 @@
         },
         data() {
             return {
+                eventImagePath: [
+                    '/images/top_recommend_image_01.jpg',
+                    '/images/top_recommend_image_02.jpg',
+                    '/images/top_recommend_image_03.jpg',
+                ],
                 eventTime: '10:00',
                 eventCategory: 'language',
                 eventTitle: 'プログラミングであそぼう',
@@ -49,7 +56,6 @@
                 eventPrice: '3,000',
                 eventPlace: '豊洲',
                 eventMinAge: '3',
-
                 swiperOption: {
                     slidesPerView: 1.2,
                     spaceBetween: 15,

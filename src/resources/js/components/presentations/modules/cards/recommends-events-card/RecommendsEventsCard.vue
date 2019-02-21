@@ -1,5 +1,5 @@
 <template>
-    <div class="column is-one-third">
+    <div class="column" :class="eventDisplayType">
         <router-link :to="{ name: 'EventIndividual', params: { id: eventId } }" class="activity__container">
             <div class="activity__container__images">
                 <progressive-img class="activity__container__images--image" :src="eventImagePath" />
@@ -47,6 +47,10 @@
 <script>
     export default {
         props: {
+            eventDisplayType: {
+                type: String,
+                default: 'is-one-quarter'
+            },
             eventId: {
                 type: Number,
             },
@@ -84,7 +88,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .column.is-one-third {
+    .column {
         text-align: left;
         margin-bottom: 8px;
         .activity__container {
