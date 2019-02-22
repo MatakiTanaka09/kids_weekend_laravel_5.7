@@ -8,6 +8,7 @@
                 <div class="columns">
                     <div class="column is-one-quarter">
                         <div class="side-menu">
+                            <progressive-img src="/images/top_recommend_image_01.jpg" />
                         </div>
                     </div>
                     <div class="column">
