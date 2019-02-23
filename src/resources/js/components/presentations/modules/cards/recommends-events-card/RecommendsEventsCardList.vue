@@ -54,6 +54,7 @@
         },
         data() {
             return {
+                // events: {},
                 eventImagePath: [
                     '/images/top_recommend_image_01.jpg',
                     '/images/top_recommend_image_02.jpg',
@@ -67,7 +68,7 @@
                 eventPlace: '豊洲',
                 eventMinAge: '3',
                 swiperOption: {
-                    slidesPerView: 1.2,
+                    slidesPerView: 2.2,
                     spaceBetween: 15,
                 }
             }

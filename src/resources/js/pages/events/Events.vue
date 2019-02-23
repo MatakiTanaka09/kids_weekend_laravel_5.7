@@ -7,6 +7,8 @@
             <!--SearchBar-->
             <search-bar></search-bar>
             <!--Place-->
+            <place-card-list></place-card-list>
+
             <recommends-events-card-list
                 :recommends-title="recommendsRecently"
                 :card-display-number="cardDisplayEight"
@@ -33,13 +35,15 @@
     import CategoryCardList from '../../components/presentations/modules/cards/category-card/CategoryCardList';
     import RecommendsEventsCardList from '../../components/presentations/modules/cards/recommends-events-card/RecommendsEventsCardList';
     import SearchBar from '../../components/presentations/modules/bars/search-bar/SearchBar';
+    import PlaceCardList from '../../components/presentations/modules/cards/place-card/PlaceCardList';
 
     export default {
         components: {
             FadeLoader,
             CategoryCardList,
             RecommendsEventsCardList,
-            SearchBar
+            SearchBar,
+            PlaceCardList
         },
         data() {
             return {
@@ -50,6 +54,7 @@
                 recommendsRecently: "今日・明日",
                 cardDisplayFour: 4,
                 cardDisplayEight: 8,
+                cardDisplayType: 'is-one-third',
             }
         },
     }

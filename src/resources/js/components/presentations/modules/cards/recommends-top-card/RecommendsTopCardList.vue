@@ -57,12 +57,8 @@
                 eventPlace: '豊洲',
                 eventMinAge: '3',
                 swiperOption: {
-                    slidesPerView: 1.2,
+                    slidesPerView: 2.2,
                     spaceBetween: 15,
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true
-                    }
                 }
             }
         },

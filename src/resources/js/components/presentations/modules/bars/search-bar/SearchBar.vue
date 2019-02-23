@@ -38,6 +38,7 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../../../../../../sass/_variables";
     .searchbar__container {
         margin: 32px 0;
         width: 100%;
@@ -46,7 +47,7 @@
         }
         &__wrapper {
             padding-bottom: 8px;
-            border-bottom: 0.5px solid rgb(114, 113, 113);
+            border-bottom: 0.5px solid $lightGray;
             &--buttons {
                 display: flex;
                 align-items: center;

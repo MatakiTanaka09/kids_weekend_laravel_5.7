@@ -43,6 +43,10 @@ const routes = [
     {
         path: '/users',
         component: UsersInfo
+    },
+    {
+        path: '*',
+        component: Top
     }
 ];
 

@@ -54,7 +54,7 @@
       height: 63px;
       background-color: white;
       nav.navbar {
-          max-width: 980px;
+          max-width: 1088px;
           margin: 0 auto;
           .navbar__item--logo {
               font-size: 27px;

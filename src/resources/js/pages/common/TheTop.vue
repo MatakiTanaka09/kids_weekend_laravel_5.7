@@ -113,11 +113,11 @@
               <h1 class="app__title end__content--title_color">今すぐこどもの好きを発見しよう</h1>
               <p class="end__content--detail">好きなだけ体験できる新しい学びスタイル</p>
               <router-link to="/register" class="button button__end is-hidden-mobile">
-                  <strong class="button_end_text_color">新規登録</strong>
+                  <strong class="button_end_text_color">登録する</strong>
               </router-link>
           </div>
           <router-link to="/register" class="button button__end is-hidden-desktop">
-              <strong class="button_end_text_color">新規登録</strong>
+              <strong class="button_end_text_color">登録する</strong>
           </router-link>
       </section>
   </main>
@@ -139,6 +139,7 @@
 </script>
 
 <style lang="scss" scoped>
+    @import '../../../sass/_variables.scss';
     .top {
         position: relative;
         @media screen and (max-width: 767px){
@@ -147,6 +148,7 @@
         .top-image {
             width: 100%;
             z-index: 99;
+            opacity: 1.5;
         }
         .top__content {
             font-weight: bold;
@@ -178,7 +180,7 @@
                     height: 53px;
                     width: 290px;
                     background-color: white;
-                    color: #01A0EA;
+                    color: $skyBlue;
                     font-size: 18px;
                     @media screen and (max-width: 767px) {
                         width: 100px;
@@ -194,7 +196,7 @@
                     height: 53px;
                     width: 260px;
                     background-color: white;
-                    color: #01A0EA;
+                    color: $skyBlue;
                     font-size: 18px;
                     @media screen and (max-width: 767px) {
                         width: 100px;
@@ -210,8 +212,8 @@
                 margin: 2px;
                 width: 150px;
                 height: 53px;
-                background-color: #ffd046;
-                border: 2px solid #ffd046;
+                background-color: $pink;
+                border: 2px solid $pink;
                 @media screen and (max-width: 767px) {
                     width: 75px;
                     height: 45px;
@@ -256,7 +258,7 @@
     }
     .section__howtouse {
         position: relative;
-        background-color: #DCF5F2;
+        background-color: $lightGreen;
         padding-bottom: 64px;
         &_container {
             .columns {
@@ -264,6 +266,7 @@
                     margin: 0 auto;
                     max-width: 980px;
                     width: 100%;
+                    color: white;
                     .column.is-one-third {
                         text-align: center;
                         .section__howtouse_container_boxes {
@@ -273,12 +276,10 @@
                             }
                             .section__howtouse_container--title {
                                 font-weight: bold;
-                                color: #3f9ae5;
                                 font-size: 21px;
                                 margin: 8px 0;
                             }
                             .section__howtouse_container--description {
-                                color: #7a7a7a;
                                 font-size: 13px;
                             }
                         }
@@ -287,17 +288,16 @@
                 @media screen and (max-width: 767px) {
                     .column.is-one-third {
                         text-align: center;
+                        color: white;
                         .section__howtouse_container_boxes {
                             text-align: center;
                         }
                         .section__howtouse_container--title {
                             font-weight: bold;
-                            color: #3f9ae5;
                             font-size: 24px;
                             margin-bottom: 8px;
                         }
                         .section__howtouse_container--description {
-                            color: #7a7a7a;
                             font-size: 16px;
                         }
                     }
@@ -310,7 +310,7 @@
             left: 0;
             width: 100%;
             padding-bottom: 24px;
-            background-color: #03A1EB;
+            background-color: $skyBlue;
         }
     }
     .section__map {
@@ -353,7 +353,7 @@
                         }
                     }
                     .activity_container_category_name {
-                        color: lightseagreen;
+                        color: $lightGreen;
                     }
                     .activity_container_title {
                         &--detail {
@@ -375,8 +375,8 @@
                     margin-top: 24px;
                     padding: 8px;
                     color: white;
-                    background-color: lawngreen;
-                    border: 2px solid lawngreen;
+                    background-color: $lightGreen;
+                    border: 2px solid $lightGreen;
                     border-radius: 4px;
                     font-weight: bold;
                     @media screen and (max-width: 767px) {
@@ -428,8 +428,8 @@
             .button__end {
                 width: 350px;
                 height: 36px;
-                background-color: #F29208;
-                border: 2px solid #F29208;
+                background-color: $pink;
+                border: 2px solid $pink;
                 @media screen and (max-width: 767px) {
                     width: 300px;
                 }
@@ -441,8 +441,8 @@
         .button__end {
             width: 350px;
             height: 36px;
-            background-color: #F29208;
-            border: 2px solid #F29208;
+            background-color: $pink;
+            border: 2px solid $pink;
             @media screen and (max-width: 767px) {
                 width: 300px;
                 margin-top: 8px;
@@ -464,7 +464,7 @@
         padding-bottom: 15px;
         letter-spacing: 5px;
         font-size: 36px;
-        color: #2B2B7C;
+        color: $darkBlue;
         font-weight: bolder;
         &::before {
             width: 50%;
@@ -473,7 +473,7 @@
             right: 0;
             bottom: 0;
             left: 25%;
-            border-bottom: 2px solid #2B2B7C;
+            border-bottom: 2px solid $darkBlue;
         }
         @media screen and (max-width: 768px) {
             font-size: 20px;
