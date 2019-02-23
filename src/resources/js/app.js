@@ -9,7 +9,11 @@ import App from './App.vue';
 import router from './router/';
 import store from './store/';
 import { sync } from 'vuex-router-sync';
-import VueProgressiveImage from 'vue-progressive-image'
+import VueProgressiveImage from 'vue-progressive-image';
+import VueAwesomeSwiper from 'vue-awesome-swiper';
+import 'swiper/dist/css/swiper.css';
+
+Vue.use(VueAwesomeSwiper);
 
 Vue.use(VueProgressiveImage, {
   blur: 30
@@ -22,3 +26,4 @@ const app = new Vue({
   store,
   render: h => h(App)
 }).$mount('#app');
+
