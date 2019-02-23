@@ -7,7 +7,7 @@
             <!--SearchBar-->
             <search-bar></search-bar>
             <!--Place-->
-            <place-card-list></place-card-list>
+            <location-card-list></location-card-list>
 
             <recommends-events-card-list
                 :recommends-title="recommendsRecently"
@@ -35,7 +35,7 @@
     import CategoryCardList from '../../components/presentations/modules/cards/category-card/CategoryCardList';
     import RecommendsEventsCardList from '../../components/presentations/modules/cards/recommends-events-card/RecommendsEventsCardList';
     import SearchBar from '../../components/presentations/modules/bars/search-bar/SearchBar';
-    import PlaceCardList from '../../components/presentations/modules/cards/place-card/PlaceCardList';
+    import LocationCardList from '../../components/presentations/modules/cards/location-card/LocationCardList';
 
     export default {
         components: {
@@ -43,7 +43,7 @@
             CategoryCardList,
             RecommendsEventsCardList,
             SearchBar,
-            PlaceCardList
+            LocationCardList
         },
         data() {
             return {

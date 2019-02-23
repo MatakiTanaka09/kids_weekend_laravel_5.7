@@ -95,6 +95,7 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../../../../../../sass/variables";
     .recommends__container {
         margin: 64px 0;
         &__wrapper {
@@ -110,9 +111,10 @@
             }
             &--more_button {
                 margin-bottom: 20px;
-                color: rgb(226,121,133);
+                color: $pink;
+                font-weight: bold;
                 a {
-                    color: rgb(226,121,133);
+                    color: $pink;
                 }
             }
         }

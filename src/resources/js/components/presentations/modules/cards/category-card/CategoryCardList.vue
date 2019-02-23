@@ -50,6 +50,7 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../../../../../../sass/variables";
     .category__container {
         margin: 96px 0;
         @media screen and (max-width: 767px){
@@ -68,9 +69,10 @@
             }
             &--more_button {
                 margin-bottom: 20px;
-                color: rgb(226,121,133);
+                color: $pink;
+                font-weight: bold;
                 a {
-                    color: rgb(226,121,133);
+                    color: $pink;
                 }
             }
         }
