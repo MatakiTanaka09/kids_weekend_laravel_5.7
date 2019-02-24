@@ -2130,6 +2130,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2140,7 +2153,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             categoryImages: ['/images/eventsPage/science.jpg', '/images/eventsPage/sports.jpg', '/images/eventsPage/art.jpg', '/images/eventsPage/language.jpg', '/images/eventsPage/music.jpg', '/images/eventsPage/others.jpg'],
-            categoryName: ['科学', 'スポーツ', 'アート', '外国語', '音楽', 'その他']
+            categoryName: ['科学', 'スポーツ', 'アート', '外国語', '音楽', 'その他'],
+            swiperOption: {
+                slidesPerView: 1.2,
+                spaceBetween: 8
+            }
         };
     }
 });
@@ -2201,7 +2218,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-            locationName: ['豊洲', '二子玉川']
+            locationName: ['豊洲', '二子玉川'],
+            swiperOption: {
+                slidesPerView: 2.2,
+                spaceBetween: 8
+            }
         };
     }
 });
@@ -2357,6 +2378,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -2377,7 +2401,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             eventMinAge: '3',
             swiperOption: {
                 slidesPerView: 2.2,
-                spaceBetween: 15
+                spaceBetween: 8
             }
         };
     },
@@ -3860,7 +3884,7 @@ exports.push([module.i, "\n.column[data-v-476aa9c8] {\n  text-align: left;\n  ma
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "\n.searchbar__container[data-v-48325d80] {\n  margin: 32px 0;\n  width: 100%;\n}\n@media screen and (max-width: 767px) {\n.searchbar__container[data-v-48325d80] {\n      margin: 0;\n}\n}\n.searchbar__container__wrapper[data-v-48325d80] {\n    padding-bottom: 8px;\n    border-bottom: 0.5px solid #727171;\n}\n.searchbar__container__wrapper--buttons[data-v-48325d80] {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n}\n", ""]);
+exports.push([module.i, "\n.searchbar__container[data-v-48325d80] {\n  margin: 32px 0;\n  width: 100%;\n}\n@media screen and (max-width: 767px) {\n.searchbar__container[data-v-48325d80] {\n      margin: 0;\n}\n}\n.searchbar__container__wrapper[data-v-48325d80] {\n    padding-bottom: 8px;\n    border-bottom: 0.5px solid #b5b5b6;\n}\n.searchbar__container__wrapper--buttons[data-v-48325d80] {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n}\n", ""]);
 
 
 
@@ -3937,7 +3961,7 @@ exports.push([module.i, "\n.loading-container[data-v-7445ec34] {\n    display: -
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "\n.column.is-half[data-v-7cdca753] {\n  text-align: left;\n  padding-bottom: 0px;\n}\n.column.is-half .category__container[data-v-7cdca753] {\n    width: 100%;\n    color: #7a7a7a;\n    font-size: 40px;\n    font-weight: bold;\n}\n.column.is-half .category__container[data-v-7cdca753]:hover {\n      opacity: 0.7;\n}\n.column.is-half .category__container__images[data-v-7cdca753] {\n      position: relative;\n}\n.column.is-half .category__container__images--image[data-v-7cdca753] {\n        border-radius: 8px;\n        opacity: 0.8;\n}\n.column.is-half .category__container__images .content_all_center[data-v-7cdca753] {\n        position: absolute;\n        text-align: center;\n        top: 50%;\n        left: 50%;\n        -webkit-transform: translate(-50%, -50%);\n        transform: translate(-50%, -50%);\n        margin: 0;\n        padding: 0;\n        z-index: 100;\n        color: white;\n}\n", ""]);
+exports.push([module.i, "\n.category__card__container[data-v-7cdca753] {\n  text-align: left;\n  padding-bottom: 0px;\n}\n.category__card__container__wrapper[data-v-7cdca753] {\n    width: 100%;\n    color: #7a7a7a;\n    font-size: 40px;\n    font-weight: bold;\n}\n@media screen and (max-width: 767px) {\n.category__card__container__wrapper[data-v-7cdca753] {\n        font-size: 24px;\n}\n}\n.category__card__container__wrapper[data-v-7cdca753]:hover {\n      opacity: 0.7;\n}\n.category__card__container__wrapper .category__container__images[data-v-7cdca753] {\n      position: relative;\n}\n.category__card__container__wrapper .category__container__images--image[data-v-7cdca753] {\n        border-radius: 8px;\n        opacity: 0.8;\n}\n.category__card__container__wrapper .category__container__images .content_all_center[data-v-7cdca753] {\n        position: absolute;\n        text-align: center;\n        top: 50%;\n        left: 50%;\n        -webkit-transform: translate(-50%, -50%);\n        transform: translate(-50%, -50%);\n        margin: 0;\n        padding: 0;\n        z-index: 100;\n        color: white;\n}\n", ""]);
 
 
 
@@ -3970,7 +3994,7 @@ exports.push([module.i, "\n.side-nav-item[data-v-b66964d4] {\n  padding-bottom: 
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "\n.recommends__container[data-v-e68b424c] {\n  margin: 64px 0;\n}\n.recommends__container__wrapper[data-v-e68b424c] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.recommends__container__wrapper--title[data-v-e68b424c] {\n      font-size: 24px;\n      margin-right: 30px;\n      margin-bottom: 20px;\n}\n@media screen and (max-width: 767px) {\n.recommends__container__wrapper--title[data-v-e68b424c] {\n          margin-right: 12px;\n}\n}\n.recommends__container__wrapper--more_button[data-v-e68b424c] {\n      margin-bottom: 20px;\n      color: #e27985;\n      font-weight: bold;\n}\n.recommends__container__wrapper--more_button a[data-v-e68b424c] {\n        color: #e27985;\n}\n.recommends__container .swiper-wrapper[data-v-e68b424c] {\n    margin-bottom: 8px;\n}\n", ""]);
+exports.push([module.i, "\n.recommends__container[data-v-e68b424c] {\n  margin: 64px 0;\n}\n.recommends__container__wrapper[data-v-e68b424c] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.recommends__container__wrapper--title[data-v-e68b424c] {\n      font-size: 24px;\n      margin-right: 30px;\n      margin-bottom: 20px;\n}\n@media screen and (max-width: 767px) {\n.recommends__container__wrapper--title[data-v-e68b424c] {\n          margin-right: 12px;\n}\n}\n.recommends__container__wrapper--more_button[data-v-e68b424c] {\n      margin-bottom: 20px;\n      color: #e27985;\n      font-weight: bold;\n}\n.recommends__container__wrapper--more_button a[data-v-e68b424c] {\n        color: #e27985;\n}\n.recommends__container .swiper-wrapper[data-v-e68b424c] {\n    margin-bottom: 8px;\n}\n@media screen and (max-width: 767px) {\n.recommends__container--more_button[data-v-e68b424c] {\n      width: 100%;\n      text-align: center;\n      margin-top: 24px;\n      padding: 8px;\n      color: #e27985;\n      border: 2px solid #e27985;\n      border-radius: 4px;\n}\n.recommends__container--more_button a[data-v-e68b424c] {\n        color: #e27985;\n}\n}\n", ""]);
 
 
 
@@ -3992,7 +4016,7 @@ exports.push([module.i, "\n@media screen and (max-width: 767px) {\nheader[data-v
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "\n.place__container[data-v-f3c25afe] {\n  width: 150px;\n  margin-right: 8px;\n}\n@media screen and (min-width: 767px) {\n.place__container[data-v-f3c25afe] {\n      width: 300px;\n      margin-right: 25px;\n}\n}\n.place__container__wrapper__buttons[data-v-f3c25afe] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    width: 150px;\n    border: 1px solid #727171;\n    border-radius: 8px;\n}\n@media screen and (min-width: 767px) {\n.place__container__wrapper__buttons[data-v-f3c25afe] {\n        width: 300px;\n}\n}\n.place__container__wrapper__buttons--word[data-v-f3c25afe] {\n      width: 100%;\n      text-align: center;\n      font-size: 10px;\n      color: #595757;\n}\n@media screen and (min-width: 767px) {\n.place__container__wrapper__buttons--word[data-v-f3c25afe] {\n          font-size: 16px;\n}\n}\n", ""]);
+exports.push([module.i, "\n.place__container[data-v-f3c25afe] {\n  width: 150px;\n  margin-right: 8px;\n}\n@media screen and (min-width: 767px) {\n.place__container[data-v-f3c25afe] {\n      width: 300px;\n      margin-right: 25px;\n}\n}\n.place__container__wrapper__buttons[data-v-f3c25afe] {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    width: 150px;\n    border: 1px solid #b5b5b6;\n    border-radius: 8px;\n}\n@media screen and (min-width: 767px) {\n.place__container__wrapper__buttons[data-v-f3c25afe] {\n        width: 300px;\n}\n}\n.place__container__wrapper__buttons--word[data-v-f3c25afe] {\n      width: 100%;\n      text-align: center;\n      font-size: 10px;\n      color: #595757;\n}\n@media screen and (min-width: 767px) {\n.place__container__wrapper__buttons--word[data-v-f3c25afe] {\n          font-size: 16px;\n}\n}\n", ""]);
 
 
 
@@ -32779,17 +32803,46 @@ var render = function() {
     _c(
       "div",
       { staticClass: "columns is-multiline" },
-      _vm._l(6, function(n, index) {
-        return _c("category-card", {
-          key: n,
-          attrs: {
-            "category-id": n,
-            "category-image-path": _vm.categoryImages[index],
-            "category-name": _vm.categoryName[index]
-          }
-        })
-      }),
-      1
+      [
+        _vm._l(6, function(n, index) {
+          return _c("category-card", {
+            key: n,
+            staticClass: "is-hidden-mobile",
+            attrs: {
+              "category-id": n,
+              "category-image-path": _vm.categoryImages[index],
+              "category-name": _vm.categoryName[index]
+            }
+          })
+        }),
+        _vm._v(" "),
+        _c(
+          "swiper",
+          {
+            staticClass: "is-hidden-desktop",
+            attrs: { options: _vm.swiperOption }
+          },
+          _vm._l(6, function(n, index) {
+            return _c(
+              "swiper-slide",
+              { key: n },
+              [
+                _c("category-card", {
+                  staticClass: "is-hidden-desktop",
+                  attrs: {
+                    "category-id": n,
+                    "category-image-path": _vm.categoryImages[index],
+                    "category-name": _vm.categoryName[index]
+                  }
+                })
+              ],
+              1
+            )
+          }),
+          1
+        )
+      ],
+      2
     )
   ])
 }
@@ -32803,11 +32856,18 @@ var staticRenderFns = [
         _vm._v("カテゴリー")
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "category__container__wrapper--more_button" }, [
-        _c("span", [_c("i", { staticClass: "fas fa-angle-right" })]),
-        _vm._v(" "),
-        _c("a", [_vm._v("もっとみる")])
-      ])
+      _c(
+        "div",
+        {
+          staticClass:
+            "category__container__wrapper--more_button is-hidden-mobile"
+        },
+        [
+          _c("span", [_c("i", { staticClass: "fas fa-angle-right" })]),
+          _vm._v(" "),
+          _c("a", [_vm._v("もっとみる")])
+        ]
+      )
     ])
   }
 ]
@@ -33228,12 +33288,12 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "column is-half" },
+    { staticClass: "column is-half category__card__container" },
     [
       _c(
         "router-link",
         {
-          staticClass: "category__container",
+          staticClass: "category__card__container__wrapper",
           attrs: {
             to: { name: "EventIndividual", params: { id: _vm.categoryId } }
           }
@@ -33252,7 +33312,7 @@ var render = function() {
                 "p",
                 {
                   staticClass:
-                    "content_all_center category__container__image--title"
+                    "content_all_center category__container__images--title"
                 },
                 [
                   _vm._v(
@@ -34119,42 +34179,36 @@ var render = function() {
             staticClass: "is-hidden-desktop",
             attrs: { options: _vm.swiperOption }
           },
-          [
-            _vm._l(_vm.cardDisplayNumber, function(n) {
-              return _c(
-                "swiper-slide",
-                { key: n },
-                [
-                  _c("recommends-events-card", {
-                    staticClass: "is-hidden-desktop",
-                    attrs: {
-                      "event-id": n,
-                      "event-image-path": _vm.eventImagePath[n % 3],
-                      "event-time": _vm.eventTime,
-                      "event-category": _vm.eventCategory,
-                      "event-title": _vm.eventTitle,
-                      "event-date-time": _vm.eventDateTime,
-                      "event-price": _vm.eventPrice,
-                      "event-place": _vm.eventPlace,
-                      "event-min-age": _vm.eventMinAge
-                    }
-                  })
-                ],
-                1
-              )
-            }),
-            _vm._v(" "),
-            _c("div", {
-              staticClass: "swiper-pagination",
-              attrs: { slot: "pagination" },
-              slot: "pagination"
-            })
-          ],
-          2
+          _vm._l(_vm.cardDisplayNumber, function(n) {
+            return _c(
+              "swiper-slide",
+              { key: n },
+              [
+                _c("recommends-events-card", {
+                  staticClass: "is-hidden-desktop",
+                  attrs: {
+                    "event-id": n,
+                    "event-image-path": _vm.eventImagePath[n % 3],
+                    "event-time": _vm.eventTime,
+                    "event-category": _vm.eventCategory,
+                    "event-title": _vm.eventTitle,
+                    "event-date-time": _vm.eventDateTime,
+                    "event-price": _vm.eventPrice,
+                    "event-place": _vm.eventPlace,
+                    "event-min-age": _vm.eventMinAge
+                  }
+                })
+              ],
+              1
+            )
+          }),
+          1
         )
       ],
       2
-    )
+    ),
+    _vm._v(" "),
+    _vm._m(1)
   ])
 }
 var staticRenderFns = [
@@ -34164,7 +34218,24 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "recommends__container__wrapper--more_button" },
+      {
+        staticClass:
+          "recommends__container__wrapper--more_button is-hidden-mobile"
+      },
+      [
+        _c("span", [_c("i", { staticClass: "fas fa-angle-right" })]),
+        _vm._v(" "),
+        _c("a", [_vm._v("もっとみる")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "recommends__container--more_button is-hidden-desktop" },
       [
         _c("span", [_c("i", { staticClass: "fas fa-angle-right" })]),
         _vm._v(" "),

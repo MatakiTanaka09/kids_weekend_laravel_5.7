@@ -19,7 +19,11 @@
                 locationName: [
                     '豊洲',
                     '二子玉川'
-                ]
+                ],
+                swiperOption: {
+                    slidesPerView: 2.2,
+                    spaceBetween: 8,
+                }
             }
         }
     }

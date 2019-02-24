@@ -2,7 +2,7 @@
     <div class="category__container">
         <div class="category__container__wrapper">
             <h1 class="category__container__wrapper--title">カテゴリー</h1>
-            <div class="category__container__wrapper--more_button">
+            <div class="category__container__wrapper--more_button is-hidden-mobile">
                 <span><i class="fas fa-angle-right"></i></span>
                 <a>もっとみる</a>
             </div>
@@ -11,10 +11,23 @@
             <category-card
                 v-for="(n, index) in 6"
                 :key="n"
+                class="is-hidden-mobile"
                 :category-id="n"
                 :category-image-path="categoryImages[index]"
                 :category-name="categoryName[index]"
             ></category-card>
+            <swiper
+                :options="swiperOption"
+                class="is-hidden-desktop">
+                <swiper-slide v-for="(n, index) in 6" :key="n">
+                    <category-card
+                        class="is-hidden-desktop"
+                        :category-id="n"
+                        :category-image-path="categoryImages[index]"
+                        :category-name="categoryName[index]"
+                    ></category-card>
+                </swiper-slide>
+            </swiper>
         </div>
     </div>
 </template>
@@ -43,7 +56,11 @@
                     '外国語',
                     '音楽',
                     'その他'
-                ]
+                ],
+                swiperOption: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 8,
+                }
             }
         }
     }

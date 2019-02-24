@@ -32,11 +32,10 @@
         }
         &__wrapper {
             &__buttons {
-
                 display: flex;
                 align-items: center;
                 width: 150px;
-                border: 1px solid rgb(114, 113, 113);
+                border: 1px solid $moreLightGray;
                 -webkit-border-radius: 8px;
                 -moz-border-radius: 8px;
                 border-radius: 8px;
