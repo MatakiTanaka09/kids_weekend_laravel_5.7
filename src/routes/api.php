@@ -24,7 +24,7 @@ Route::group(["middleware" => "api"], function () {
     Route::post("/password/reset/{token}", "Auth\ResetPasswordController@reset");
     Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
     Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
-
+    Route::get('test', 'BookController@index');
     Route::group(['middleware' => ['jwt.auth']], function () {
         Route::get('/home', 'ApiController@index');
     });

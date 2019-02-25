@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Book;
 
-class Book extends Controller
+class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class Book extends Controller
      */
     public function index()
     {
-        //
+        $books = Book::with('userParents')->get();
+        return $books;
     }
 
     /**
