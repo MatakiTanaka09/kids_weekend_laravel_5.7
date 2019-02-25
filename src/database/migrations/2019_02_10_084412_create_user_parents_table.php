@@ -23,9 +23,9 @@ class CreateUserParentsTable extends Migration
             $table->string('user_first_kana',50);
             $table->string('email');
             $table->string('tel');
-            $table->integer('sex');
-            $table->integer('u_zip_code1');
-            $table->integer('u_zip_code2');
+            $table->string('sex');
+            $table->string('u_zip_code1');
+            $table->string('u_zip_code2');
             $table->string('u_state');
             $table->string('u_city');
             $table->string('u_address1');

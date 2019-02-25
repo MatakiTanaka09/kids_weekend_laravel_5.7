@@ -18,7 +18,7 @@ class CreateBooksTable extends Migration
             $table->uuid('uuid')->primary();
             $table->uuid('user_parent_id');
             $table->uuid('event_id');
-            $table->string('book_price');
+            $table->integer('book_price');
             $table->timestamps();
         });
 

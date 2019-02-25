@@ -20,8 +20,8 @@ class CreateSchoolsTable extends Migration
             $table->string('school_email');
             $table->string('school_hp')->nullable();
             $table->string('school_tel');
-            $table->integer('school_zip_code1')->unsigned();
-            $table->integer('school_zip_code2')->unsigned();
+            $table->string('school_zip_code1');
+            $table->string('school_zip_code2');
             $table->string('school_state');
             $table->string('school_city');
             $table->string('school_address1');

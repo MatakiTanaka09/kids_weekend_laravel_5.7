@@ -15,7 +15,7 @@ class CreateSexesTable extends Migration
     {
         Schema::create('sexes', function (Blueprint $table) {
             $table->integer('id')->primary()->unsigned();
-            $table->integer('sex')->unsigned();
+            $table->string('sex');
             $table->timestamps();
         });
     }
