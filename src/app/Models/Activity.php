@@ -16,8 +16,8 @@ class Activity extends BaseUuid
         return $this->belongsTo('\App\Models\School');
     }
 
-    public function categories()
+    public function images()
     {
-        return $this->belongsTo('\App\Models\Category');
+        return $this->morphMany(Image::class, 'target');
     }
 }

@@ -8,17 +8,17 @@ class Event extends BaseUuid
     protected $table = 'events';
 
     protected $guarded = [
-        'event_id', 'activity_id'
+        'uuid', 'activity_id'
     ];
 
     public function books()
     {
-        return $this->hasMany('App\Models\Book', 'event_id', 'event_id');
+        return $this->hasMany('App\Models\Book');
     }
 
     public function activities()
     {
-        return $this->belongsTo('App\Models\Activity', 'activity_id', 'activity_id');
+        return $this->hasOne('App\Models\Activity');
     }
 
     public function reviews()
@@ -26,8 +26,4 @@ class Event extends BaseUuid
         return $this->hasMany('\App\Models\Review');
     }
 
-    public function images()
-    {
-        return $this->morphMany('App\Models\Image', 'target');
-    }
 }

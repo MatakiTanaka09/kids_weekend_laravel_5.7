@@ -6,7 +6,7 @@ class Book extends BaseUuid
 {
     protected $table = 'books';
 
-    protected $guarded = ['id'];
+    protected $guarded = ['uuid'];
 
     public function userParents()
     {

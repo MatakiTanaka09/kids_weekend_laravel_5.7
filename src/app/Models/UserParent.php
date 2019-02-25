@@ -27,17 +27,22 @@ class UserParent extends BaseUuid
 
     public function userChildren()
     {
-        return $this->hasMany('App\Models\userChild', 'id', 'user_parent_id');
+        return $this->hasMany('App\Models\userChild', 'user_id');
     }
 
     public function books()
     {
-        return $this->hasMany('App\Models\Book');
+        return $this->hasMany('App\Models\Book', 'parent_id');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany('App\Models\Review');
     }
 
     public function images()
     {
-        return $this->morphMany('App\Models\Image', 'target');
+        return $this->morphMany(Image::class, 'target');
     }
 
 }

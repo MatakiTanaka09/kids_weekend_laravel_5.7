@@ -8,5 +8,5 @@ class Sex extends Model
 {
     protected $table = 'sexes';
 
-    protected $guarded = [];
+    protected $guarded = ['id'];
 }

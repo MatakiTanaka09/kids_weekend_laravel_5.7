@@ -9,5 +9,4 @@ class Image extends Model
     protected $table = 'images';
 
     protected $guarded = ['id'];
-
 }

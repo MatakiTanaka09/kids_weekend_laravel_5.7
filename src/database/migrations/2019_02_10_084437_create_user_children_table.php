@@ -21,7 +21,7 @@ class CreateUserChildrenTable extends Migration
             $table->string('first_name', 50);
             $table->string('last_kana', 50);
             $table->string('first_kana', 50);
-            $table->string('sex')->unsigned();
+            $table->string('sex');
             $table->datetime('birth_day');
             $table->timestamps();
         });

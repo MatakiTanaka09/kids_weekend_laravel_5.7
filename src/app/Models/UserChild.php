@@ -15,4 +15,9 @@ class UserChild extends BaseUuid
     {
         return $this->belongsTo('App\Models\UserParent');
     }
+
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'target');
+    }
 }

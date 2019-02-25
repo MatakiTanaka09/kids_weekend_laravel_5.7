@@ -18,7 +18,7 @@ class CreateSchoolsTable extends Migration
             $table->string('name');
             $table->string('name_kana');
             $table->string('email')->nullable();
-            $table->string('hp')->nullable();
+            $table->text('url')->nullable();
             $table->string('tel')->nullable();
             $table->string('zip_code1');
             $table->string('zip_code2');

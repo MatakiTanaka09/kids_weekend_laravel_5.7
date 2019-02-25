@@ -52,4 +52,8 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmailContrac
         $this->notify(new VerifyEmail);
     }
 
+    public function userParent()
+    {
+        $this->hasOne('App\Models\UserParent');
+    }
 }

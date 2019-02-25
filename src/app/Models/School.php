@@ -7,7 +7,7 @@ class School extends BaseUuid
 
     protected $table = 'schools';
 
-    protected $guarded = ['id'];
+    protected $guarded = ['uuid'];
 
     public function activities()
     {
@@ -17,5 +17,10 @@ class School extends BaseUuid
     public function adminUsers()
     {
         return $this->hasMany('App\Models\AdminUser');
+    }
+
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'target');
     }
 }

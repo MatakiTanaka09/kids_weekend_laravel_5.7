@@ -8,10 +8,15 @@ class AdminUser extends Model
 {
     protected $table = 'adminUsers';
 
-    protected $guarded = [];
+    protected $guarded = ['school_id'];
 
     public function schools()
     {
         return $this->belongsTo('App\Models\School');
+    }
+
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'target');
     }
 }
