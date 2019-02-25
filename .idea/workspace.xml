@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a8bbcf1-c134-4d3a-acff-bcd7b8364c8a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/app/Models/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Activity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/AdminUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/AdminUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Event.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/Review.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Review.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/School.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/School.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/Sex.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/Sex.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/UserChild.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/UserChild.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Models/UserParent.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Models/UserParent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2019_02_10_084437_create_user_children_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2019_02_10_084437_create_user_children_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/migrations/2019_02_10_084537_create_schools_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/migrations/2019_02_10_084537_create_schools_table.php" afterDir="false" />
-    </list>
+    <list default="true" id="9a8bbcf1-c134-4d3a-acff-bcd7b8364c8a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +29,29 @@
     <favorites_list name="kidsweekend_laravel_5.7" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/routes/api.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
+              <folding>
+                <element signature="e#23#63#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -238,21 +246,13 @@
               <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
               <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
               <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -300,12 +300,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63524000" />
+    <option name="totallyTimeSpent" value="63574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49927008" visible="true" weight="0.22617124" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49927008" visible="true" weight="0.22617124" />
       <window_info id="Favorites" order="1" sideWeight="0.5007299" side_tool="true" weight="0.2536349" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -318,7 +318,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32846716" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.39854014" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.39854014" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -330,17 +330,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#40#85#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/UserParent.php" />
     <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/UserChild.php" />
     <entry file="file://$PROJECT_DIR$/src/composer.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -428,16 +417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/CategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#40#64#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/Auth/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -469,13 +448,6 @@
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
@@ -569,13 +541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/migrations/2019_02_10_084412_create_user_parents_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/database/migrations/2019_02_13_234637_create_images_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -585,8 +550,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="57" column="4" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
+        <state relative-caret-position="275">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
           <folding>
             <element signature="e#23#63#0#PHP" expanded="true" />
           </folding>
@@ -677,6 +642,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/BookController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#40#64#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Http/Controllers/EventController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/migrations/2019_02_10_084412_create_user_parents_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
