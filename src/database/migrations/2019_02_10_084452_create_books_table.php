@@ -16,9 +16,9 @@ class CreateBooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->uuid('uuid')->primary();
-            $table->uuid('user_parent_id');
+            $table->uuid('parent_id');
             $table->uuid('event_id');
-            $table->integer('book_price');
+            $table->integer('price');
             $table->timestamps();
         });
 

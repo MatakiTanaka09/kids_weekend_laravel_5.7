@@ -16,13 +16,13 @@ class CreateUserChildrenTable extends Migration
         Schema::create('userChildren', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->uuid('uuid')->primary();
-            $table->uuid('user_parent_id');
-            $table->string('child_last_name', 50);
-            $table->string('child_first_name', 50);
-            $table->string('child_last_kana', 50);
-            $table->string('child_first_kana', 50);
-            $table->string('child_sex')->unsigned();
-            $table->datetime('child_birth_day');
+            $table->uuid('parent_id');
+            $table->string('last_name', 50);
+            $table->string('first_name', 50);
+            $table->string('last_kana', 50);
+            $table->string('first_kana', 50);
+            $table->string('sex')->unsigned();
+            $table->datetime('birth_day');
             $table->timestamps();
         });
 

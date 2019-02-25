@@ -18,10 +18,9 @@ class CreateActivitiesTable extends Migration
             $table->uuid('uuid')->primary();
             $table->uuid('school_id');
             $table->uuid('review_id');
-            $table->boolean('activity_pub_status');
-            $table->string('activity_name');
-            $table->text('activity_detail');
-            $table->string('file_name')->nullable();
+            $table->boolean('pub_status');
+            $table->string('name');
+            $table->text('detail');
             $table->timestamps();
         });
     }

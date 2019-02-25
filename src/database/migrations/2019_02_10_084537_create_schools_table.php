@@ -15,24 +15,18 @@ class CreateSchoolsTable extends Migration
     {
         Schema::create('schools', function (Blueprint $table) {
             $table->uuid('uuid')->primary();
-            $table->string('school_name_kana');
-            $table->string('school_name');
-            $table->string('school_email');
-            $table->string('school_hp')->nullable();
-            $table->string('school_tel');
-            $table->string('school_zip_code1');
-            $table->string('school_zip_code2');
-            $table->string('school_state');
-            $table->string('school_city');
-            $table->string('school_address1');
-            $table->string('school_address2')->nullable();
-            $table->text('school_detail');
-//            $table->string('school_bank_account');
-//            $table->string('school_bank_name');
-//            $table->integer('school_bank_branch_code')->unsigned();
-//            $table->integer('school_bank_account_number')->unsigned();
-//            $table->integer('school_bank_account_type')->unsigned();
-//            $table->string('school_bank_beneficiary_name');
+            $table->string('name');
+            $table->string('name_kana');
+            $table->string('email')->nullable();
+            $table->string('hp')->nullable();
+            $table->string('tel')->nullable();
+            $table->string('zip_code1');
+            $table->string('zip_code2');
+            $table->string('state');
+            $table->string('city');
+            $table->string('address1');
+            $table->string('address2')->nullable();
+            $table->text('detail');
             $table->timestamps();
         });
     }
