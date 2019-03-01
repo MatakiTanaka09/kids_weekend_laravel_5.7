@@ -6,17 +6,17 @@ class Activity extends BaseUuid
 {
     protected $table = "activities";
 
-    public function events()
+    public function event()
     {
-        return $this->belongsTo('\App\Models\Event');
+        return $this->hasMany(Event::class);
     }
 
-    public function schools()
+    public function school()
     {
-        return $this->belongsTo('\App\Models\School');
+        return $this->belongsTo(School::class);
     }
 
-    public function images()
+    public function image()
     {
         return $this->morphMany(Image::class, 'target');
     }

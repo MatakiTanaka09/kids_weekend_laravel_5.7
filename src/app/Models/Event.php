@@ -6,24 +6,30 @@ class Event extends BaseUuid
 {
     //
     protected $table = 'events';
+//    protected $dates = ['started_at', 'ended_at'];
 
     protected $guarded = [
-        'uuid', 'activity_id'
+        'uuid'
     ];
 
-    public function books()
+    public function book()
     {
-        return $this->hasMany('App\Models\Book');
+        return $this->hasMany(Book::class);
     }
 
-    public function activities()
+    public function activity()
     {
-        return $this->hasOne('App\Models\Activity');
+        return $this->belongsTo(Activity::class);
     }
 
-    public function reviews()
+    public function school()
     {
-        return $this->hasMany('\App\Models\Review');
+        return $this->belongsTo(School::class);
+    }
+
+    public function review()
+    {
+        return $this->hasMany(Review::class);
     }
 
 }

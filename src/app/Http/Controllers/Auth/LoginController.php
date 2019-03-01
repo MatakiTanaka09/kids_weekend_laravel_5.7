@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\User\User as UserResource;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Auth\AuthManager;
 use Illuminate\Http\JsonResponse;
@@ -47,17 +48,6 @@ class LoginController extends Controller
 
     public function login(Request $request): JsonResponse
     {
-//      $guard = $this->authManager->guard('api');
-//      $token = $guard->attempt([
-//          'email' =>  $request->get('email'),
-//          'password'  =>  $request->get('password'),
-//      ]);
-//      if (!$token) {
-//          return new JsonResponse(__('auth.failed'));
-//      }
-//
-//      return new JsonResponse($token);
-
         $credentials = $request->only('email', 'password');
 
         try {
@@ -68,7 +58,7 @@ class LoginController extends Controller
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
 
-        $user = User::where('email', $request->email)->first();
+        $user = new UserResource(User::where('email', $request->email)->first());
         return response()->json(compact('user', 'token'));
     }
 }

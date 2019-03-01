@@ -15,8 +15,8 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->uuid('uuid')->primary();
-            $table->uuid('review_user_id');
-            $table->uuid('event_id');
+            $table->uuid('review_user_uuid');
+            $table->uuid('event_uuid');
             $table->text('comment');
             $table->integer('star_amount')->unsigned();
             $table->timestamps();

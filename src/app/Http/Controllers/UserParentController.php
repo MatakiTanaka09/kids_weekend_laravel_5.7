@@ -4,14 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\UserParent;
+use App\Http\Resources\User\UserParent as UserParentResource;
 
 class UserParentController extends Controller
 {
+    public function me()
+    {
+        $id = auth()->user()->id;
+        return UserParentResource::collection(
+            UserParent::where('user_id', $id)->get()
+        );
+    }
 
     public function index()
     {
-        $userParents = UserParent::with('user');
-        return $userParents;
+        return UserParentResource::collection(
+            UserParent::with(['user', 'userChild'])->get()
+        );
     }
 
     /**

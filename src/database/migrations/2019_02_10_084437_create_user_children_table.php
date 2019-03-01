@@ -16,7 +16,7 @@ class CreateUserChildrenTable extends Migration
         Schema::create('userChildren', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->uuid('uuid')->primary();
-            $table->uuid('parent_id');
+            $table->uuid('user_parent_uuid');
             $table->string('last_name', 50);
             $table->string('first_name', 50);
             $table->string('last_kana', 50);

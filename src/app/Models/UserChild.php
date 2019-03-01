@@ -8,15 +8,15 @@ class UserChild extends BaseUuid
 
     protected $guarded = [
         'uuid',
-        'user_parent_id'
+        'parent_id'
     ];
 
-    public function userParents()
+    public function userParent()
     {
-        return $this->belongsTo('App\Models\UserParent');
+        return $this->belongsTo(UserParent::class);
     }
 
-    public function images()
+    public function image()
     {
         return $this->morphMany(Image::class, 'target');
     }

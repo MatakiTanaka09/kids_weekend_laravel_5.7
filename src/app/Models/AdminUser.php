@@ -8,14 +8,14 @@ class AdminUser extends Model
 {
     protected $table = 'adminUsers';
 
-    protected $guarded = ['school_id'];
+    protected $guarded = ['school_uuid'];
 
-    public function schools()
+    public function school()
     {
-        return $this->belongsTo('App\Models\School');
+        return $this->belongsTo(School::class);
     }
 
-    public function images()
+    public function image()
     {
         return $this->morphMany(Image::class, 'target');
     }

@@ -4,18 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
+use App\Http\Resources\Book\Book as BookResource;
 
 class BookController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        $books = Book::with('userParents')->get();
-        return $books;
+        return BookResource::collection(
+            Book::with(['userParent', 'Event'])->get()
+        );
     }
 
     /**

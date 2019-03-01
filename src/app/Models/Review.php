@@ -8,17 +8,17 @@ class Review extends BaseUuid
 
     protected $guarded = [
         'uuid',
-        'review_user_id',
-        'event_id'
+        'review_user_uuid',
+        'event_uuid'
     ];
 
-    public function activities()
+    public function event()
     {
-        return $this->belongsTo('App\Models\Event');
+        return $this->belongsTo(Event::class);
     }
 
-    public function userParents()
+    public function userParent()
     {
-        return $this->belongsTo('App\Models\UserParent');
+        return $this->belongsTo(UserParent::class);
     }
 }

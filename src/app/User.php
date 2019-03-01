@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\UserParent;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmailContract;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -52,8 +53,8 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmailContrac
         $this->notify(new VerifyEmail);
     }
 
-    public function userParents()
+    public function userParent()
     {
-        $this->hasOne('App\Models\UserParent');
+        $this->hasOne(UserParent::class);
     }
 }

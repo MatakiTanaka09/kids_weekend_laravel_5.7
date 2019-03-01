@@ -8,13 +8,13 @@ class Book extends BaseUuid
 
     protected $guarded = ['uuid'];
 
-    public function userParents()
+    public function userParent()
     {
-        return $this->belongsTo('App\Models\UserParent');
+        return $this->belongsTo(UserParent::class);
     }
 
-    public function events()
+    public function event()
     {
-        return $this->belongsTo('App\Models\Event');
+        return $this->belongsTo(Event::class);
     }
 }

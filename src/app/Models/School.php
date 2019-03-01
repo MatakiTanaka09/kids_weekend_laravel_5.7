@@ -9,17 +9,22 @@ class School extends BaseUuid
 
     protected $guarded = ['uuid'];
 
-    public function activities()
+    public function activity()
     {
-        return $this->hasMany('App\Models\Activity');
+        return $this->hasMany(Activity::class);
     }
 
-    public function adminUsers()
+    public function event()
     {
-        return $this->hasMany('App\Models\AdminUser');
+        return $this->hasMany(Event::class);
     }
 
-    public function images()
+    public function adminUser()
+    {
+        return $this->hasMany(AdminUser::class);
+    }
+
+    public function image()
     {
         return $this->morphMany(Image::class, 'target');
     }

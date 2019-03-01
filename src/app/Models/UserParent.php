@@ -2,45 +2,46 @@
 
 namespace App\Models;
 
+use App\User;
+
 class UserParent extends BaseUuid
 {
     protected $table = 'userParents';
 
     protected $guarded = [
-        'user_parent_id',
-        'user_id'
+        'uuid'
     ];
 
     protected $hidden = [
-        'u_zip_code1',
-        'u_zip_code2',
-        'u_state',
-        'u_city',
-        'u_address1',
-        'u_address2'
+        'zip_code1',
+        'zip_code2',
+        'state',
+        'city',
+        'address1',
+        'address2'
     ];
 
-    public function users()
+    public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(User::class);
     }
 
-    public function userChildren()
+    public function userChild()
     {
-        return $this->hasMany('App\Models\userChild', 'user_id');
+        return $this->hasMany(UserChild::class, 'user_parent_uuid');
     }
 
-    public function books()
+    public function book()
     {
-        return $this->hasMany('App\Models\Book', 'parent_id');
+        return $this->hasMany(Book::class, 'parent_id');
     }
 
-    public function reviews()
+    public function review()
     {
-        return $this->hasMany('App\Models\Review');
+        return $this->hasMany(Review::class);
     }
 
-    public function images()
+    public function image()
     {
         return $this->morphMany(Image::class, 'target');
     }
