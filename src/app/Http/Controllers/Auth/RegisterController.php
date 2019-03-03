@@ -73,16 +73,16 @@ class RegisterController extends Controller
         ]);
     }
 
-  public function register(Request $request): JsonResponse
-  {
-    $validate = $this->validator($request->all());
+    public function register(Request $request): JsonResponse
+    {
+        $validate = $this->validator($request->all());
 
-    if ($validate->fails()) {
-      return new JsonResponse($validate->errors());
+        if ($validate->fails()) {
+          return new JsonResponse($validate->errors());
+        }
+
+        event(new Registered($user = $this->create($request->all())));
+
+        return new JsonResponse($user);
     }
-
-    event(new Registered($user = $this->create($request->all())));
-
-    return new JsonResponse($user);
-  }
 }
