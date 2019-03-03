@@ -47,7 +47,7 @@
         }
         &__wrapper {
             padding-bottom: 8px;
-            border-bottom: 0.5px solid $lightGray;
+            border-bottom: 0.5px solid $moreLightGray;
             &--buttons {
                 display: flex;
                 align-items: center;
