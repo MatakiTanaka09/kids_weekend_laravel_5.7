@@ -1,25 +1,29 @@
 <template>
     <div class="columns is-multiline">
-        <place-card
+        <location-card
             v-for="(n, index) in 2" :key="n"
-            :place-name="placeName[index]"
-        ></place-card>
+            :location-name="locationName[index]"
+        ></location-card>
     </div>
 </template>
 
 <script>
-    import PlaceCard from './PlaceCard';
+    import LocationCard from './LocationCard';
 
     export default {
         components: {
-            PlaceCard
+            LocationCard
         },
         data() {
             return {
-                placeName: [
+                locationName: [
                     '豊洲',
                     '二子玉川'
-                ]
+                ],
+                swiperOption: {
+                    slidesPerView: 2.2,
+                    spaceBetween: 8,
+                }
             }
         }
     }
@@ -28,5 +32,12 @@
 <style lang="scss" scoped>
     .columns.is-multiline {
         margin: 0px;
+        display: flex;
+        align-items: center;
+        @media screen and (max-width: 767px) {
+            :first-child {
+                padding-left: 0px;
+            }
+        }
     }
 </style>

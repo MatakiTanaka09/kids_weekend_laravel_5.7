@@ -2,7 +2,7 @@
     <div class="recommends__container">
         <div class="recommends__container__wrapper">
             <h1 class="recommends__container__wrapper--title">{{ recommendsTitle }}</h1>
-            <div class="recommends__container__wrapper--more_button">
+            <div class="recommends__container__wrapper--more_button is-hidden-mobile">
                 <span><i class="fas fa-angle-right"></i></span>
                 <a>もっとみる</a>
             </div>
@@ -39,8 +39,11 @@
                         :event-min-age="eventMinAge"
                     ></recommends-events-card>
                 </swiper-slide>
-                <div class="swiper-pagination" slot="pagination"></div>
             </swiper>
+        </div>
+        <div class="recommends__container--more_button is-hidden-desktop">
+            <span><i class="fas fa-angle-right"></i></span>
+            <a>もっとみる</a>
         </div>
     </div>
 </template>
@@ -69,7 +72,7 @@
                 eventMinAge: '3',
                 swiperOption: {
                     slidesPerView: 2.2,
-                    spaceBetween: 15,
+                    spaceBetween: 8,
                 }
             }
         },
@@ -95,6 +98,7 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../../../../../../sass/variables";
     .recommends__container {
         margin: 64px 0;
         &__wrapper {
@@ -110,14 +114,29 @@
             }
             &--more_button {
                 margin-bottom: 20px;
-                color: rgb(226,121,133);
+                color: $pink;
+                font-weight: bold;
                 a {
-                    color: rgb(226,121,133);
+                    color: $pink;
                 }
             }
         }
         .swiper-wrapper {
             margin-bottom: 8px;
+        }
+        &--more_button {
+            @media screen and (max-width: 767px) {
+                width: 100%;
+                text-align: center;
+                margin-top: 24px;
+                padding: 8px;
+                color: $pink;
+                border: 2px solid $pink;
+                border-radius: 4px;
+                a {
+                    color: $pink;
+                }
+            }
         }
     }
 
