@@ -198,7 +198,7 @@
       <path value="$PROJECT_DIR$/src/vendor/webpatser/laravel-uuid" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="777" />
