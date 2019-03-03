@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources\EventSchool;
+namespace App\Http\Resources\Search\EventDetail;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 

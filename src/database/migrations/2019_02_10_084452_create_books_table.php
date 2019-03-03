@@ -16,16 +16,12 @@ class CreateBooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->uuid('uuid')->primary();
-            $table->uuid('user_parent_uuid');
+            $table->integer('child_parent_id')->unsigned();
             $table->uuid('event_uuid');
-            $table->integer('price');
+            $table->uuid('school_uuid');
+            $table->integer('price')->unsigned();
             $table->timestamps();
         });
-
-//        Schema::table('books', function($table) {
-//            $table->foreign('user_parent_id')->references('id')->on('userParents');
-//            $table->foreign('event_id')->references('id')->on('events');
-//        });
     }
     /**
      * Reverse the migrations.

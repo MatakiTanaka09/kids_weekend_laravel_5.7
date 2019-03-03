@@ -9,14 +9,14 @@ class School extends BaseUuid
 
     protected $guarded = ['uuid'];
 
-    public function activity()
-    {
-        return $this->hasMany(Activity::class);
+    public function activityEventSchool() {
+        return $this->hasMany(ActivityEventSchool::class);
+//        return $this->belongsToMany(ActivityEventSchool::class);
     }
 
-    public function event()
+    public function book()
     {
-        return $this->hasMany(Event::class);
+        return $this->hasMany(Book::class);
     }
 
     public function adminUser()

@@ -21,11 +21,6 @@ class CreateReviewsTable extends Migration
             $table->integer('star_amount')->unsigned();
             $table->timestamps();
         });
-
-//        Schema::table('userChildren', function($table) {
-//            $table->foreign('review_user_id')->references('id')->on('userParents')->onDelete('cascade')->onUpdate('cascade');
-//            $table->foreign('activity_id')->references('id')->on('activities');
-//        });
     }
 
     /**

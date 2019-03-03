@@ -14,6 +14,7 @@ class BookController extends Controller
         return BookResource::collection(
             Book::with(['userParent', 'Event'])->get()
         );
+//        return Book::with(['userParent', 'Event', 'School'])->get();
     }
 
     /**
@@ -31,10 +32,18 @@ class BookController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * Request $request
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $book = new Book();
+//        $book->fill($request->json()->all());
+//        $book->child_parent_id = 1;
+//        $book->school_uuid = "cce53180-3d83-11e9-a133-2f785df45f7c";
+//        $book->event_uuid = "f994a560-3d73-11e9-b034-d5d317db75d3";
+//        $book->price = 1000;
+        $book->save();
+        return $book;
     }
 
     /**

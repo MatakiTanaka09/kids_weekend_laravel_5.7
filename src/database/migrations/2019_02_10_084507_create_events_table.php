@@ -16,7 +16,6 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->uuid('uuid')->primary();
-            $table->uuid('school_uuid');
             $table->date('date');
             $table->datetime('started_at');
             $table->datetime('ended_at');

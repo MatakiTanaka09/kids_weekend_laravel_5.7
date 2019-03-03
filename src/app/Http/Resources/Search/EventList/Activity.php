@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources\EventSchool;
+namespace App\Http\Resources\Search\EventList;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -15,9 +15,8 @@ class Activity extends JsonResource
     public function toArray($request)
     {
         return [
-            "uuid" => $this->uuid,
+            "pub_state" => $this->pub_state,
             "name" => $this->name,
-            "detail" => $this->detail,
         ];
     }
 }

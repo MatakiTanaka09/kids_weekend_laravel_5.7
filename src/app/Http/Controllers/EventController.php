@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\ActivityEventSchool;
+use App\Http\Resources\Search\EventDetail\Main as EventDetailResource;
 use Illuminate\Http\Request;
-use App\Http\Resources\EventSchool\Events as EventResource;
 
 class EventController extends Controller
 {
@@ -15,13 +16,7 @@ class EventController extends Controller
      */
     public function index()
     {
-//        return Event::with('activity.school')->get();
-        return EventResource::collection(
-            Event::with(['activity', 'school'])->get()
-        );
-//        $event = Event::where('uuid', '78ec2b00-3bd7-11e9-9439-43af0a44dd63')->get();
-//        return $event;
-//        return Event::all();
+        return Event::all();
     }
 
     /**
@@ -48,7 +43,7 @@ class EventController extends Controller
         $event->fill($request->json()->all());
         $event->school_uuid = $school_uuid;
         $event->save();
-        return new EventResource($event);
+//        return new EventResource($event);
     }
 
     /**
@@ -57,9 +52,8 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
     }
 
     /**

@@ -6,7 +6,7 @@ class Book extends BaseUuid
 {
     protected $table = 'books';
 
-    protected $guarded = ['uuid'];
+    protected $guarded = [];
 
     public function userParent()
     {
@@ -16,5 +16,10 @@ class Book extends BaseUuid
     public function event()
     {
         return $this->belongsTo(Event::class);
+    }
+
+    public function school()
+    {
+        return $this->belongsTo(School::class);
     }
 }

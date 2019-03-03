@@ -16,7 +16,6 @@ class CreateUserChildrenTable extends Migration
         Schema::create('userChildren', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->uuid('uuid')->primary();
-            $table->uuid('user_parent_uuid');
             $table->string('last_name', 50);
             $table->string('first_name', 50);
             $table->string('last_kana', 50);
@@ -25,10 +24,6 @@ class CreateUserChildrenTable extends Migration
             $table->datetime('birth_day');
             $table->timestamps();
         });
-
-//        Schema::table('userChildren', function($table) {
-//            $table->foreign('user_parent_id')->references('uuid')->on('userParents')->onDelete('cascade')->onUpdate('cascade');
-//        });
     }
     /**
      * Reverse the migrations.

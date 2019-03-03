@@ -15,7 +15,7 @@ class CreateAdminUsersTable extends Migration
     {
         Schema::create('adminUsers', function (Blueprint $table) {
             $table->increments('id');
-            $table->uuid('school_id')->nullable();
+            $table->uuid('school_uuid')->nullable();
             $table->string('name', 50);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

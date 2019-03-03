@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\School;
 use Faker\Generator as Faker;
 
-$factory->define(App\Models\School::class, function (Faker $faker) {
+$factory->define(School::class, function (Faker $faker) {
     return [
         'uuid'      => $faker->uuid,
         'name'      => $faker->realText($maxNbChars = 10, $indexSize = 2),

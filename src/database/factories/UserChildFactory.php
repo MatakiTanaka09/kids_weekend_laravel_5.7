@@ -1,11 +1,11 @@
 <?php
 
+use App\Models\UserChild;
 use Faker\Generator as Faker;
 
-$factory->define(App\Models\UserChild::class, function (Faker $faker) {
+$factory->define(UserChild::class, function (Faker $faker) {
     return [
         //
-        'user_parent_uuid' => $faker->uuid,
         'last_name'        => $faker->lastName,
         'first_name'       => $faker->firstName,
         'last_kana'        => $faker->lastName,

@@ -1,9 +1,10 @@
 <?php
 
+use App\Models\UserParent;
 use Faker\Generator as Faker;
 $autoIncrement = autoIncrement();
 
-$factory->define(App\Models\UserParent::class, function (Faker $faker) use ($autoIncrement){
+$factory->define(UserParent::class, function (Faker $faker) use ($autoIncrement) {
     $autoIncrement->next();
 
     return [

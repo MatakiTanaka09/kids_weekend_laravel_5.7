@@ -33,7 +33,7 @@ class UserParent extends BaseUuid
 
     public function book()
     {
-        return $this->hasMany(Book::class, 'parent_id');
+        return $this->hasMany(Book::class, 'user_parent_uuid');
     }
 
     public function review()
