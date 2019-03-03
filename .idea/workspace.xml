@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a8bbcf1-c134-4d3a-acff-bcd7b8364c8a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/components/presentations/modules/bars/search-bar/SearchBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/presentations/modules/bars/search-bar/SearchBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/components/presentations/modules/cards/category-card/CategoryCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/presentations/modules/cards/category-card/CategoryCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/components/presentations/modules/cards/category-card/CategoryCardList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/presentations/modules/cards/category-card/CategoryCardList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/components/presentations/modules/cards/location-card/LocationCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/presentations/modules/cards/location-card/LocationCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/components/presentations/modules/cards/location-card/LocationCardList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/presentations/modules/cards/location-card/LocationCardList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/components/presentations/modules/cards/recommends-events-card/RecommendsEventsCardList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/presentations/modules/cards/recommends-events-card/RecommendsEventsCardList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/sass/_variables.scss" afterDir="false" />
-    </list>
+    <list default="true" id="9a8bbcf1-c134-4d3a-acff-bcd7b8364c8a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,69 +222,6 @@
               <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="presentations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="presentations" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="presentations" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="cards" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kidsweekend_laravel_5.7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kidsweekend_laravel_5.7" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="presentations" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="cards" type="462c0819:PsiDirectoryNode" />
-              <item name="recommends-events-card" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -354,12 +280,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131809000" />
+    <option name="totallyTimeSpent" value="131896000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="777" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="777" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49927008" visible="true" weight="0.22617124" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49927008" visible="true" weight="0.22213247" />
       <window_info id="Favorites" order="1" sideWeight="0.5007299" side_tool="true" weight="0.2536349" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -372,13 +298,34 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32868218" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.23795621" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.23795621" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" internal_type="SLIDING" order="3" type="SLIDING" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49927008" visible="true" weight="0.23263328" />
+      <window_info id="Favorites" order="1" sideWeight="0.5007299" side_tool="true" weight="0.2536349" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32846716" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.30072993" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32956383" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
