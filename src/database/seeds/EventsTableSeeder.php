@@ -14,7 +14,7 @@ class EventsTableSeeder extends Seeder
         DB::table('events')->insert([
             [
                 "uuid"             => '66482970-38c9-11e9-aa82-a93aabbe9be0',
-                'date'             => '2019-10-08',
+                'time'             => '10:00:00',
                 'started_at'       => '2019-10-08 10:00:00',
                 'ended_at'         => '2019-10-08 18:00:00',
                 'capacity_members' => 3,
@@ -36,7 +36,7 @@ class EventsTableSeeder extends Seeder
             ],
             [
                 "uuid"             => 'aa802176-01d8-3463-b557-2593d8a462ce',
-                'date'             => '2019-10-08',
+                'time'             => '10:00:00',
                 'started_at'       => '2019-10-08 10:00:00',
                 'ended_at'         => '2019-10-08 18:00:00',
                 'capacity_members' => 10,
@@ -58,7 +58,7 @@ class EventsTableSeeder extends Seeder
             ],
             [
                 "uuid"             => '978ae615-97a5-369c-b898-c808b51e02a0',
-                'date'             => '2019-10-08',
+                'time'             => '10:00:00',
                 'started_at'       => '2019-10-08 10:00:00',
                 'ended_at'         => '2019-10-08 18:00:00',
                 'capacity_members' => 5,
@@ -80,7 +80,7 @@ class EventsTableSeeder extends Seeder
             ],
             [
                 "uuid"             => 'f9934030-3d73-11e9-8b6b-bb3494e69e8b',
-                'date'             => '2019-10-08',
+                'time'             => '10:00:00',
                 'started_at'       => '2019-10-08 10:00:00',
                 'ended_at'         => '2019-10-08 18:00:00',
                 'capacity_members' => 3,
@@ -102,7 +102,7 @@ class EventsTableSeeder extends Seeder
             ],
             [
                 "uuid"             => 'f993afb0-3d73-11e9-8077-9b0393124b8c',
-                'date'             => '2019-10-08',
+                'time'             => '10:00:00',
                 'started_at'       => '2019-10-08 10:00:00',
                 'ended_at'         => '2019-10-08 18:00:00',
                 'capacity_members' => 10,
@@ -124,7 +124,7 @@ class EventsTableSeeder extends Seeder
             ],
             [
                 "uuid"             => 'f9940060-3d73-11e9-a5b5-438c7de4051c',
-                'date'             => '2019-10-08',
+                'time'             => '10:00:00',
                 'started_at'       => '2019-10-08 10:00:00',
                 'ended_at'         => '2019-10-08 18:00:00',
                 'capacity_members' => 5,
@@ -146,7 +146,7 @@ class EventsTableSeeder extends Seeder
             ],
             [
                 "uuid"             => 'f9944fb0-3d73-11e9-a80b-83caa6bf0826',
-                'date'             => '2019-10-08',
+                'time'             => '10:00:00',
                 'started_at'       => '2019-10-08 10:00:00',
                 'ended_at'         => '2019-10-08 18:00:00',
                 'capacity_members' => 3,
@@ -168,7 +168,7 @@ class EventsTableSeeder extends Seeder
             ],
             [
                 "uuid"             => 'f994a560-3d73-11e9-b034-d5d317db75d3',
-                'date'             => '2019-10-08',
+                'time'             => '10:00:00',
                 'started_at'       => '2019-10-08 10:00:00',
                 'ended_at'         => '2019-10-08 18:00:00',
                 'capacity_members' => 10,
@@ -190,7 +190,7 @@ class EventsTableSeeder extends Seeder
             ],
             [
                 "uuid"             => '0d5f0e80-3a4a-11e9-bff4-5d4dcf70a1e0',
-                'date'             => '2019-10-08',
+                'time'             => '10:00:00',
                 'started_at'       => '2019-10-08 10:00:00',
                 'ended_at'         => '2019-10-08 18:00:00',
                 'capacity_members' => 5,
