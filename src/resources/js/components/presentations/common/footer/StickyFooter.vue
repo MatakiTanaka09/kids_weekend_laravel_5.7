@@ -87,7 +87,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        /*width: 300px;*/
         height: 50px;
     }
     .content {

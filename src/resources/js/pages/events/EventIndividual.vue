@@ -15,10 +15,11 @@
                         <div class="main-info">
                             <div class="main-content">
                                 <div class="school-name">
-                                    <span>スクールネーム {{ $route.params.id }}</span>
+                                    <span>{{data.school.name}}</span>
                                 </div>
                                 <div class="title-expand">
-                                    <h1 class="title is-1">タイトル</h1>
+                                    <!--<h1 class="title is-1">タイトル</h1>-->
+                                    <h1 class="title is-1">{{data.activity.name}}</h1>
                                 </div>
                                 <div class="icon-group">
                                     <div class="location">
@@ -28,7 +29,7 @@
                                         <div>
                                             <p class="">
                                                 <span>東京</span>
-                                                <span>月島</span>
+                                                <span>{{data.event.address1}}</span>
                                             </p>
                                         </div>
                                     </div>
@@ -37,7 +38,7 @@
                                             <i class="far fa-clock"></i>
                                         </div>
                                         <div>
-                                            <p class=""><time datetime="2016-1-1">2019/2/</time></p>
+                                            <p class=""><time datetime="2016-1-1">{{data.event.started_at}}</time></p>
                                         </div>
                                     </div>
                                     <div class="to-bring">
@@ -54,9 +55,9 @@
                                         </div>
                                         <div>
                                             <p class="">
-                                                <span>2</span>
+                                                <span>{{data.event.target_min_age}}</span>
                                                 <span> 〜 </span>
-                                                <span>5才</span>
+                                                <span>{{data.event.target_max_age}}才</span>
                                             </p>
                                         </div>
                                     </div>
@@ -74,7 +75,7 @@
                                         <div class="about-shcool">
                                             <p class="shcool-heading is-3">スクールについて</p>
                                             <p>
-                                                スクールについて
+                                                {{data.school.detail}}
                                             </p>
                                         </div>
                                     </div>
@@ -85,7 +86,7 @@
                                             </figure>
                                         </div>
                                         <div class="host-info">
-                                            <p class="host-name">プログラミングであそぼう</p>
+                                            <p class="host-name">{{data.school.name}}</p>
                                             <a class="contact-host">
                                                 スクールに連絡する
                                             </a>
@@ -97,7 +98,7 @@
                                         <div class="about-experience">
                                             <p class="experience-heading is-3">体験できること</p>
                                             <p>
-                                                adjoaisdjoisjoidjoifjoaijdoa
+                                                {{data.activity.detail}}
                                             </p>
                                         </div>
                                     </div>
@@ -147,8 +148,9 @@
                                                             <span>10:00 − 12:00</span>
                                                         </div>
                                                         <div class="schedule-card-price">
-                                                            <span>¥1,000 / 人</span>
-                                                            <span>.残席あと1名</span>
+                                                            <span>¥</span>
+                                                            <span> {{data.event.price}}/ 人</span>
+                                                            <span>.残席あと{{data.event.capacity_members}}名</span>
                                                         </div>
                                                     </div>
                                                     <div class="reserve-button">
@@ -184,13 +186,13 @@
                                                 <div class="column is-half">
                                                     <p class="notes-heading">参加人数</p>
                                                     <p>
-                                                        定員残り7名です。
+                                                        定員残り{{data.event.capacity_members}}名です。
                                                     </p>
                                                 </div>
                                                 <div class="column is-half">
                                                     <p class="notes-heading">参加対象</p>
                                                     <p>
-                                                        10歳以上の方のみ参加できます。保護者による2歳未満のお子様の同伴も可能です。
+                                                        {{data.event.target_min_age}}歳以上の方のみ参加できます。保護者による2歳未満のお子様の同伴も可能です。
                                                     </p>
                                                 </div>
                                             </div>
@@ -218,7 +220,7 @@
     import FadeLoader from 'vue-spinner/src/FadeLoader.vue';
     import EventBookModal from '../../components/presentations/modules/modals/event-book-modal/EventBookModal';
     import StickyFooter from '../../components/contianers/StickyFooter';
-
+    import http from "../../services/http";
     export default {
         components: {
             FadeLoader,
@@ -229,18 +231,42 @@
             return {
                 slideData: ["label1","label2","label3"],
                 isLoading: false,
-                showBookModal: false
+                showBookModal: false,
+                data: {
+                    activity: {},
+                    event: {},
+                    school: {}
+                }
             }
         },
         methods: {
             bookModalToggle() {
                 this.showBookModal = !this.showBookModal;
             },
+            fetchEventData() {
+                http.get("/events/search/eventDetail", res => {
+                    this.data = res.data["data"][0];
+                    Object.assign(this.data, { event : this.data.event  });
+                    Object.assign(this.data, { activity : this.data.activity  });
+                    Object.assign(this.data, { school : this.data.school  });
+                    // this.data.event = this.data.event;
+                    // this.data.school = this.data.school;
+
+                }, null);
+            }
+        },
+        created() {
+            this.fetchEventData();
+            console.log(this.data.event);
+            console.log(this.data.activity);
         }
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    .section {
+        padding: 0px 24px;
+    }
     .loading-container {
         display: flex;
         justify-content: center;
@@ -248,42 +274,13 @@
         height: 100vh;
     }
     .columns {
-        margin: 24px 0px;
-    }
-    .image-top {
-        /*width: 100%;*/
-        /*height: auto;*/
-    }
-    .container-expand {
-    }
-    .side-menu {
-    }
-    .side-nav-item {
-        padding-bottom: 8px;
-    }
-    .side-nav-item-title {
-        color: black;
-    }
-    .btn-profile {
-        margin-top: 8px;
-        width: 100%;
-    }
-    .main-edit {
-    }
-    .profile-required {
-        margin-bottom: 40px;
-    }
-    .children-infomation {
-        margin-bottom: 40px;
+        margin: 48px 0px;
     }
     a:hover {
         opacity: 0.6;
     }
     .content p:not(:last-child), .content {
         margin-bottom: 8px;
-    }
-    .field-body {
-        margin-bottom: 12px;
     }
     .title-expand {
         padding-bottom: 20px;
@@ -294,7 +291,6 @@
     .school-image {
         z-index: -2;
     }
-
     .location {
         display: flex;
     }
@@ -353,20 +349,8 @@
     }
     .host-part-left,
     .experience-part-left,
-    .to-need-left
-    {
-        width: 100%;
-        height: auto;
-        margin-right: 40px;
-    }
     .host-part-right,
     .experience-part-right,
-    .to-need-left
-    {
-        width: 33.333%;
-        height: auto;
-        text-align: center;
-    }
     .image-box.image-box-expand {
         margin-right: 0px;
     }
@@ -376,11 +360,6 @@
     .shcool-heading,
     .experience-heading,
     .to-need-heading,
-    .schedule-part-heading
-    {
-        font-weight: bold;
-        margin-bottom: 8px;
-    }
     .school-image {
         margin: 0px auto 8px;
     }
@@ -487,9 +466,6 @@
             width: 100%;
             height: auto;
             /*padding-right: 16px;*/
-        }
-        .right-item-wrapper {
-            margin: 0px auto;
         }
     }
 

@@ -48,7 +48,7 @@
     export default {
         props: {
             eventId: {
-                type: Number,
+                type: String,
             },
             eventImagePath: {
                 type: [String, Array]
@@ -57,19 +57,23 @@
                 type: String,
             },
             eventCategory: {
-                type: String,
+                type: [Object, String],
+                default: "その他"
             },
             eventTitle: {
                 type: String,
+                default: "No Title"
             },
             eventDateTime: {
                 type: String,
             },
             eventPrice: {
-                type: String,
+                type: [Number, String],
+                default: "priceless"
             },
             eventPlace: {
                 type: String,
+                default: " 月島"
             },
             eventMinAge: {
                 type: String,

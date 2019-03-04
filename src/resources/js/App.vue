@@ -10,7 +10,7 @@
     import TopHeader from "./components/presentations/common/header/TopHeader";
     import TopFooter from "./components/presentations/common/footer/TopFooter";
     import http from './services/http';
-
+    import { mapActions } from "vuex";
     export default {
         components: {
           TopHeader,
@@ -18,6 +18,12 @@
         },
         created() {
             http.init();
+            // this.init();
+        },
+        methods: {
+            ...mapActions({
+                init: 'auth/setCurrentUser'
+            })
         }
     }
 </script>

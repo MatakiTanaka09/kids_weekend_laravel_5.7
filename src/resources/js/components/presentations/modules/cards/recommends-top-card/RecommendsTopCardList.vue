@@ -2,32 +2,32 @@
     <div class="columns is-multiline">
         <recommends-top-card
             class="is-hidden-mobile"
-            v-for="n in 9" :key="n"
-            :event-id=n
-            :event-image-path="eventImagePath[n % 3]"
-            :event-time="eventTime"
-            :event-category="eventCategory"
-            :event-title="eventTitle"
-            :event-date-time="eventDateTime"
-            :event-price="eventPrice"
+            v-for="(data,index) in events" :key="data.event_uuid"
+            :event-id=data.event_uuid
+            :event-image-path="eventImagePath[index % 3]"
+            :event-time="data.event.time"
+            :event-category="data.event.category_event.category.name"
+            :event-title="data.activity.name"
+            :event-date-time="data.event.started_at"
+            :event-price="data.event.price"
             :event-place="eventPlace"
-            :event-min-age="eventMinAge"
+            :event-min-age="data.event.target_min_age"
         ></recommends-top-card>
         <swiper
             :options="swiperOption"
             class="is-hidden-desktop">
-            <swiper-slide v-for="n in 5" :key="n">
+            <swiper-slide v-for="(data,index) in events" :key="data.event_uuid">
                 <recommends-top-card
                     class="is-hidden-desktop"
-                    :event-id=n
-                    :event-image-path="eventImagePath[n % 3]"
-                    :event-time="eventTime"
-                    :event-category="eventCategory"
-                    :event-title="eventTitle"
-                    :event-date-time="eventDateTime"
-                    :event-price="eventPrice"
+                    event-id=data.event_uuid
+                    :event-image-path="eventImagePath[index % 3]"
+                    :event-time="data.event.time"
+                    :event-category="data.event.category_event.category.name"
+                    :event-title="data.activity.name"
+                    :event-date-time="data.event.started_at"
+                    :event-price="data.event.price"
                     :event-place="eventPlace"
-                    :event-min-age="eventMinAge"
+                    :event-min-age="data.event.target_min_age"
                 ></recommends-top-card>
                 </swiper-slide>
                 <div class="swiper-pagination" slot="pagination"></div>
@@ -64,7 +64,7 @@
         },
         props: {
             events: {
-                type: Array,
+                type: [Array, Object],
                 default: () => []
             }
         },

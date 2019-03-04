@@ -124,7 +124,7 @@
 </template>
 
 <script>
-    import RecommendTopCardList from "../../components/presentations/modules/cards/recommends-top-card/RecommendsTopCardList";
+    import RecommendTopCardList from "../../components/presentations/modules/cards/recommends-top-card/RecommendsTopCardListLogic";
 
     export default {
         components: {
@@ -132,10 +132,11 @@
         },
         data() {
             return {
-                'top_image': '/images/app_top_image.jpg'
+                'top_image': '/images/app_top_image.jpg',
             }
         },
-  }
+        methods: {}
+    }
 </script>
 
 <style lang="scss" scoped>
