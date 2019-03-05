@@ -42,7 +42,7 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'jwt',
             'provider' => 'users',
         ],
     ],
@@ -99,4 +99,8 @@ return [
         ],
     ],
 
+    'admin-api' => [
+        'driver' => 'session',
+        'provider' => 'admins',
+    ],
 ];
