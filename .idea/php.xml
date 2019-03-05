@@ -93,6 +93,7 @@
       <path value="$PROJECT_DIR$/src/vendor/symfony/polyfill-php56" />
       <path value="$PROJECT_DIR$/src/vendor/namshi/jose" />
       <path value="$PROJECT_DIR$/src/vendor/tymon/jwt-auth" />
+      <path value="$PROJECT_DIR$/src/vendor/webpatser/laravel-uuid" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

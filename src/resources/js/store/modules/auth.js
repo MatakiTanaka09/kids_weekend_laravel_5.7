@@ -1,4 +1,5 @@
 import http from '../../services/http';
+import urls from '../../utils/url';
 import types from '../mutation-types';
 
 const state = {
@@ -8,22 +9,22 @@ const state = {
 
 const actions = {
     register({ commit }, payload) {
-        http.post('register', payload, res => {
+        http.post(urls.REGISTER, payload, res => {
             commit(types.AUTH_REGISTER, res.data);
         }, null);
     },
     login({ commit }, payload) {
-        http.post('login', payload, res => {
+        http.post('/auth/login', payload, res => {
             commit(types.AUTH_LOGIN, res.data);
         }, null);
     },
     logout({ commit }) {
-        http.get('logout', () => {
+        http.get(urls.LOGOUT, () => {
             commit(types.AUTH_LOGOUT);
         }, null);
     },
     setCurrentUser ({ commit }) {
-        http.get('me', res => {
+        http.get('/auth/me', res => {
             commit(types.SET_USER, res.data);
         }, null);
     }
@@ -31,20 +32,20 @@ const actions = {
 
 const mutations = {
     [types.AUTH_REGISTER](state, payload) {
-        this.state.user = payload.user;
+        Object.assign(state, { user : payload });
         this.state.authenticated = true;
     },
     [types.AUTH_LOGIN](state, payload) {
-        this.state.user = payload.user;
+        Object.assign(state, { user : payload });
         this.state.authenticated = true;
     },
-    [types.AUTH_LOGOUT](state) {
+    [types.AUTH_LOGOUT]() {
         localStorage.removeItem('jwt-token');
         this.state.user = {};
         this.state.authenticated = false;
     },
     [types.SET_USER](state, payload) {
-        this.state.user = payload.user;
+        Object.assign(state, { user : payload });
         this.state.authenticated = true;
     }
 };

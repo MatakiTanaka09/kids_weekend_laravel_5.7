@@ -94,6 +94,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/tymon/jwt-auth" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/webpatser/laravel-uuid" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-diactoros" />
     </content>
     <orderEntry type="inheritedJdk" />

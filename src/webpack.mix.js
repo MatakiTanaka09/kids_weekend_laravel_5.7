@@ -11,7 +11,21 @@ const mix = require('laravel-mix');
  |
  */
 
-mix
-    .js('resources/js/app.js', 'public/js')
+mix.webpackConfig({
+    resolve: {
+        extensions: ['.js', '.vue', '.json'],
+        alias: {
+            // 'vue$': 'vue/dist/vue.esm.js',
+            // '@': resolve('/resources/js'),
+            "@component": path.resolve(
+                __dirname,
+                "resources/js/components"
+            )
+        }
+    }
+});
+
+mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .version();
+

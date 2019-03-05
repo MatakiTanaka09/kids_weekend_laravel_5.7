@@ -1,11 +1,12 @@
 <template>
     <sticky-footer
         @book="bookActive"
+        :event-price="eventPrice"
     ></sticky-footer>
 </template>
 
 <script>
-    import StickyFooter from '../presentations/common/footer/StickyFooter';
+    import StickyFooter from './StickyFooter';
     import { mapActions, mapGetters } from 'vuex';
 
     export default {
@@ -14,6 +15,11 @@
         },
         data() {
             return {
+            }
+        },
+        props: {
+            eventPrice: {
+                type: Number
             }
         },
         methods: {
