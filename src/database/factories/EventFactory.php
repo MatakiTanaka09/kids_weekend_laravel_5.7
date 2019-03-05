@@ -28,7 +28,7 @@ $factory->define(Event::class, function (Faker $faker) use ($autoUuid) {
     $autoUuid->next();
     return [
         'uuid'              => $autoUuid->current(),
-        'date'              => '2019-10-08',
+        'time'              => '10:00:00',
         'started_at'        => '2019-10-08 10:00:00',
         'ended_at'          => '2019-10-08 18:00:00',
         'capacity_members'  => $faker->numberBetween(3, 15),

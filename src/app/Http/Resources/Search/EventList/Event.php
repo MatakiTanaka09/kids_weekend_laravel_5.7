@@ -16,7 +16,7 @@ class Event extends JsonResource
     public function toArray($request)
     {
         return [
-            "date"           => $this->date,
+            "time"           => $this->time,
             "started_at"     => $this->started_at,
             "target_min_age" => $this->target_min_age,
             "price"          => $this->price,

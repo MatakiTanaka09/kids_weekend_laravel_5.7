@@ -17,7 +17,7 @@ class Event extends JsonResource
     {
         return [
             "uuid"             => $this->uuid,
-            "date"             => $this->date,
+            "time"             => $this->time,
             "started_at"       => $this->started_at,
             "ended_at"         => $this->ended_at,
             "capacity_members" => $this->capacity_members,

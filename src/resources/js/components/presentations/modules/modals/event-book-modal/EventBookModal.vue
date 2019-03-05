@@ -1,34 +1,32 @@
 <template>
     <transition name="modal" :class="{ 'is-active': showBookModal }" appear>
         <div class="modal-mask">
-            <div class="modal-wrapper">
+            <div class="modal-wrapper" @click.self="$emit('close')">
                 <div class="modal-container">
-
                     <div class="modal-header">
                         <slot name="header">
                             <button class="delete" aria-label="close" @click.self="$emit('close')"></button>
                         </slot>
                     </div>
-
                     <div class="modal-body">
                         <slot name="body">
                             <form>
                                 <div class="field">
-                                    <label class="label">アクティビティ</label>
+                                    <label class="label">アクティビティ名</label>
                                     <div class="control">
-                                        <p>aaa</p>
+                                        <p>{{ activityName }}</p>
                                     </div>
                                 </div>
                                 <div class="field">
                                     <label class="label">日時</label>
                                     <div class="control">
-                                        <p>2019/2/</p>
+                                        <p>{{ activityTime }}</p>
                                     </div>
                                 </div>
                                 <div class="field">
                                     <label class="label">料金</label>
                                     <div class="control">
-                                        <p><span>¥</span>1,000</p>
+                                        <p><span>¥</span>{{ activityPrice }}</p>
                                     </div>
                                 </div>
                                 <div class="field">
@@ -43,7 +41,6 @@
                             </form>
                         </slot>
                     </div>
-
                     <div class="modal-footer">
                         <slot name="footer">
                             <button class="button is-block is-info is-fullwidth" @click="book">
@@ -69,10 +66,21 @@
             showBookModal: Boolean,
             action: {
                 type: Function
-            }
+            },
+            activityName: {
+                type: String
+            },
+            activityTime: {
+                type: String
+            },
+            activityPrice: {
+                type: Number
+            },
         },
         methods: {
             book() {
+                this.$emit('close');
+                // console.log("book");
                 this.action()
             }
         }

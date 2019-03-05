@@ -6,7 +6,7 @@ import Login from '../pages/auth/Login';
 import Register from '../pages/auth/Register';
 import RegisterConfirmation from '../pages/auth/RegisterConfirmation';
 import Events from '../pages/events/Events';
-import EventIndividual from '../pages/events/EventIndividual';
+import EventIndividual from '../pages/events/EventLogic';
 import UsersInfo from '../pages/users/UsersInfo';
 
 Vue.use(VueRouter);

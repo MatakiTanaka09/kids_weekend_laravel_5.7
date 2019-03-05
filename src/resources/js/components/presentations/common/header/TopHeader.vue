@@ -14,13 +14,16 @@
             <div id="navbarHomeHeader" class="navbar-menu" :class="{'is-active': dropdownActive}">
                 <div class="navbar-end">
                     <div class="navbar-item">
-                        <div class="buttons">
+                        <div class="buttons" v-if="!isLoggedIn">
                             <router-link to="register" class="button buttons__btn--register">
                                 <strong>Sign up</strong>
                             </router-link>
                             <router-link to="/login" class="button buttons__btn--login">
                                 Log in
                             </router-link>
+                        </div>
+                        <div v-else>
+                            hello!
                         </div>
                     </div>
                 </div>
@@ -30,16 +33,22 @@
 </template>
 
 <script>
+    import { mapGetters } from "vuex";
     export default {
         data() {
             return {
                 dropdownActive: false,
             }
         },
+        computed: {
+            ...mapGetters({
+                isLoggedIn: "auth/isLoggedIn"
+            })
+        },
         methods: {
             dropdownToggle() {
                 this.dropdownActive = !this.dropdownActive;
-            },
+            }
         },
     }
 </script>

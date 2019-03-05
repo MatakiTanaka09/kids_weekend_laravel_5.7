@@ -104,14 +104,12 @@
             }
             .btn__container {
                 margin-top: 24px;
-
                 .button {
                     background-color: #57b8ff;
                     border: 1px solid #57b8ff;
                     color: white;
                 }
             }
-
             .reset__password {
                 margin-top: 15px;
                 text-align: center;
