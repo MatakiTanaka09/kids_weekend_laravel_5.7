@@ -36,7 +36,6 @@
     import RecommendsEventsCardList from '../../components/presentations/modules/cards/recommends-events-card/RecommendsEventsCardList';
     import SearchBar from '../../components/presentations/modules/bars/search-bar/SearchBar';
     import LocationCardList from '../../components/presentations/modules/cards/location-card/LocationCardList';
-
     export default {
         components: {
             FadeLoader,

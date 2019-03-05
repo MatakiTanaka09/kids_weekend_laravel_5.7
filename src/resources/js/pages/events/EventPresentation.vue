@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <div>
         <div v-if="isLoading" class="loading__container">
             <fade-loader class="loading"></fade-loader>
         </div>
@@ -15,10 +15,10 @@
                         <div class="event__detail__wrapper__main">
                             <div class="event__detail__wrapper__main--content">
                                 <div class="school_name">
-                                    <span>スクール名</span>
+                                    <span>{{ school.name }}</span>
                                 </div>
                                 <div class="event_title">
-                                    <h1 class="event_title--expand">タイトル</h1>
+                                    <h1 class="event_title--expand">{{ activity.name }}</h1>
                                 </div>
                                 <div class="icon_group">
                                     <div class="icon_group--item">
@@ -37,7 +37,7 @@
                                             <i class="far fa-clock"></i>
                                         </div>
                                         <div>
-                                            <p class=""><time datetime="2016-1-1">2019/02/02</time></p>
+                                            <p class=""><time datetime="2016-1-1">{{ event.started_at }}</time></p>
                                         </div>
                                     </div>
                                     <div class="icon_group--item">
@@ -54,9 +54,9 @@
                                         </div>
                                         <div>
                                             <p class="">
-                                                <span>0</span>
+                                                <span>{{ event.target_min_age }}</span>
                                                 <span> 〜 </span>
-                                                <span>5才</span>
+                                                <span>{{ event.target_max_age }}才</span>
                                             </p>
                                         </div>
                                     </div>
@@ -73,9 +73,7 @@
                                     <div class="school_detail--left_part">
                                         <div class="about">
                                             <p class="heading">スクールについて</p>
-                                            <p>
-                                                スクールディスクリプション
-                                            </p>
+                                            <p>{{ school.detail }}</p>
                                         </div>
                                     </div>
                                     <div class="school_detail--right_part">
@@ -85,7 +83,7 @@
                                             </figure>
                                         </div>
                                         <div class="school_info">
-                                            <p class="heading">スクール名</p>
+                                            <p class="heading heading--school">{{ school.name }}</p>
                                             <a class="school_contact">
                                                 スクールに連絡する
                                             </a>
@@ -97,7 +95,7 @@
                                         <div class="about">
                                             <p class="heading">体験できること</p>
                                             <p>
-                                                体験ディスクリプション
+                                                {{ activity.detail }}
                                             </p>
                                         </div>
                                     </div>
@@ -147,8 +145,8 @@
                                                     </div>
                                                     <div class="schedule__about__container--card_price">
                                                         <span>¥</span>
-                                                        <span>1,500 / 人</span>
-                                                        <span>.残席あと10名</span>
+                                                        <span>{{ event.price }} / 人</span>
+                                                        <span>.残席あと{{ event.capacity_members }}名</span>
                                                     </div>
                                                 </div>
                                                 <div class="schedule__about__container--card_button">
@@ -182,13 +180,13 @@
                                             <div class="column is-half notes__about__column">
                                                 <p class="heading">参加人数</p>
                                                 <p>
-                                                    定員残り1名です。
+                                                    定員残り{{ event.capacity_members }}名です。
                                                 </p>
                                             </div>
                                             <div class="column is-half notes__about__column">
                                                 <p class="heading">参加対象</p>
                                                 <p>
-                                                    7歳以上の方のみ参加できます。保護者による2歳未満のお子様の同伴も可能です。
+                                                    {{ event.target_min_age }}歳以上の方のみ参加できます。保護者による2歳未満のお子様の同伴も可能です。
                                                 </p>
                                             </div>
                                         </div>
@@ -202,19 +200,24 @@
         </div>
         <event-book-modal
             v-if="showBookModal"
+            :activity-name="activity.name"
+            :activity-time="event.started_at"
+            :activity-price="event.price"
             :showBookModal=showBookModal
+            :action="book"
             @close="bookModalToggle"
         ></event-book-modal>
         <sticky-footer
             @bookActive="bookModalToggle"
+            :event-price="event.price"
         ></sticky-footer>
-    </main>
+    </div>
 </template>
 
 <script>
     import FadeLoader from 'vue-spinner/src/FadeLoader.vue';
     import EventBookModal from '../../components/presentations/modules/modals/event-book-modal/EventBookModal';
-    import StickyFooter from '../../components/contianers/StickyFooter';
+    import StickyFooter from '../../components/presentations/common/footer/StickyFooterLogic';
     export default {
         components: {
             FadeLoader,
@@ -223,7 +226,6 @@
         },
         data() {
             return {
-                slideData: ["label1","label2","label3"],
                 isLoading: false,
                 showBookModal: false,
             }
@@ -231,6 +233,24 @@
         methods: {
             bookModalToggle() {
                 this.showBookModal = !this.showBookModal;
+            },
+            book() {
+                // Vuexを通じて予約処理を行う
+                alert("book!");
+            }
+        },
+        props: {
+            event: {
+                type: [Array, Object],
+                default: () => []
+            },
+            activity: {
+                type: [Array, Object],
+                default: () => []
+            },
+            school: {
+                type: [Array, Object],
+                default: () => []
             }
         }
     }
@@ -252,8 +272,10 @@
     }
     .heading {
         font-size: 16px;
-        padding-bottom: 8px;
         font-weight: bold;
+        &--school {
+            font-size: 12px;
+        }
     }
     .section {
         @media screen and (max-width: 767px) {

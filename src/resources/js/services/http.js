@@ -36,8 +36,8 @@ export default {
 
         axios.interceptors.response.use(response => {
             const token = response.headers['Authorization'] || response.data['token'];
-            console.log(response.headers['Authorization']);
-            console.log(response.data['token']);
+            // console.log(response.headers['Authorization']);
+            // console.log(response.data['token']);
             if(token) {
                 localStorage.setItem('jwt-token', token);
             }

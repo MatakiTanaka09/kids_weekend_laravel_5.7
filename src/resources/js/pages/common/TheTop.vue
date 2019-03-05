@@ -428,7 +428,7 @@
             }
             .button__end {
                 width: 350px;
-                height: 36px;
+                height: 50px;
                 background-color: $pink;
                 border: 2px solid $pink;
                 @media screen and (max-width: 767px) {

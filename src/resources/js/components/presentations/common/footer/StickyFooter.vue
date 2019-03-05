@@ -1,12 +1,12 @@
 <template>
-    <div class="sticky-footer">
-        <div class="container sticky-footer-container">
-            <div class="sticky-footer-wrapper">
-                <div>
-                    <div class="left-item is-hidden-mobile">
+    <div class="sticky__footer">
+        <div class="sticky__footer__container">
+            <div class="sticky__footer__container__wrapper">
+                <div class="left__item__container">
+                    <div class="left__item__container__wrapper is-hidden-mobile">
                         <div class="image-box">
                             <figure class="image image-size">
-                                <!--<progressive-img class="is-rounded" placeholder="https://unsplash.it/1920/1080?random" />-->
+                                <progressive-img src="http://placehold.jp/48x48.png" />
                             </figure>
                         </div>
                         <div class="content">
@@ -18,18 +18,18 @@
                                 </div>
                                 <div class="review-link">
                                     <span class="">
-                                        <a>495件のレビュー</a>
+                                        <a>OO件のレビュー</a>
                                     </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="right-item-wrapper">
-                    <div class="right-item">
+                <div class="right__item__container">
+                    <div class="right__item__container__wrapper">
                         <div class="price-part">
                             <div class="price-container">
-                                <span class="activity-price has-text-weight-bold">¥1,000</span>
+                                <span class="activity-price has-text-weight-bold">¥{{ eventPrice }}</span>
                                 <span> / 1人</span>
                             </div>
                         </div>
@@ -50,6 +50,9 @@
 <script>
     export default {
         props: {
+            eventPrice: {
+                type: Number
+            }
         },
         methods: {
             book() {
@@ -60,7 +63,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .sticky-footer {
+    .sticky__footer {
         height: 70px;
         position: fixed;
         bottom: 0;
@@ -68,41 +71,45 @@
         border-top: 1px solid #EBEBEB;
         box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.05);
         background-color: white;
-    }
-    .sticky-footer-container {
-    }
-    .sticky-footer-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .left-item {
-        display: flex;
-        /*width: 240px;*/
-        height: 50px;
-    }
-    .right-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 50px;
-    }
-    .content {
-        width: 100%;
-    }
-    .price-part {
-    }
-    .price-container {
-        width: 100%;
-        padding-right: 8px;
-    }
-    .btn-expand {
-        width: 200px;
-        height: 48px;
-        background-color: #ffd046;
-        border: 1px solid #ffd046;
-        color: white;
+        z-index: 1000;
+        &__container {
+            margin: 0px 20px;
+            &__wrapper {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                width: 100%;
+                .left__item__container {
+                    &__wrapper {
+                        display: flex;
+                        height: 50px;
+                        .content {
+                            width: 100%;
+                        }
+                    }
+                }
+                .right__item__container {
+                    &__wrapper {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        height: 50px;
+                        .price-container {
+                            width: 100%;
+                            padding-right: 8px;
+                        }
+                        .btn-expand {
+                            width: 200px;
+                            height: 48px;
+                            background-color: #ffd046;
+                            border: 1px solid #ffd046;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
     }
 </style>
