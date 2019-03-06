@@ -4,11 +4,8 @@
             <fade-loader class="loading"></fade-loader>
         </div>
         <section v-else class="section">
-            <!--SearchBar-->
             <search-bar></search-bar>
-            <!--Place-->
             <location-card-list></location-card-list>
-
             <recommends-events-card-list
                 :recommends-title="recommendsRecently"
                 :card-display-number="cardDisplayEight"
