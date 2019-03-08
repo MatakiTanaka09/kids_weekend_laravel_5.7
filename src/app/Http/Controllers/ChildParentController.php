@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\User\ChildParent as ChildParentResource;
 use App\Models\ChildParent;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class ChildParentController extends Controller
      */
     public function index()
     {
-        //
+        return ChildParentResource::collection(
+            ChildParent::with(['userParent', 'userChild'])->get()
+        );
     }
 
     /**

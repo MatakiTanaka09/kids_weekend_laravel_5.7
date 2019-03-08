@@ -24,8 +24,10 @@ Route::group(["prefix" => "v1", "middleware" => "api"], function () {
     Route::post("/password/reset/{token}", "Auth\ResetPasswordController@reset");
     Route::get("/email/verify/{ID}", "Auth\VerificationController@verify")->name("verification.verify");
     Route::post("/email/resend", "Auth\VerificationController@resend")->name("verification.resend");
+
     Route::get("/test", "UserParentController@index");
-    Route::post("/book", "BookController@store");
+    Route::get("/auth/show", "ChildParentController@index");
+    Route::get("/auth/parent", "UserParentController@index");
 
     Route::get("/events", "EventController@index");
     Route::post("/events", "EventController@store");
@@ -35,6 +37,8 @@ Route::group(["prefix" => "v1", "middleware" => "api"], function () {
     Route::get("/events/search/top", "SearchController@searchTop");
     Route::get("/events/search/eventList", "SearchController@searchEventList");
     Route::get("/events/search/eventDetail", "SearchController@searchEventDetail");
+
+    Route::post("/book", "BookController@store");
 
     Route::group(["middleware" => ["jwt.auth"]], function () {
         Route::post("/auth/logout", "Auth\AuthController@logout");

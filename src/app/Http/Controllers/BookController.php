@@ -34,16 +34,30 @@ class BookController extends Controller
      * @return \Illuminate\Http\Response
      * Request $request
      */
-    public function store()
+    public function store(Request $request)
     {
         $book = new Book();
-//        $book->fill($request->json()->all());
+        $book->fill($request->json()->all())->save();
+        return $book;
+//        $book->child_parent_id = $book->child_parent_id[0]["id"];
+//        if (count($child_parent_id) === 1) {
+//            $book->child_parent_id = $child_parent_id[0];
+//            $book->save();
+//            return $book;
+//        } else {
+//            foreach ($this->childParent($child_parent_id) as $childParent)
+//            {
+//                $book->child_parent_id  = $childParent;
+//                $book->save();
+//            }
+//            return $book;
+//        }
+
 //        $book->child_parent_id = 1;
 //        $book->school_uuid = "cce53180-3d83-11e9-a133-2f785df45f7c";
 //        $book->event_uuid = "f994a560-3d73-11e9-b034-d5d317db75d3";
 //        $book->price = 1000;
-        $book->save();
-        return $book;
+//        $book->save();
     }
 
     /**
@@ -90,4 +104,14 @@ class BookController extends Controller
     {
         //
     }
+
+//    public function childParent($child_parent_id)
+//    {
+//        if(count($child_parent_id)===1) return;
+//        for($i = 0; $i < count($child_parent_id); $i++) {
+//            yield $book->child_parent_id = $child_parent_id[$i];
+//        }
+//    }
 }
+
+

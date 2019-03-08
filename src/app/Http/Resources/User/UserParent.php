@@ -2,7 +2,8 @@
 
 namespace App\Http\Resources\User;
 
-use App\Http\Resources\User\UserChild as UserChildResource;
+use App\Http\Resources\Book\BookUserChildren as UserChildResource;
+use App\Http\Resources\User\ChildParent as ChildParentResource;
 use Illuminate\Http\Resources\Json\Resource;
 
 class UserParent extends Resource
@@ -21,6 +22,7 @@ class UserParent extends Resource
             "last_name"  => $this->last_name,
             "email"      => $this->user->email,
             "children"   => UserChildResource::collection($this->userChild),
+            "child_parent_id" => ChildParentResource::collection($this->childParent)
         ];
     }
 }

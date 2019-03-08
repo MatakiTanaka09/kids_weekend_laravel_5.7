@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Resources\Book;
+namespace App\Http\Resources\User;
 
+use App\Http\Resources\User\UserParent as UserParentResource;
+use App\Http\Resources\User\UserChild as UserChildResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class BookUserChildren extends JsonResource
+class ChildParent extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,8 +17,8 @@ class BookUserChildren extends JsonResource
     public function toArray($request)
     {
         return [
-            "uuid" => $this->uuid,
-            "last_kana" => $this->last_kana,
+            'id' => $this->id,
+            'child_uuid' => $this->child_uuid
         ];
     }
 }

@@ -23,17 +23,17 @@ class UserParent extends BaseUuid
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function userChild()
     {
-        return $this->hasMany(UserChild::class, 'user_parent_uuid');
+        return $this->hasMany(UserChild::class, 'parent_uuid');
     }
 
-    public function book()
+    public function childParent()
     {
-        return $this->hasMany(Book::class, 'user_parent_uuid');
+        return $this->hasMany(ChildParent::class, 'parent_uuid');
     }
 
     public function review()

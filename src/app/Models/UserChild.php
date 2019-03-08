@@ -8,12 +8,17 @@ class UserChild extends BaseUuid
 
     protected $guarded = [
         'uuid',
-        'parent_id'
+        'parent_uuid'
     ];
+
+    public function childParent()
+    {
+        return $this->hasOne(ChildParent::class, 'child_uuid');
+    }
 
     public function userParent()
     {
-        return $this->belongsTo(UserParent::class);
+        return $this->belongsToMany(UserParent::class, 'parent_uuid');
     }
 
     public function image()

@@ -6,6 +6,7 @@ use Faker\Generator as Faker;
 $factory->define(UserChild::class, function (Faker $faker) {
     return [
         //
+        'parent_uuid'      => $faker->uuid,
         'last_name'        => $faker->lastName,
         'first_name'       => $faker->firstName,
         'last_kana'        => $faker->lastName,
