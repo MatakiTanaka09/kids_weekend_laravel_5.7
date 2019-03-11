@@ -25,9 +25,9 @@ Route::group(["prefix" => "v1", "middleware" => "api"], function () {
     Route::get("/email/verify/{ID}", "Auth\VerificationController@verify")->name("verification.verify");
     Route::post("/email/resend", "Auth\VerificationController@resend")->name("verification.resend");
 
-    Route::get("/test", "UserParentController@index");
+    Route::get("/test", "BookController@showBookUser");
     Route::get("/auth/show", "ChildParentController@index");
-    Route::get("/auth/parent", "UserParentController@index");
+//    Route::get("/auth/parent", "UserParentController@index");
 
     Route::get("/events", "EventController@index");
     Route::post("/events", "EventController@store");

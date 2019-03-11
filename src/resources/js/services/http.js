@@ -26,7 +26,7 @@ export default {
      * Init the service.
      */
     init() {
-        axios.defaults.baseURL = '/api/v1'
+        axios.defaults.baseURL = '/api/v1';
         axios.interceptors.request.use(config => {
             config.headers['Authorization']    = `Bearer ${localStorage.getItem('jwt-token')}`;
             config.headers['X-CSRF-TOKEN']     = window.Laravel.csrfToken;

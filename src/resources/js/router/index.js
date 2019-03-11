@@ -8,6 +8,7 @@ import RegisterConfirmation from '../pages/auth/RegisterConfirmation';
 import Events from '../pages/events/Events';
 import EventIndividual from '../pages/events/EventLogic';
 import UsersInfo from '../pages/users/UsersInfo';
+import BookConfirm from '../pages/common/BookConfirm';
 
 Vue.use(VueRouter);
 
@@ -43,6 +44,10 @@ const routes = [
     {
         path: '/users',
         component: UsersInfo
+    },
+    {
+        path: '/book/confirm',
+        component: BookConfirm
     },
     {
         path: '*',

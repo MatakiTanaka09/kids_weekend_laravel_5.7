@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Http\Resources\Book\Book as BookResource;
+use App\Models\UserParent;
+use App\Http\Resources\Book\BookUser as BookUserResource;
 
 class BookController extends Controller
 {
@@ -17,6 +19,12 @@ class BookController extends Controller
 //        return Book::with(['userParent', 'Event', 'School'])->get();
     }
 
+    public function showBookUser()
+    {
+        return BookUserResource::collection(
+            UserParent::with(['user', 'userChild', 'childParent'])->get()
+        );
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -38,6 +46,11 @@ class BookController extends Controller
     {
         $book = new Book();
         $book->fill($request->json()->all())->save();
+//        $book->child_parent_id = $book->input("child_parent_id");
+//        $book->school_uuid     = $book->input("school_uuid");
+//        $book->event_uuid      = $book->input("event_uuid");
+//        $book->price           = $book->input("price");
+//        $book->save();
         return $book;
 //        $book->child_parent_id = $book->child_parent_id[0]["id"];
 //        if (count($child_parent_id) === 1) {

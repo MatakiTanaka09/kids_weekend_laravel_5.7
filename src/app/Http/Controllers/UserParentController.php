@@ -41,19 +41,20 @@ class UserParentController extends Controller
     public function store(Request $request)
     {
         $userParent = new UserParent();
-        $userParent->last_name  = $request->last_name;
-        $userParent->first_name = $request->first_name;
-        $userParent->last_kana  = $request->last_kana;
-        $userParent->first_kana = $request->first_kana;
-        $userParent->email      = $request->email;
-        $userParent->tel        = $request->tel;
-        $userParent->sex        = $request->sex;
-        $userParent->zip_code1  = $request->zip_code1;
-        $userParent->zip_code2  = $request->zip_code2;
-        $userParent->state      = $request->state;
-        $userParent->city       = $request->city;
-        $userParent->address1   = $request->address1;
-        $userParent->address2   = $request->address2;
+        $userParent->fill($request->json()->all());
+//        $userParent->last_name  = $request->last_name;
+//        $userParent->first_name = $request->first_name;
+//        $userParent->last_kana  = $request->last_kana;
+//        $userParent->first_kana = $request->first_kana;
+//        $userParent->email      = $request->email;
+//        $userParent->tel        = $request->tel;
+//        $userParent->sex        = $request->sex;
+//        $userParent->zip_code1  = $request->zip_code1;
+//        $userParent->zip_code2  = $request->zip_code2;
+//        $userParent->state      = $request->state;
+//        $userParent->city       = $request->city;
+//        $userParent->address1   = $request->address1;
+//        $userParent->address2   = $request->address2;
         $userParent->save();
         return $userParent;
     }

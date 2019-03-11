@@ -32,10 +32,10 @@
                                 <div class="field">
                                     <label class="label">参加されるお子さん</label>
                                     <div class="control">
-                                        <input type="checkbox" name="children" value="りえちゃん" id="checkbox01">
-                                        <label for="checkbox01" class="checkbox">りえちゃん</label>
-                                        <input type="checkbox" name="childrebn" value="ながせちゃん" id="checkbox02">
-                                        <label for="checkbox02" class="checkbox">ながせちゃん</label>
+                                        <div  v-for="(child,index) in children" :key="child.uuid">
+                                            <input type="checkbox" name="children" :value="child.last_kana" :id="'checkout0' + index">
+                                            <label :for="'checkout0' + index" class="checkbox">{{ child.last_kana }}</label>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="modal-footer">
                         <slot name="footer">
-                            <button class="button is-block is-info is-fullwidth" @click="book">
+                            <button class="button is-block is-info is-fullwidth" @click="$emit('action')">
                                 予約する
                             </button>
                         </slot>
@@ -64,9 +64,9 @@
         },
         props: {
             showBookModal: Boolean,
-            action: {
-                type: Function
-            },
+            // action: {
+            //     type: Function
+            // },
             activityName: {
                 type: String
             },
@@ -76,12 +76,15 @@
             activityPrice: {
                 type: Number
             },
+            children: {
+                type: [Object, Array]
+            }
         },
         methods: {
             book() {
                 this.$emit('close');
                 // console.log("book");
-                this.action()
+                // this.action();
             }
         }
     }
@@ -138,8 +141,6 @@
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
     }
-
-
     input[type=checkbox] {
         display: none;
     }
@@ -176,7 +177,6 @@
         border-radius: 6px;
         content: '';
     }
-
     .checkbox:before {
         -webkit-transition: opacity 0.2s linear;
         transition: opacity 0.2s linear;

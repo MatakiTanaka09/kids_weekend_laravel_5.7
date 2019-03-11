@@ -6,6 +6,7 @@
     ></event-presentation>
 </template>
 
+
 <script>
     import EventPresentation from "./EventPresentation";
     import http from "../../services/http";
@@ -24,6 +25,8 @@
         },
         methods: {
             fetchEventData() {
+                // event_uuidで検索して、一つのデータを持ってきて、個別データに入れる
+                // Vuexで管理する
                 http.get("/events/search/eventDetail", res => {
                     this.data = res.data["data"][0];
                     Object.assign(this.data, { event : this.data.event  });
@@ -35,8 +38,6 @@
         created() {
             this.fetchEventData();
         }
+        // render()を使いたい
     }
 </script>
-
-<style lang="scss" scoped>
-</style>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources\User;
 
-use App\Http\Resources\Book\BookUserChildren as UserChildResource;
+use App\Http\Resources\User\UserChild as UserChildResource;
 use App\Http\Resources\User\ChildParent as ChildParentResource;
 use Illuminate\Http\Resources\Json\Resource;
 

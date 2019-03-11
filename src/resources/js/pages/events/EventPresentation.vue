@@ -204,7 +204,8 @@
             :activity-time="event.started_at"
             :activity-price="event.price"
             :showBookModal=showBookModal
-            :action="book"
+            @action="book"
+            :children="user.children"
             @close="bookModalToggle"
         ></event-book-modal>
         <sticky-footer
@@ -218,6 +219,7 @@
     import FadeLoader from 'vue-spinner/src/FadeLoader.vue';
     import EventBookModal from '../../components/presentations/modules/modals/event-book-modal/EventBookModal';
     import StickyFooter from '../../components/presentations/common/footer/StickyFooterLogic';
+    import http from "../../services/http";
     export default {
         components: {
             FadeLoader,
@@ -228,30 +230,73 @@
             return {
                 isLoading: false,
                 showBookModal: false,
+                user: {
+                    children: {}
+                },
             }
         },
         methods: {
             bookModalToggle() {
                 this.showBookModal = !this.showBookModal;
             },
-            book() {
-                // Vuexを通じて予約処理を行う
-                alert("book!");
+            async lodingToggle() {
+                return new Promise(resolve => {
+                    this.isLoading = !this.isLoading;
+                    resolve();
+                });
+            },
+            async loading() {
+                await setTimeout(this.lodingToggle, 1750);
+            },
+            async goBookConfirm() {
+                await this.lodingToggle();
+                this.$router.push("/book/confirm");
+            },
+            async book() {
+                this.bookModalToggle();
+                // setTimeout(this.lodingToggle, 1750);
+                this.loading();
+                http.post("/book", {
+                    "event_uuid"      : this.event.uuid,
+                    "school_uuid"     : this.school.uuid,
+                    "child_parent_id" : this.user.children_id[0].id,
+                    "price"           : this.event.price,
+                }, res => {
+                    console.log(res);
+                    this.lodingToggle();
+                    // 予約完了画面に遷移
+                    // メール送信
+                }, e => {
+                    console.log('error', e)
+                });
+            },
+            confirm() {
+            },
+            // ログインユーザーのデータを格納する
+            fetchUserData() {
+                http.get("/test", res => {
+                    this.user = res.data["data"][15];
+                    Object.assign(this.user, this.user);
+                    Object.assign(this.user, { children : this.user.children });
+                }, null);
             }
         },
         props: {
             event: {
-                type: [Array, Object],
+                type   : [Array, Object],
                 default: () => []
             },
             activity: {
-                type: [Array, Object],
+                type   : [Array, Object],
                 default: () => []
             },
             school: {
-                type: [Array, Object],
+                type   : [Array, Object],
                 default: () => []
             }
+        },
+        created() {
+            this.fetchUserData();
         }
     }
 </script>
