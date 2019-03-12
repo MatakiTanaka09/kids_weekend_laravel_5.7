@@ -13,7 +13,7 @@
                                 type="email"
                                 placeholder="半角英数"
                                 v-model="email"
-                                @keyup.enter="login"
+                                @keyup.enter="handleLogin"
                                 required
                                 autofocus>
                             <span class="icon is-small is-left">
@@ -29,7 +29,7 @@
                                 type="password"
                                 placeholder="半角英数"
                                 v-model="password"
-                                @keyup.enter="login"
+                                @keyup.enter="handleLogin"
                                 required>
                             <span class="icon is-small is-left">
                             <i class="fas fa-lock"></i>
@@ -64,8 +64,8 @@
         },
         data() {
             return {
-                email: '',
-                password: '',
+                email    : '',
+                password : '',
             }
         },
         methods: {
@@ -74,6 +74,7 @@
             }),
             async handleLogin() {
                 await this.login({email: this.email, password: this.password});
+                await this.$router.go(0);
                 this.$router.push('/');
             },
         }

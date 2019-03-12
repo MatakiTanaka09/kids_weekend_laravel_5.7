@@ -30,7 +30,7 @@
                                 type="password"
                                 placeholder="半角英数"
                                 v-model="password"
-                                @keyup.enter="login"
+                                @keyup.enter="handleRegister"
                                 required>
 
                             <span class="icon is-small is-left">
@@ -46,7 +46,7 @@
                                 type="password"
                                 placeholder="半角英数"
                                 v-model="password_confirmation"
-                                @keyup.enter="login"
+                                @keyup.enter="handleRegister"
                                 required>
 
                             <span class="icon is-small is-left">

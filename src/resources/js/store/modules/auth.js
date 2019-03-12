@@ -1,10 +1,12 @@
 import http from '../../services/http';
 import urls from '../../utils/url';
+import util from '../../utils/util';
 import types from '../mutation-types';
 
 const state = {
     user: {},
-    authenticated: false,
+    token: localStorage.getItem(util.JWT_TOKEN) || '',
+    status: '',
 }
 
 const actions = {
@@ -14,9 +16,11 @@ const actions = {
         }, null);
     },
     login({ commit }, payload) {
-        http.post('/auth/login', payload, res => {
+        http.post(urls.LOGIN, payload, res => {
             commit(types.AUTH_LOGIN, res.data);
-        }, null);
+        }, err => {
+            console.log(util.ERROR, err);
+        });
     },
     logout({ commit }) {
         http.get(urls.LOGOUT, () => {
@@ -24,7 +28,7 @@ const actions = {
         }, null);
     },
     setCurrentUser ({ commit }) {
-        http.get('/auth/me', res => {
+        http.get(urls.ME, res => {
             commit(types.SET_USER, res.data);
         }, null);
     }
@@ -32,27 +36,27 @@ const actions = {
 
 const mutations = {
     [types.AUTH_REGISTER](state, payload) {
-        Object.assign(state, { user : payload });
+        Object.assign(state, { user: payload });
         this.state.authenticated = true;
     },
     [types.AUTH_LOGIN](state, payload) {
-        Object.assign(state, { user : payload });
+        Object.assign(state, { user: payload });
         this.state.authenticated = true;
     },
     [types.AUTH_LOGOUT]() {
-        localStorage.removeItem('jwt-token');
+        localStorage.removeItem(util.JWT_TOKEN);
         this.state.user = {};
         this.state.authenticated = false;
     },
     [types.SET_USER](state, payload) {
-        Object.assign(state, { user : payload });
+        Object.assign(state, { user: payload });
         this.state.authenticated = true;
     }
 };
 
 const getters = {
-    user: (state, getters, rootState) => rootState.user,
-    isLoggedIn: (state, getters, rootState) => rootState.authenticated
+    user: (state, getters, rootState) => state.user,
+    isLoggedIn: state => !!state.token
 };
 
 export default {

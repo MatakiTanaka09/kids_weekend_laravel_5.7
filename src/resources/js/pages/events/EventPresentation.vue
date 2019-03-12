@@ -204,8 +204,8 @@
             :activity-time="event.started_at"
             :activity-price="event.price"
             :showBookModal=showBookModal
-            @action="book"
             :children="user.children"
+            @action="book"
             @close="bookModalToggle"
         ></event-book-modal>
         <sticky-footer
