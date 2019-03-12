@@ -2664,7 +2664,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         fetchTopEvent: function fetchTopEvent() {
             var _this = this;
 
-            __WEBPACK_IMPORTED_MODULE_1__services_http__["a" /* default */].get("/events/search/top", function (res) {
+            __WEBPACK_IMPORTED_MODULE_1__services_http__["a" /* default */].get("/events/search/top/3", function (res) {
                 _this.events = res.data["data"];
                 console.log(_this.events);
             }, null);
@@ -3307,7 +3307,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             // event_uuidで検索して、一つのデータを持ってきて、個別データに入れる
             // Vuexで管理する
-            __WEBPACK_IMPORTED_MODULE_1__services_http__["a" /* default */].get("/events/search/eventDetail", function (res) {
+            var ID = "66482970-38c9-11e9-aa82-a93aabbe9be0";
+            __WEBPACK_IMPORTED_MODULE_1__services_http__["a" /* default */].get("/events/search/eventDetail/", function (res) {
                 _this.data = res.data["data"][0];
                 Object.assign(_this.data, { event: _this.data.event });
                 Object.assign(_this.data, { activity: _this.data.activity });
@@ -3329,19 +3330,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__("./node_modules/babel-runtime/regenerator/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_spinner_src_FadeLoader_vue__ = __webpack_require__("./node_modules/vue-spinner/src/FadeLoader.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_spinner_src_FadeLoader_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_spinner_src_FadeLoader_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_presentations_modules_modals_event_book_modal_EventBookModal__ = __webpack_require__("./resources/js/components/presentations/modules/modals/event-book-modal/EventBookModal.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_presentations_modules_modals_event_book_modal_EventBookModal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_presentations_modules_modals_event_book_modal_EventBookModal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_presentations_common_footer_StickyFooterLogic__ = __webpack_require__("./resources/js/components/presentations/common/footer/StickyFooterLogic.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_presentations_common_footer_StickyFooterLogic___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_presentations_common_footer_StickyFooterLogic__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_http__ = __webpack_require__("./resources/js/services/http.js");
-
-
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_spinner_src_FadeLoader_vue__ = __webpack_require__("./node_modules/vue-spinner/src/FadeLoader.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_spinner_src_FadeLoader_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_spinner_src_FadeLoader_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_presentations_modules_modals_event_book_modal_EventBookModal__ = __webpack_require__("./resources/js/components/presentations/modules/modals/event-book-modal/EventBookModal.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_presentations_modules_modals_event_book_modal_EventBookModal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_presentations_modules_modals_event_book_modal_EventBookModal__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_presentations_common_footer_StickyFooterLogic__ = __webpack_require__("./resources/js/components/presentations/common/footer/StickyFooterLogic.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_presentations_common_footer_StickyFooterLogic___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_presentations_common_footer_StickyFooterLogic__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_http__ = __webpack_require__("./resources/js/services/http.js");
 //
 //
 //
@@ -3566,9 +3561,9 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
-        FadeLoader: __WEBPACK_IMPORTED_MODULE_1_vue_spinner_src_FadeLoader_vue___default.a,
-        EventBookModal: __WEBPACK_IMPORTED_MODULE_2__components_presentations_modules_modals_event_book_modal_EventBookModal___default.a,
-        StickyFooter: __WEBPACK_IMPORTED_MODULE_3__components_presentations_common_footer_StickyFooterLogic___default.a
+        FadeLoader: __WEBPACK_IMPORTED_MODULE_0_vue_spinner_src_FadeLoader_vue___default.a,
+        EventBookModal: __WEBPACK_IMPORTED_MODULE_1__components_presentations_modules_modals_event_book_modal_EventBookModal___default.a,
+        StickyFooter: __WEBPACK_IMPORTED_MODULE_2__components_presentations_common_footer_StickyFooterLogic___default.a
     },
     data: function data() {
         return {
@@ -3584,132 +3579,61 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         bookModalToggle: function bookModalToggle() {
             this.showBookModal = !this.showBookModal;
         },
-        lodingToggle: function () {
-            var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
-                var _this = this;
+        loadingToggle: function loadingToggle() {
+            var _this = this;
 
-                return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
-                    while (1) {
-                        switch (_context.prev = _context.next) {
-                            case 0:
-                                return _context.abrupt('return', new Promise(function (resolve) {
-                                    _this.isLoading = !_this.isLoading;
-                                    resolve();
-                                }));
-
-                            case 1:
-                            case 'end':
-                                return _context.stop();
-                        }
-                    }
-                }, _callee, this);
-            }));
-
-            function lodingToggle() {
-                return _ref.apply(this, arguments);
-            }
-
-            return lodingToggle;
-        }(),
-        loading: function () {
-            var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
-                return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
-                    while (1) {
-                        switch (_context2.prev = _context2.next) {
-                            case 0:
-                                _context2.next = 2;
-                                return setTimeout(this.lodingToggle, 1750);
-
-                            case 2:
-                            case 'end':
-                                return _context2.stop();
-                        }
-                    }
-                }, _callee2, this);
-            }));
-
-            function loading() {
-                return _ref2.apply(this, arguments);
-            }
-
-            return loading;
-        }(),
-        goBookConfirm: function () {
-            var _ref3 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee3() {
-                return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee3$(_context3) {
-                    while (1) {
-                        switch (_context3.prev = _context3.next) {
-                            case 0:
-                                _context3.next = 2;
-                                return this.lodingToggle();
-
-                            case 2:
-                                this.$router.push("/book/confirm");
-
-                            case 3:
-                            case 'end':
-                                return _context3.stop();
-                        }
-                    }
-                }, _callee3, this);
-            }));
-
-            function goBookConfirm() {
-                return _ref3.apply(this, arguments);
-            }
-
-            return goBookConfirm;
-        }(),
-        book: function () {
-            var _ref4 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee4() {
-                var _this2 = this;
-
-                return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee4$(_context4) {
-                    while (1) {
-                        switch (_context4.prev = _context4.next) {
-                            case 0:
-                                this.bookModalToggle();
-                                // setTimeout(this.lodingToggle, 1750);
-                                this.loading();
-                                __WEBPACK_IMPORTED_MODULE_4__services_http__["a" /* default */].post("/book", {
-                                    "event_uuid": this.event.uuid,
-                                    "school_uuid": this.school.uuid,
-                                    "child_parent_id": this.user.children_id[0].id,
-                                    "price": this.event.price
-                                }, function (res) {
-                                    console.log(res);
-                                    _this2.lodingToggle();
-                                    // 予約完了画面に遷移
-                                    // メール送信
-                                }, function (e) {
-                                    console.log('error', e);
-                                });
-
-                            case 3:
-                            case 'end':
-                                return _context4.stop();
-                        }
-                    }
-                }, _callee4, this);
-            }));
-
-            function book() {
-                return _ref4.apply(this, arguments);
-            }
-
-            return book;
-        }(),
+            return new Promise(function (resolve) {
+                _this.isLoading = !_this.isLoading;
+                resolve();
+            });
+        },
+        loading: function loading() {
+            setTimeout(this.loadingToggle, 1750);
+        },
+        goBookConfirm: function goBookConfirm() {
+            this.loadingToggle();
+            this.$router.push("/book/confirm");
+        },
+        book: function book() {
+            this.bookModalToggle();
+            // setTimeout(this.lodingToggle, 1750);
+            this.loading();
+            __WEBPACK_IMPORTED_MODULE_3__services_http__["a" /* default */].post("/book", {
+                "event_uuid": this.event.uuid,
+                "school_uuid": this.school.uuid,
+                "child_parent_id": this.user.children_id[0].id,
+                "price": this.event.price
+            }, function (res) {
+                console.log(res);
+                // メール送信
+            }, function (e) {
+                console.log('error', e);
+            });
+            this.loadingToggle();
+            // 予約完了画面に遷移
+            // this.$router.push("/book/confirm");
+        },
         confirm: function confirm() {},
 
         // ログインユーザーのデータを格納する
         fetchUserData: function fetchUserData() {
-            var _this3 = this;
+            var _this2 = this;
 
-            __WEBPACK_IMPORTED_MODULE_4__services_http__["a" /* default */].get("/test", function (res) {
-                _this3.user = res.data["data"][15];
-                Object.assign(_this3.user, _this3.user);
-                Object.assign(_this3.user, { children: _this3.user.children });
+            __WEBPACK_IMPORTED_MODULE_3__services_http__["a" /* default */].get("/test", function (res) {
+                _this2.user = res.data["data"][0];
+                Object.assign(_this2.user, _this2.user);
+                Object.assign(_this2.user, { children: _this2.user.children });
             }, null);
+        },
+        fetchEventData: function fetchEventData() {
+            console.log(this.event);
+            // for(let i = 0; i < this.event.length; i++) {
+            //     console.log(this.event[i]);
+            //     if(ID === this.event.uuid[i]) console.log("same id");
+            //     else {
+            //         console.log("different");
+            //     }
+            // }
         }
     },
     props: {
@@ -3734,6 +3658,11 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
     },
     created: function created() {
         this.fetchUserData();
+        this.fetchEventData();
+    },
+
+    watch: {
+        '$route': ['fetchEventData']
     }
 });
 
@@ -33270,40 +33199,7 @@ var render = function() {
           attrs: { src: "./images/app_top_image.jpg" }
         }),
         _vm._v(" "),
-        _c("div", { staticClass: "top__content content_all_center" }, [
-          _c("h1", { staticClass: "app__title top_content_title_color" }, [
-            _vm._v("こどもの好きを見つけよう")
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "top__content--detail" }, [
-            _vm._v(
-              "こどもの「やりたい」を好きなだけ体験できる新しい学びスタイル"
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "top__search" },
-            [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("div", { staticClass: "top__search--age_box" }, [
-                _vm._v("\n                    こどもの年齢\n                ")
-              ]),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                { staticClass: "button button__top", attrs: { to: "/" } },
-                [
-                  _c("strong", { staticClass: "button_top_text_color" }, [
-                    _vm._v("検索")
-                  ])
-                ]
-              )
-            ],
-            1
-          )
-        ])
+        _vm._m(0)
       ],
       1
     ),
@@ -33434,25 +33330,7 @@ var render = function() {
         _c(
           "div",
           { staticClass: "app__activity" },
-          [
-            _c("recommend-top-card-list"),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "more_button_container" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "button button_category_display",
-                    attrs: { to: "/events" }
-                  },
-                  [_c("span", [_vm._v("もっとみる")])]
-                )
-              ],
-              1
-            )
-          ],
+          [_c("recommend-top-card-list")],
           1
         )
       ])
@@ -33517,8 +33395,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "top__search--calendar_box" }, [
-      _c("span", [_vm._v("カレンダーから探す")])
+    return _c("div", { staticClass: "top__content content_all_center" }, [
+      _c("h1", { staticClass: "app__title top_content_title_color" }, [
+        _vm._v("こどもの好きを見つけよう")
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "top__content--detail" }, [
+        _vm._v("こどもの「やりたい」を好きなだけ体験できる新しい学びスタイル")
+      ])
     ])
   },
   function() {
@@ -52983,7 +52867,7 @@ module.exports = Component.exports
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__("./node_modules/vue/dist/vue.common.js");
+/* WEBPACK VAR INJECTION */(function(__dirname) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__("./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__("./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_common_TheTop__ = __webpack_require__("./resources/js/pages/common/TheTop.vue");
@@ -53002,7 +52886,6 @@ module.exports = Component.exports
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_users_UsersInfo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__pages_users_UsersInfo__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_common_BookConfirm__ = __webpack_require__("./resources/js/pages/common/BookConfirm.vue");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_common_BookConfirm___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__pages_common_BookConfirm__);
-
 
 
 
@@ -53053,6 +52936,7 @@ var routes = [{
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
     mode: 'history',
+    base: __dirname,
     routes: routes,
     scrollBehavior: function scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
@@ -53064,6 +52948,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 });
 
 /* harmony default export */ __webpack_exports__["a"] = (router);
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, "/"))
 
 /***/ }),
 

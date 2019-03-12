@@ -5,17 +5,17 @@
           <div class="top__content content_all_center">
               <h1 class="app__title top_content_title_color">こどもの好きを見つけよう</h1>
               <p class="top__content--detail">こどもの「やりたい」を好きなだけ体験できる新しい学びスタイル</p>
-              <div class="top__search">
-                  <div class="top__search--calendar_box">
-                      <span>カレンダーから探す</span>
-                  </div>
-                  <div class="top__search--age_box">
-                      こどもの年齢
-                  </div>
-                  <router-link to="/" class="button button__top">
-                      <strong class="button_top_text_color">検索</strong>
-                  </router-link>
-              </div>
+              <!--<div class="top__search">-->
+                  <!--<div class="top__search&#45;&#45;calendar_box">-->
+                      <!--<span>カレンダーから探す</span>-->
+                  <!--</div>-->
+                  <!--<div class="top__search&#45;&#45;age_box">-->
+                      <!--こどもの年齢-->
+                  <!--</div>-->
+                  <!--<router-link to="/" class="button button__top">-->
+                      <!--<strong class="button_top_text_color">検索</strong>-->
+                  <!--</router-link>-->
+              <!--</div>-->
           </div>
       </section>
       <section class="section section__about">
@@ -99,11 +99,11 @@
               </div>
               <div class="app__activity">
                   <recommend-top-card-list></recommend-top-card-list>
-                  <div class="more_button_container">
-                      <router-link to="/events" class="button button_category_display">
-                          <span>もっとみる</span>
-                      </router-link>
-                  </div>
+                  <!--<div class="more_button_container">-->
+                      <!--<router-link to="/events" class="button button_category_display">-->
+                          <!--<span>もっとみる</span>-->
+                      <!--</router-link>-->
+                  <!--</div>-->
               </div>
           </div>
       </section>

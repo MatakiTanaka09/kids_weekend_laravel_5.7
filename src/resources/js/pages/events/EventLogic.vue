@@ -27,7 +27,8 @@
             fetchEventData() {
                 // event_uuidで検索して、一つのデータを持ってきて、個別データに入れる
                 // Vuexで管理する
-                http.get("/events/search/eventDetail", res => {
+                const ID = "66482970-38c9-11e9-aa82-a93aabbe9be0";
+                http.get("/events/search/eventDetail/", res => {
                     this.data = res.data["data"][0];
                     Object.assign(this.data, { event : this.data.event  });
                     Object.assign(this.data, { activity : this.data.activity  });

@@ -239,20 +239,20 @@
             bookModalToggle() {
                 this.showBookModal = !this.showBookModal;
             },
-            async lodingToggle() {
+            loadingToggle() {
                 return new Promise(resolve => {
                     this.isLoading = !this.isLoading;
                     resolve();
                 });
             },
-            async loading() {
-                await setTimeout(this.lodingToggle, 1750);
+            loading() {
+                setTimeout(this.loadingToggle, 1750);
             },
-            async goBookConfirm() {
-                await this.lodingToggle();
+            goBookConfirm() {
+                this.loadingToggle();
                 this.$router.push("/book/confirm");
             },
-            async book() {
+            book() {
                 this.bookModalToggle();
                 // setTimeout(this.lodingToggle, 1750);
                 this.loading();
@@ -263,22 +263,34 @@
                     "price"           : this.event.price,
                 }, res => {
                     console.log(res);
-                    this.lodingToggle();
-                    // 予約完了画面に遷移
                     // メール送信
                 }, e => {
                     console.log('error', e)
                 });
+                this.loadingToggle();
+                // 予約完了画面に遷移
+                // this.$router.push("/book/confirm");
             },
             confirm() {
             },
             // ログインユーザーのデータを格納する
             fetchUserData() {
                 http.get("/test", res => {
-                    this.user = res.data["data"][15];
+                    this.user = res.data["data"][0];
                     Object.assign(this.user, this.user);
                     Object.assign(this.user, { children : this.user.children });
                 }, null);
+            },
+            fetchEventData() {
+                console.log(this.event);
+                // for(let i = 0; i < this.event.length; i++) {
+                //     console.log(this.event[i]);
+                //     if(ID === this.event.uuid[i]) console.log("same id");
+                //     else {
+                //         console.log("different");
+                //     }
+                // }
+
             }
         },
         props: {
@@ -297,7 +309,11 @@
         },
         created() {
             this.fetchUserData();
-        }
+            this.fetchEventData();
+        },
+        watch: {
+            '$route': ['fetchEventData']
+        },
     }
 </script>
 

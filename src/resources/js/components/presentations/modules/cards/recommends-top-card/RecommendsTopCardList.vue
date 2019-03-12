@@ -67,7 +67,7 @@
                 type: [Array, Object],
                 default: () => []
             }
-        },
+        }
     }
 </script>
 

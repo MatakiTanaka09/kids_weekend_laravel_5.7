@@ -34,9 +34,10 @@ Route::group(["prefix" => "v1", "middleware" => "api"], function () {
     Route::get("/events/{EVENT_ID}", "EventController@show");
     Route::patch("/events/{EVENT_ID}", "EventController@update");
     Route::delete("/events/{EVENT_ID}", "EventController@destroy");
-    Route::get("/events/search/top", "SearchController@searchTop");
+    Route::get("/events/search/top/{limit}", "SearchController@searchTop");
     Route::get("/events/search/eventList", "SearchController@searchEventList");
-    Route::get("/events/search/eventDetail", "SearchController@searchEventDetail");
+    Route::get("/events/search/eventDetail/", "SearchController@searchEventDetail");
+//    Route::get("/events/search/eventDetail", "SearchController@searchEventDetail");
 
     Route::post("/book", "BookController@store");
 

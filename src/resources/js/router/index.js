@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-
 import Top from '../pages/common/TheTop';
 import Login from '../pages/auth/Login';
 import Register from '../pages/auth/Register';
@@ -57,9 +56,10 @@ const routes = [
 
 const router = new VueRouter({
     mode: 'history',
+    base: __dirname,
     routes,
     scrollBehavior (to, from, savedPosition) {
-        if (savedPosition) {
+        if(savedPosition) {
             return savedPosition
         }
         else {

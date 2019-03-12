@@ -1,15 +1,15 @@
 <template>
-    <recommends-top-card-list-render
+    <recommends-events-card-list-render
         :events="events"
-    ></recommends-top-card-list-render>
+    ></recommends-events-card-list-render>
 </template>
 
 <script>
-    import RecommendsTopCardListRender from "./RecommendsTopCardList";
+    import RecommendsEventsCardListRender from "./RecommendsEventsCardList";
     import http from "../../../../../services/http";
     export default {
         components: {
-            RecommendsTopCardListRender
+            RecommendsEventsCardListRender
         },
         data() {
             return {
@@ -18,7 +18,7 @@
         },
         methods: {
             fetchTopEvent() {
-                http.get("/events/search/top/3", res => {
+                http.get("/events/search/eventList", res => {
                     this.events = res.data["data"];
                     console.log(this.events);
                 }, null);
