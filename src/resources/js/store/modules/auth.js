@@ -4,28 +4,49 @@ import util from '../../utils/util';
 import types from '../mutation-types';
 
 const state = {
-    user: {},
-    token: localStorage.getItem(util.JWT_TOKEN) || '',
+    user  : {},
+    token : localStorage.getItem(util.JWT_TOKEN) || '',
     status: '',
 }
 
 const actions = {
     register({ commit }, payload) {
-        http.post(urls.REGISTER, payload, res => {
-            commit(types.AUTH_REGISTER, res.data);
-        }, null);
+        return new Promise((resolve, reject) => {
+            commit(types.AUTH_LOADING);
+            http.post(urls.REGISTER, payload, res => {
+                commit(types.AUTH_SUCCESS, res.data);
+                resolve(res);
+            }, err => {
+                commit(types.AUTH_ERROR, err);
+                localStorage.removeItem(util.JWT_TOKEN);
+                reject(err)
+            });
+        });
     },
     login({ commit }, payload) {
-        http.post(urls.LOGIN, payload, res => {
-            commit(types.AUTH_LOGIN, res.data);
-        }, err => {
-            console.log(util.ERROR, err);
+        return new Promise((resolve, reject) => {
+            commit(types.AUTH_LOADING);
+            http.post(urls.LOGIN, payload, res => {
+                console.log(res.data);
+                const token = res.data.token;
+                const user = res.data.user;
+                commit(types.AUTH_SUCCESS, token, user);
+                resolve(res);
+            }, err => {
+                commit(types.AUTH_ERROR, err);
+                localStorage.removeItem(util.JWT_TOKEN);
+                reject(err)
+            });
         });
     },
     logout({ commit }) {
-        http.get(urls.LOGOUT, () => {
-            commit(types.AUTH_LOGOUT);
-        }, null);
+        return new Promise((resolve) => {
+            http.get(urls.LOGOUT, () => {
+                commit(types.AUTH_LOGOUT);
+                localStorage.removeItem(util.JWT_TOKEN);
+                resolve();
+            }, null);
+        });
     },
     setCurrentUser ({ commit }) {
         http.get(urls.ME, res => {
@@ -35,27 +56,29 @@ const actions = {
 };
 
 const mutations = {
-    [types.AUTH_REGISTER](state, payload) {
-        Object.assign(state, { user: payload });
-        this.state.authenticated = true;
-    },
-    [types.AUTH_LOGIN](state, payload) {
-        Object.assign(state, { user: payload });
-        this.state.authenticated = true;
-    },
     [types.AUTH_LOGOUT]() {
-        localStorage.removeItem(util.JWT_TOKEN);
-        this.state.user = {};
-        this.state.authenticated = false;
+        state.user = {};
+        state.token = '';
     },
     [types.SET_USER](state, payload) {
         Object.assign(state, { user: payload });
-        this.state.authenticated = true;
-    }
+    },
+    [types.AUTH_LOADING](state) {
+        state.status = util.AUTH_STATUS_LOADING;
+    },
+    [types.AUTH_SUCCESS](state, token, user) {
+        console.log("login-success");
+        state.status = util.AUTH_STATUS_SUCCESS;
+        state.token = token;
+        Object.assign(state, { user: user });
+    },
+    [types.AUTH_ERROR](state) {
+        state.status = util.AUTH_STATUS_ERROR;
+    },
 };
 
 const getters = {
-    user: (state, getters, rootState) => state.user,
+    status: state => state.status,
     isLoggedIn: state => !!state.token
 };
 

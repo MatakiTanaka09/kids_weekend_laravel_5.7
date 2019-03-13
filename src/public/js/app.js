@@ -2972,8 +2972,6 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
-//
-//
 
 
 
@@ -2993,19 +2991,20 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
     }), {
         handleLogin: function () {
             var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+                var email, password;
                 return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
                     while (1) {
                         switch (_context.prev = _context.next) {
                             case 0:
-                                _context.next = 2;
-                                return this.login({ email: this.email, password: this.password });
-
-                            case 2:
+                                email = this.email;
+                                password = this.password;
                                 _context.next = 4;
-                                return this.$router.go(0);
+                                return this.login({ email: email, password: password });
 
                             case 4:
-                                this.$router.push('/');
+                                console.log("ended");
+                                // this.$router.go(0);
+                                // this.$router.push('/');
 
                             case 5:
                             case 'end':
@@ -32926,21 +32925,6 @@ var render = function() {
                     },
                     domProps: { value: _vm.email },
                     on: {
-                      keyup: function($event) {
-                        if (
-                          "keyCode" in $event &&
-                          _vm._k(
-                            $event.keyCode,
-                            "enter",
-                            13,
-                            $event.key,
-                            "Enter"
-                          )
-                        ) {
-                          return null
-                        }
-                        return _vm.handleLogin($event)
-                      },
                       input: function($event) {
                         if ($event.target.composing) {
                           return
@@ -32976,15 +32960,6 @@ var render = function() {
                   },
                   domProps: { value: _vm.password },
                   on: {
-                    keyup: function($event) {
-                      if (
-                        "keyCode" in $event &&
-                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                      ) {
-                        return null
-                      }
-                      return _vm.handleLogin($event)
-                    },
                     input: function($event) {
                       if ($event.target.composing) {
                         return
@@ -53266,22 +53241,24 @@ module.exports = Component.exports
 /* WEBPACK VAR INJECTION */(function(__dirname) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__("./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__("./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_common_TheTop__ = __webpack_require__("./resources/js/pages/common/TheTop.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_common_TheTop___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__pages_common_TheTop__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_auth_Login__ = __webpack_require__("./resources/js/pages/auth/Login.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_auth_Login___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__pages_auth_Login__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_auth_Register__ = __webpack_require__("./resources/js/pages/auth/Register.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_auth_Register___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__pages_auth_Register__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_auth_RegisterConfirmation__ = __webpack_require__("./resources/js/pages/auth/RegisterConfirmation.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_auth_RegisterConfirmation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__pages_auth_RegisterConfirmation__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_events_Events__ = __webpack_require__("./resources/js/pages/events/Events.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_events_Events___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__pages_events_Events__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_events_EventLogic__ = __webpack_require__("./resources/js/pages/events/EventLogic.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_events_EventLogic___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__pages_events_EventLogic__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_users_UsersInfo__ = __webpack_require__("./resources/js/pages/users/UsersInfo.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_users_UsersInfo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__pages_users_UsersInfo__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_common_BookConfirm__ = __webpack_require__("./resources/js/pages/common/BookConfirm.vue");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_common_BookConfirm___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__pages_common_BookConfirm__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__("./resources/js/store/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_common_TheTop__ = __webpack_require__("./resources/js/pages/common/TheTop.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_common_TheTop___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__pages_common_TheTop__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_auth_Login__ = __webpack_require__("./resources/js/pages/auth/Login.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_auth_Login___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__pages_auth_Login__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_auth_Register__ = __webpack_require__("./resources/js/pages/auth/Register.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_auth_Register___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__pages_auth_Register__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_auth_RegisterConfirmation__ = __webpack_require__("./resources/js/pages/auth/RegisterConfirmation.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_auth_RegisterConfirmation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__pages_auth_RegisterConfirmation__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_events_Events__ = __webpack_require__("./resources/js/pages/events/Events.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_events_Events___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__pages_events_Events__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_events_EventLogic__ = __webpack_require__("./resources/js/pages/events/EventLogic.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_events_EventLogic___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__pages_events_EventLogic__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_users_UsersInfo__ = __webpack_require__("./resources/js/pages/users/UsersInfo.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_users_UsersInfo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__pages_users_UsersInfo__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_common_BookConfirm__ = __webpack_require__("./resources/js/pages/common/BookConfirm.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_common_BookConfirm___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__pages_common_BookConfirm__);
+
 
 
 
@@ -53297,23 +53274,23 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 
 var routes = [{
     path: '/',
-    component: __WEBPACK_IMPORTED_MODULE_2__pages_common_TheTop___default.a
+    component: __WEBPACK_IMPORTED_MODULE_3__pages_common_TheTop___default.a
 }, {
     path: '/login',
-    component: __WEBPACK_IMPORTED_MODULE_3__pages_auth_Login___default.a
+    component: __WEBPACK_IMPORTED_MODULE_4__pages_auth_Login___default.a
 }, {
     path: '/register',
-    component: __WEBPACK_IMPORTED_MODULE_4__pages_auth_Register___default.a
+    component: __WEBPACK_IMPORTED_MODULE_5__pages_auth_Register___default.a
 }, {
     path: '/register/confirmation',
-    component: __WEBPACK_IMPORTED_MODULE_5__pages_auth_RegisterConfirmation___default.a
+    component: __WEBPACK_IMPORTED_MODULE_6__pages_auth_RegisterConfirmation___default.a
 }, {
     path: '/events',
-    component: __WEBPACK_IMPORTED_MODULE_6__pages_events_Events___default.a
+    component: __WEBPACK_IMPORTED_MODULE_7__pages_events_Events___default.a
 }, {
     path: '/events/:id',
     name: 'EventIndividual',
-    component: __WEBPACK_IMPORTED_MODULE_7__pages_events_EventLogic___default.a,
+    component: __WEBPACK_IMPORTED_MODULE_8__pages_events_EventLogic___default.a,
     props: function props(route) {
         return {
             id: Number(route.params.id)
@@ -53321,13 +53298,16 @@ var routes = [{
     }
 }, {
     path: '/users',
-    component: __WEBPACK_IMPORTED_MODULE_8__pages_users_UsersInfo___default.a
+    component: __WEBPACK_IMPORTED_MODULE_9__pages_users_UsersInfo___default.a,
+    meta: {
+        requiresAuth: true
+    }
 }, {
     path: '/book/confirm',
-    component: __WEBPACK_IMPORTED_MODULE_9__pages_common_BookConfirm___default.a
+    component: __WEBPACK_IMPORTED_MODULE_10__pages_common_BookConfirm___default.a
 }, {
     path: '*',
-    component: __WEBPACK_IMPORTED_MODULE_2__pages_common_TheTop___default.a
+    component: __WEBPACK_IMPORTED_MODULE_3__pages_common_TheTop___default.a
 }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
@@ -53343,6 +53323,21 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
     }
 });
 
+router.beforeEach(function (to, from, next) {
+    if (to.matched.some(function (record) {
+        return record.meta.requiresAuth;
+    })) {
+        if (__WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].getters['auth/isLoggedIn']) {
+            next();
+            console.log("pass the auth");
+            return;
+        }
+        next('/login');
+    } else {
+        next();
+    }
+});
+
 /* harmony default export */ __webpack_exports__["a"] = (router);
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, "/"))
 
@@ -53354,6 +53349,8 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__("./node_modules/axios/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_util__ = __webpack_require__("./resources/js/utils/util.js");
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -53371,35 +53368,35 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
         var successCb = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
         var errorCb = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
-        return this.request('get', url, {}, successCb, errorCb);
+        return this.request(__WEBPACK_IMPORTED_MODULE_1__utils_util__["a" /* default */].METHOD_GET, url, {}, successCb, errorCb);
     },
     post: function post(url, data) {
         var successCb = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
         var errorCb = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
 
-        return this.request('post', url, data, successCb, errorCb);
+        return this.request(__WEBPACK_IMPORTED_MODULE_1__utils_util__["a" /* default */].METHOD_POST, url, data, successCb, errorCb);
     },
     put: function put(url, data) {
         var successCb = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
         var errorCb = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
 
-        return this.request('put', url, data, successCb, errorCb);
+        return this.request(__WEBPACK_IMPORTED_MODULE_1__utils_util__["a" /* default */].METHOD_PUT, url, data, successCb, errorCb);
     },
     delete: function _delete(url) {
         var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
         var successCb = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
         var errorCb = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
 
-        return this.request('delete', url, data, successCb, errorCb);
+        return this.request(__WEBPACK_IMPORTED_MODULE_1__utils_util__["a" /* default */].METHOD_DELETE, url, data, successCb, errorCb);
     },
 
     /**
      * Init the service.
      */
     init: function init() {
-        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.baseURL = '/api/v1';
+        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.baseURL = __WEBPACK_IMPORTED_MODULE_1__utils_util__["a" /* default */].API_BASE_URL;
         __WEBPACK_IMPORTED_MODULE_0_axios___default.a.interceptors.request.use(function (config) {
-            config.headers['Authorization'] = 'Bearer ' + localStorage.getItem('jwt-token');
+            config.headers['Authorization'] = 'Bearer ' + localStorage.getItem(__WEBPACK_IMPORTED_MODULE_1__utils_util__["a" /* default */].JWT_TOKEN);
             config.headers['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
             config.headers['X-Requested-With'] = 'XMLHttpRequest';
             return config;
@@ -53410,7 +53407,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
             // console.log(response.headers['Authorization']);
             // console.log(response.data['token']);
             if (token) {
-                localStorage.setItem('jwt-token', token);
+                localStorage.setItem(__WEBPACK_IMPORTED_MODULE_1__utils_util__["a" /* default */].JWT_TOKEN, token);
             }
             return response;
         }, function (error) {
@@ -53474,25 +53471,46 @@ var actions = {
     register: function register(_ref, payload) {
         var commit = _ref.commit;
 
-        __WEBPACK_IMPORTED_MODULE_0__services_http__["a" /* default */].post(__WEBPACK_IMPORTED_MODULE_1__utils_url__["a" /* default */].REGISTER, payload, function (res) {
-            commit(__WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_REGISTER, res.data);
-        }, null);
+        return new Promise(function (resolve, reject) {
+            commit(__WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_LOADING);
+            __WEBPACK_IMPORTED_MODULE_0__services_http__["a" /* default */].post(__WEBPACK_IMPORTED_MODULE_1__utils_url__["a" /* default */].REGISTER, payload, function (res) {
+                commit(__WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_SUCCESS, res.data);
+                resolve(res);
+            }, function (err) {
+                commit(__WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_ERROR, err);
+                localStorage.removeItem(__WEBPACK_IMPORTED_MODULE_2__utils_util__["a" /* default */].JWT_TOKEN);
+                reject(err);
+            });
+        });
     },
     login: function login(_ref2, payload) {
         var commit = _ref2.commit;
 
-        __WEBPACK_IMPORTED_MODULE_0__services_http__["a" /* default */].post(__WEBPACK_IMPORTED_MODULE_1__utils_url__["a" /* default */].LOGIN, payload, function (res) {
-            commit(__WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_LOGIN, res.data);
-        }, function (err) {
-            console.log(__WEBPACK_IMPORTED_MODULE_2__utils_util__["a" /* default */].ERROR, err);
+        return new Promise(function (resolve, reject) {
+            commit(__WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_LOADING);
+            __WEBPACK_IMPORTED_MODULE_0__services_http__["a" /* default */].post(__WEBPACK_IMPORTED_MODULE_1__utils_url__["a" /* default */].LOGIN, payload, function (res) {
+                console.log(res.data);
+                var token = res.data.token;
+                var user = res.data.user;
+                commit(__WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_SUCCESS, token, user);
+                resolve(res);
+            }, function (err) {
+                commit(__WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_ERROR, err);
+                localStorage.removeItem(__WEBPACK_IMPORTED_MODULE_2__utils_util__["a" /* default */].JWT_TOKEN);
+                reject(err);
+            });
         });
     },
     logout: function logout(_ref3) {
         var commit = _ref3.commit;
 
-        __WEBPACK_IMPORTED_MODULE_0__services_http__["a" /* default */].get(__WEBPACK_IMPORTED_MODULE_1__utils_url__["a" /* default */].LOGOUT, function () {
-            commit(__WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_LOGOUT);
-        }, null);
+        return new Promise(function (resolve) {
+            __WEBPACK_IMPORTED_MODULE_0__services_http__["a" /* default */].get(__WEBPACK_IMPORTED_MODULE_1__utils_url__["a" /* default */].LOGOUT, function () {
+                commit(__WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_LOGOUT);
+                localStorage.removeItem(__WEBPACK_IMPORTED_MODULE_2__utils_util__["a" /* default */].JWT_TOKEN);
+                resolve();
+            }, null);
+        });
     },
     setCurrentUser: function setCurrentUser(_ref4) {
         var commit = _ref4.commit;
@@ -53503,24 +53521,25 @@ var actions = {
     }
 };
 
-var mutations = (_mutations = {}, _defineProperty(_mutations, __WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_REGISTER, function (state, payload) {
-    Object.assign(state, { user: payload });
-    this.state.authenticated = true;
-}), _defineProperty(_mutations, __WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_LOGIN, function (state, payload) {
-    Object.assign(state, { user: payload });
-    this.state.authenticated = true;
-}), _defineProperty(_mutations, __WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_LOGOUT, function () {
-    localStorage.removeItem(__WEBPACK_IMPORTED_MODULE_2__utils_util__["a" /* default */].JWT_TOKEN);
-    this.state.user = {};
-    this.state.authenticated = false;
+var mutations = (_mutations = {}, _defineProperty(_mutations, __WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_LOGOUT, function () {
+    state.user = {};
+    state.token = '';
 }), _defineProperty(_mutations, __WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].SET_USER, function (state, payload) {
     Object.assign(state, { user: payload });
-    this.state.authenticated = true;
+}), _defineProperty(_mutations, __WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_LOADING, function (state) {
+    state.status = __WEBPACK_IMPORTED_MODULE_2__utils_util__["a" /* default */].AUTH_STATUS_LOADING;
+}), _defineProperty(_mutations, __WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_SUCCESS, function (state, token, user) {
+    console.log("login-success");
+    state.status = __WEBPACK_IMPORTED_MODULE_2__utils_util__["a" /* default */].AUTH_STATUS_SUCCESS;
+    state.token = token;
+    Object.assign(state, { user: user });
+}), _defineProperty(_mutations, __WEBPACK_IMPORTED_MODULE_3__mutation_types__["a" /* default */].AUTH_ERROR, function (state) {
+    state.status = __WEBPACK_IMPORTED_MODULE_2__utils_util__["a" /* default */].AUTH_STATUS_ERROR;
 }), _mutations);
 
 var getters = {
-    user: function user(state, getters, rootState) {
-        return state.user;
+    status: function status(state) {
+        return state.status;
     },
     isLoggedIn: function isLoggedIn(state) {
         return !!state.token;
@@ -53574,6 +53593,9 @@ var getters = {};
     AUTH_REGISTER: 'AUTH_REGISTER',
     AUTH_LOGIN: 'AUTH_LOGIN',
     AUTH_LOGOUT: 'AUTH_LOGOUT',
+    AUTH_LOADING: 'AUTH_LOADING',
+    AUTH_SUCCESS: 'AUTH_SUCCESS',
+    AUTH_ERROR: 'AUTH_ERROR',
     SET_USER: 'SET_USER',
     GET_EVENTS: 'GET_EVENTS',
     GET_EVENT: 'GET_EVENT'
@@ -53586,10 +53608,10 @@ var getters = {};
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-    REGISTER: "/auth/register",
-    LOGIN: "/auth/login",
-    LOGOUT: "/auth/logout",
-    ME: "/auth/me"
+    REGISTER: '/auth/register',
+    LOGIN: '/auth/login',
+    LOGOUT: '/auth/logout',
+    ME: '/auth/me'
 });
 
 /***/ }),
@@ -53599,8 +53621,15 @@ var getters = {};
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-    ERROR: "error",
-    JWT_TOKEN: "jwt-token"
+    AUTH_STATUS_LOADING: 'loading',
+    AUTH_STATUS_SUCCESS: 'success',
+    AUTH_STATUS_ERROR: 'error',
+    JWT_TOKEN: 'jwt-token',
+    METHOD_POST: 'post',
+    METHOD_GET: 'get',
+    METHOD_PUT: 'put',
+    METHOD_DELETE: 'delete',
+    API_BASE_URL: '/api/v1'
 });
 
 /***/ }),

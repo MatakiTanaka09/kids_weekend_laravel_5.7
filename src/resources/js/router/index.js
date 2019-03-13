@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import store from '../store';
 import Top from '../pages/common/TheTop';
 import Login from '../pages/auth/Login';
 import Register from '../pages/auth/Register';
@@ -42,7 +43,10 @@ const routes = [
     },
     {
         path: '/users',
-        component: UsersInfo
+        component: UsersInfo,
+        meta: {
+            requiresAuth: true
+        }
     },
     {
         path: '/book/confirm',
@@ -65,6 +69,19 @@ const router = new VueRouter({
         else {
             return { x: 0, y: 0 }
         }
+    }
+});
+
+router.beforeEach((to, from, next) => {
+    if(to.matched.some(record => record.meta.requiresAuth)) {
+        if (store.getters['auth/isLoggedIn']) {
+            next();
+            console.log("pass the auth");
+            return
+        }
+        next('/login');
+    } else {
+        next();
     }
 });
 
