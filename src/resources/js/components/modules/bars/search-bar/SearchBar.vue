@@ -38,7 +38,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../../../../../sass/_variables";
+    @import "../../../../../sass/variables";
     .searchbar__container {
         margin: 32px 0;
         width: 100%;

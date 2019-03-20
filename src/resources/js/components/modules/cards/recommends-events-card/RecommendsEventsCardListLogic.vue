@@ -6,7 +6,7 @@
 
 <script>
     import RecommendsEventsCardListRender from "./RecommendsEventsCardList";
-    import http from "../../../../../services/http";
+    import http from "@/services/http";
     export default {
         components: {
             RecommendsEventsCardListRender

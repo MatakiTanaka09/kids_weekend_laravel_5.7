@@ -12,14 +12,14 @@ class UserParent extends BaseUuid
         'uuid'
     ];
 
-    protected $hidden = [
-        'zip_code1',
-        'zip_code2',
-        'state',
-        'city',
-        'address1',
-        'address2'
-    ];
+//    protected $hidden = [
+//        'zip_code1',
+//        'zip_code2',
+//        'state',
+//        'city',
+//        'address1',
+//        'address2'
+//    ];
 
     public function user()
     {

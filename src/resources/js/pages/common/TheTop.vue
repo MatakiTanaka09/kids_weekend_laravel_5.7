@@ -124,7 +124,7 @@
 </template>
 
 <script>
-    import RecommendTopCardList from "../../components/presentations/modules/cards/recommends-top-card/RecommendsTopCardListLogic";
+    import RecommendTopCardList from "../../components/modules/cards/recommends-top-card/RecommendsTopCardListLogic";
 
     export default {
         components: {
@@ -140,7 +140,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '../../../sass/_variables.scss';
+    @import 'sass/_variables.scss';
     .top {
         position: relative;
         @media screen and (max-width: 767px){
@@ -327,6 +327,9 @@
         }
         .app__activity {
             text-align: center;
+            @media screen and (min-width: 1280px) {
+                max-width: 980px;
+            }
             .column.is-one-third {
                 text-align: center;
                 .activity__container {

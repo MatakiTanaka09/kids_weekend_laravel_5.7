@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\User\User as UserResource;
+use App\Http\Resources\User\UserParent as UserParentResource;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Auth\AuthManager;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use App\User;
+use App\Models\UserParent;
 use JWTAuth;
 
 class LoginController extends Controller
@@ -49,16 +51,19 @@ class LoginController extends Controller
     public function login(Request $request): JsonResponse
     {
         $credentials = $request->only('email', 'password');
+        $user = new UserResource(User::where('email', $request->email)->first());
+//        $user_id = $user["id"];
+//        $userParent = new UserParentResource(UserParent::where('user_id', $user_id)->first());
 
         try {
-            if(! $token = JWTAuth::attempt($credentials)) {
+            if(!$token = JWTAuth::attempt($credentials)) {
                 return response()->json(['error' => 'Unauthorized'], 401);
             }
         } catch(JWTException $e) {
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
 
-        $user = new UserResource(User::where('email', $request->email)->first());
         return response()->json(compact('user', 'token'));
+//        return response()->json(compact('userParent', 'token'));
     }
 }

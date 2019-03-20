@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
-//use Illuminate\Http\Request;
+use App\User;
+use App\Http\Resources\User\User as UserResource;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class AuthController extends Controller
@@ -26,5 +28,12 @@ class AuthController extends Controller
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60
         ]);
+    }
+
+    public function me()
+    {
+        $id = auth()->user()->id;
+        $user = new UserResource(User::where('id', $id)->first());
+        return $user;
     }
 }

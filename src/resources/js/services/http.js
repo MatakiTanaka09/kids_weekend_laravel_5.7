@@ -33,7 +33,7 @@ export default {
             config.headers['X-CSRF-TOKEN']     = window.Laravel.csrfToken;
             config.headers['X-Requested-With'] = 'XMLHttpRequest';
             return config
-        })
+        });
 
         axios.interceptors.response.use(response => {
             const token = response.headers['Authorization'] || response.data['token'];
@@ -46,6 +46,6 @@ export default {
         }, error => {
             console.log(error);
             return Promise.reject(error);
-        })
+        });
     }
 };

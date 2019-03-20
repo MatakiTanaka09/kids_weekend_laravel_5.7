@@ -3,7 +3,7 @@
         <recommends-top-card
             class="is-hidden-mobile"
             v-for="(data,index) in events" :key="data.event_uuid"
-            :event-id=data.event_uuid
+            :event-id="data.event_uuid"
             :event-image-path="eventImagePath[index % 3]"
             :event-time="data.event.time"
             :event-category="data.event.category_event.category.name"
@@ -19,7 +19,7 @@
             <swiper-slide v-for="(data,index) in events" :key="data.event_uuid">
                 <recommends-top-card
                     class="is-hidden-desktop"
-                    event-id=data.event_uuid
+                    :event-id="data.event_uuid"
                     :event-image-path="eventImagePath[index % 3]"
                     :event-time="data.event.time"
                     :event-category="data.event.category_event.category.name"

@@ -67,7 +67,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../../../../../sass/variables";
+    @import "../../../../../sass/variables";
     .category__container {
         margin: 96px 0;
         @media screen and (max-width: 767px){

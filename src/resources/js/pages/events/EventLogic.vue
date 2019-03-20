@@ -9,7 +9,7 @@
 
 <script>
     import EventPresentation from "./EventPresentation";
-    import http from "../../services/http";
+    import http from "@/services/http";
     export default {
         components: {
             EventPresentation,

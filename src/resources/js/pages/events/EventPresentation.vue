@@ -217,9 +217,10 @@
 
 <script>
     import FadeLoader from 'vue-spinner/src/FadeLoader.vue';
-    import EventBookModal from '../../components/presentations/modules/modals/event-book-modal/EventBookModal';
-    import StickyFooter from '../../components/presentations/common/footer/StickyFooterLogic';
-    import http from "../../services/http";
+    import EventBookModal from '@/components/modules/modals/event-book-modal/EventBookModal';
+    import StickyFooter from '@/components/common/footer/StickyFooterLogic';
+    import http from "@/services/http";
+    import { mapGetters } from 'vuex';
     export default {
         components: {
             FadeLoader,
@@ -229,11 +230,13 @@
         data() {
             return {
                 isLoading: false,
-                showBookModal: false,
-                user: {
-                    children: {}
-                },
+                showBookModal: false
             }
+        },
+        computed: {
+            ...mapGetters({
+                user: 'auth/user'
+            })
         },
         methods: {
             bookModalToggle() {
@@ -259,7 +262,7 @@
                 http.post("/book", {
                     "event_uuid"      : this.event.uuid,
                     "school_uuid"     : this.school.uuid,
-                    "child_parent_id" : this.user.children_id[0].id,
+                    "child_parent_id" : this.user.child_parent_id[0].id,
                     "price"           : this.event.price,
                 }, res => {
                     console.log(res);
@@ -273,14 +276,6 @@
             },
             confirm() {
             },
-            // ログインユーザーのデータを格納する
-            fetchUserData() {
-                http.get("/test", res => {
-                    this.user = res.data["data"][0];
-                    Object.assign(this.user, this.user);
-                    Object.assign(this.user, { children : this.user.children });
-                }, null);
-            },
             fetchEventData() {
                 console.log(this.event);
                 // for(let i = 0; i < this.event.length; i++) {
@@ -290,7 +285,6 @@
                 //         console.log("different");
                 //     }
                 // }
-
             }
         },
         props: {
@@ -308,7 +302,6 @@
             }
         },
         created() {
-            this.fetchUserData();
             this.fetchEventData();
         },
         watch: {

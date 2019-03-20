@@ -16,7 +16,7 @@
 </template>
 
 <script>
-    import TopHeader from "../../components/presentations/common/header/TopHeader";
+    import TopHeader from "@/components/common/header/TopHeader";
     export default {
         components: {
             TopHeader

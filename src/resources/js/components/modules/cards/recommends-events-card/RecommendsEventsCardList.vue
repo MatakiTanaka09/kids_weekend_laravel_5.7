@@ -98,7 +98,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../../../../../sass/variables";
+    @import "../../../../../sass/variables";
     .recommends__container {
         margin: 64px 0;
         &__wrapper {

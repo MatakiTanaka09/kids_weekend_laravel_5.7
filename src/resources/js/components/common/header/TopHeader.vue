@@ -5,13 +5,13 @@
                 <router-link to="/" class="navbar-item">
                     <span class="navbar__item--logo">kidsweekend</span>
                 </router-link>
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarHomeHeader">
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarHomeHeader"  @click="dropdownToggle">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </a>
             </div>
-            <div id="navbarHomeHeader" class="navbar-menu">
+            <div id="navbarHomeHeader" class="navbar-menu" :class="{'is-active': dropdownActive}">
                 <div class="navbar-end">
                     <div class="navbar-item">
                         <div class="buttons" v-if="!isLoggedIn">
@@ -28,18 +28,18 @@
                                     <span>予約</span>
                                 </router-link>
                             </div>
-                            <div class="after__login__buttons--button">
-                                <router-link to="/" class="">
-                                    <span>プロフィール</span>
-                                </router-link>
-                            </div>
+                            <!--<div class="after__login__buttons&#45;&#45;button">-->
+                                <!--<router-link to="/" class="">-->
+                                    <!--<span>プロフィール</span>-->
+                                <!--</router-link>-->
+                            <!--</div>-->
                             <div class="after__login__buttons--button">
                                 <a class="" @click="showAuthLogoutModalToggle">
                                     <span>サインアウト</span>
                                 </a>
                             </div>
                             <div class="after__login__buttons--button">
-                                <router-link to="/" class="">
+                                <router-link to="/users" class="">
                                     <span class="letter--modified">マイアカウント</span>
                                 </router-link>
                             </div>
@@ -66,7 +66,8 @@
         },
         data() {
             return {
-                authLogoutModalActive: false
+                dropdownActive: false,
+                authLogoutModalActive: false,
             }
         },
         computed: {
@@ -77,6 +78,9 @@
         methods: {
             showAuthLogoutModalToggle() {
                 this.authLogoutModalActive = !this.authLogoutModalActive
+            },
+            dropdownToggle() {
+                this.dropdownActive = !this.dropdownActive
             },
             ...mapActions({
                 logout: "auth/logout"
@@ -92,7 +96,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '../../../../../sass/_variables.scss';
+    @import '../../../../sass/variables';
     header {
         box-shadow: 0px 3px 25px rgba(77,77,99,0.1);
         font-weight: bold;

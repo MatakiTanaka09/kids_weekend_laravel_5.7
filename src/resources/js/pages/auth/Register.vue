@@ -1,6 +1,5 @@
 <template>
     <div>
-        <top-header></top-header>
         <section class="section">
             <div class="form__container">
                 <form>
@@ -55,7 +54,7 @@
                         </div>
                     </div>
                     <div class="btn__container">
-                        <button class="button is-block is-fullwidth" @click="handleRegister">
+                        <button class="button is-block is-fullwidth" @click.prevent="handleRegister">
                             新規登録する
                         </button>
                     </div>
@@ -70,12 +69,8 @@
 </template>
 
 <script>
-    import TopHeader from "../../components/presentations/common/header/TopHeader";
     import { mapActions } from 'vuex';
     export default {
-        components: {
-            TopHeader
-        },
         data() {
             return {
                 email: '',
@@ -98,6 +93,10 @@
 <style lang="scss" scoped>
     .section {
         padding: 128px 24px;
+        @media screen and (max-width: 767px) {
+            margin: 63px 0px 0px;
+            padding: 24px;
+        };
         .form__container {
             @media screen and (min-width: 1024px) {
                 padding: 0 400px;

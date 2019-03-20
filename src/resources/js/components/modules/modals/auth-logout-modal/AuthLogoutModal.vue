@@ -46,7 +46,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../../../../../sass/_variables.scss";
+    @import "../../../../../sass/variables";
     .modal-mask {
         position: fixed;
         z-index: 9998;

@@ -22,7 +22,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../../../../../sass/_variables.scss";
+    @import "../../../../../sass/variables";
     .place__container {
         width: 150px;
         margin-right: 8px;

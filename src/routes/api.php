@@ -44,6 +44,9 @@ Route::group(["prefix" => "v1", "middleware" => "api"], function () {
     Route::group(["middleware" => ["jwt.auth"]], function () {
         Route::post("/auth/logout", "Auth\AuthController@logout");
         Route::post("/auth/refresh", "Auth\AuthController@refresh");
-        Route::get("/auth/me", "UserParentController@me");
+        Route::get("/auth/me", "Auth\AuthController@me");
+        Route::get("/auth/me/user", "UserParentController@me");
+        Route::get("/auth/me/user/detail", "UserParentController@getAuthenticatedUser");
+        Route::post("/users", "UserParentController@store");
     });
 });
