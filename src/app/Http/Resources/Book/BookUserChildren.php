@@ -16,7 +16,7 @@ class BookUserChildren extends JsonResource
     {
         return [
             "uuid" => $this->uuid,
-            "last_kana" => $this->last_kana
+            "first_kana" => $this->first_kana
         ];
     }
 }

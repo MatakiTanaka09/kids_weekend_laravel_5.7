@@ -44,14 +44,29 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        $book = new Book();
-        $book->fill($request->json()->all())->save();
+        $result = [];
+        $datas = $request->json()->all();
+        if(is_array($datas)) {
+            for($i=0; $i<count($datas); $i++) {
+                $book = new Book();
+                $data = $datas[$i];
+                $book->child_uuid   = $data["child_uuid"];
+                $book->school_uuid  = $data["school_uuid"];
+                $book->event_uuid   = $data["event_uuid"];
+                $book->price  = $data["price"];
+                $book->save();
+                array_push($result, $book);
+            }
+        }
+        return $result;
+
+
+
 //        $book->child_parent_id = $book->input("child_parent_id");
 //        $book->school_uuid     = $book->input("school_uuid");
 //        $book->event_uuid      = $book->input("event_uuid");
 //        $book->price           = $book->input("price");
 //        $book->save();
-        return $book;
 //        $book->child_parent_id = $book->child_parent_id[0]["id"];
 //        if (count($child_parent_id) === 1) {
 //            $book->child_parent_id = $child_parent_id[0];

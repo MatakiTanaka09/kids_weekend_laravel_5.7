@@ -124,7 +124,7 @@
 </template>
 
 <script>
-    import RecommendTopCardList from "../../components/modules/cards/recommends-top-card/RecommendsTopCardListLogic";
+    import RecommendTopCardList from "../../../components/modules/cards/recommends-top-card/RecommendsTopCardListLogic";
 
     export default {
         components: {
@@ -140,7 +140,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import 'sass/_variables.scss';
+    @import '../../../../sass/variables';
     .top {
         position: relative;
         @media screen and (max-width: 767px){

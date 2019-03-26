@@ -28,6 +28,30 @@ const actions = {
                 });
             });
         }
+    },
+    storeUserInfo({ commit }, payload) {
+        return new Promise((resolve, reject) => {
+            commit(types.USER_LOADING)
+            http.post(urls.SAVING_USER_INFO, payload, res => {
+                commit(types.USER_SAVED, res.data);
+                resolve()
+            }, err => {
+                commit(types.USER_ERROR, err);
+                reject(err);
+            })
+        })
+    },
+    storeUserChildInfo({ commit }, payload) {
+        return new Promise((resolve, reject) => {
+            commit(types.USER_LOADING)
+            http.post(urls.SAVING_USER_CHILD_INFO, payload, res => {
+                commit(types.USER_CHILD_SAVED);
+                resolve();
+            }, err => {
+                commit(types.USER_ERROR, err);
+                reject(err);
+            })
+        })
     }
 };
 
@@ -39,6 +63,14 @@ const mutations = {
         state.status = util.AUTH_STATUS_SUCCESS;
         const userData = payload.data[0];
         Object.assign(state, { user: userData });
+    },
+    [types.USER_SAVED](state, payload) {
+        state.status = util.AUTH_STATUS_SUCCESS;
+        const userData = payload;
+        Object.assign(state, { user: userData });
+    },
+    [types.USER_CHILD_SAVED](state) {
+        state.status = util.AUTH_STATUS_SUCCESS;
     },
     [types.USER_NULL](state) {
         state.status = util.AUTH_STATUS_SUCCESS;

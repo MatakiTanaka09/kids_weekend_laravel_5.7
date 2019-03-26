@@ -17,10 +17,8 @@ class CreateUserChildrenTable extends Migration
             $table->engine = 'InnoDB';
             $table->uuid('uuid')->primary();
             $table->uuid('parent_uuid');
-            $table->string('last_name', 50);
-            $table->string('first_name', 50);
-            $table->string('last_kana', 50);
             $table->string('first_kana', 50);
+            $table->string('last_kana', 50);
             $table->string('sex');
             $table->datetime('birth_day');
             $table->timestamps();

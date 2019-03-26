@@ -48,5 +48,6 @@ Route::group(["prefix" => "v1", "middleware" => "api"], function () {
         Route::get("/auth/me/user", "UserParentController@me");
         Route::get("/auth/me/user/detail", "UserParentController@getAuthenticatedUser");
         Route::post("/users", "UserParentController@store");
+        Route::post("/users/child", "UserChildController@store");
     });
 });

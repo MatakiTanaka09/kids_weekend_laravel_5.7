@@ -1,17 +1,18 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import store from '../store';
-import Top from '../pages/common/TheTop';
-import Login from '../pages/auth/Login';
-import Register from '../pages/auth/Register';
-import RegisterConfirmation from '../pages/auth/RegisterConfirmation';
-import Events from '../pages/events/Events';
-import EventIndividual from '../pages/events/EventLogic';
-import UserHome from '../pages/users/UserHome';
-import CreateUserForm from '../components/modules/forms/create-user-form/CreateUserForm';
-import CreateUserFormParent from '../components/modules/cards/user-create-card/CreateUserCard';
-import CreateUserFormChild from '../components/modules/cards/user-create-card/CreateUserChildCard';
-import BookConfirm from '../pages/common/BookConfirm';
+import Top from '../pages/general-users/common/TheTop';
+import Login from '../pages/general-users/auth/Login';
+import Register from '../pages/general-users/auth/Register';
+import RegisterConfirmation from '../pages/general-users/auth/RegisterConfirmation';
+import Events from '../pages/general-users/events/Events';
+import EventIndividual from '../pages/general-users/events/EventLogic';
+import UserHome from '../pages/general-users/users/UserHome';
+import ReserveIndex from '../pages/general-users/users/ReserveIndex';
+import ManageTop from '../pages/systems/manage/top/ManageTop';
+import BookConfirm from '../pages/general-users/common/BookConfirm';
+
+import TopHeader from '../components/common/header/ManageTopHeader';
 
 Vue.use(VueRouter);
 
@@ -50,20 +51,25 @@ const routes = [
         })
     },
     {
-        path: '/users',
-        name: 'users',
+        path: '/users/me',
+        name: 'UsersInfo',
         component: UserHome,
         meta: {
             requiresAuth: true
         }
     },
     {
-        path: '/users/create',
-        name: 'usersCreate',
-        component: CreateUserForm,
+        path: '/users/me/reserve',
+        name: 'ReserveIndex',
+        component: ReserveIndex,
         meta: {
             requiresAuth: true
         }
+    },
+    {
+        path: '/manage/',
+        name: 'Manage',
+        component: ManageTop
     },
     {
         path: '/book/confirm',
@@ -75,26 +81,6 @@ const routes = [
         name: 'any',
         component: Top
     },
-    // {
-    //     path: 'users/:id',
-    //     component: UserHome,
-    //     props: route => ({
-    //         id: Number(route.params.id)
-    //     }),
-    //     meta: {
-    //         requiresAuth: true
-    //     },
-    //     children: [
-    //         {
-    //             path: '',
-    //             component: '',
-    //         },
-    //         {
-    //             path: 'edit',
-    //             component: '',
-    //         },
-    //     ]
-    // }
 ];
 
 const router = new VueRouter({

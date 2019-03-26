@@ -13,35 +13,17 @@
             </header>
             <div class="card-content" v-for="(child,index) in children" :key="index">
                 <div class="content">
-                    <div class="field-body">
-                        <div class="field">
-                            <label class="label">姓</label>
-                            <span>{{ child.first_name }}</span>
-                        </div>
-                        <div class="field">
-                            <label class="label">名</label>
-                            <span>{{ child.last_name  }}</span>
-                        </div>
+                    <div class="field">
+                        <label class="label">おなまえ</label>
+                        <span>{{ child.first_kana }}</span>
                     </div>
                     <div class="field">
                         <label class="label">お誕生日</label>
                         <span>{{ child.birth_day }}</span>
                     </div>
                     <div class="field">
-                        <label class="label">年齢</label>
-                        <span>{{ child.age }}</span>
-                    </div>
-                    <div class="field">
                         <label class="label">性別</label>
-                        <div class="control">
-                            <div class="select">
-                                <select>
-                                    <option>性別</option>
-                                    <option>男の子</option>
-                                    <option>女の子</option>
-                                </select>
-                            </div>
-                        </div>
+                        <span :value="child.sex">{{ getSex(child.sex) }}</span>
                     </div>
                 </div>
             </div>
@@ -64,6 +46,21 @@
                 type: Array,
                 default: () => []
             },
+        },
+        methods: {
+            getName(firstName, lastName) {
+                return lastName + ' ' + firstName
+            },
+            getSex(sex) {
+                switch(sex) {
+                    case "1":
+                        return '男の子'
+                        break
+                    case "2":
+                        return '女の子'
+                        break
+                }
+            }
         }
     }
 </script>

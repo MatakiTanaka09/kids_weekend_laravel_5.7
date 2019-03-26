@@ -17,18 +17,12 @@ class CreateUserParentsTable extends Migration
             $table->engine = 'InnoDB';
             $table->uuid('uuid')->primary();
             $table->integer('user_id')->unsigned();
-            $table->string('last_name',50);
-            $table->string('first_name',50);
-            $table->string('last_kana',50);
-            $table->string('first_kana',50);
+            $table->string('full_name',50);
+            $table->string('full_kana',50);
             $table->string('tel');
             $table->string('sex');
-            $table->string('zip_code1');
-            $table->string('zip_code2');
-            $table->string('state');
-            $table->string('city');
-            $table->string('address1');
-            $table->string('address2')->nullable();
+            $table->string('zip_code');
+            $table->string('address');
             $table->timestamps();
         });
 

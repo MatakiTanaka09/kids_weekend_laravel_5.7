@@ -16,30 +16,18 @@
             </header>
             <div class="card-content" v-for="(child,index) in children" :key="index">
                 <div class="content">
-                    <div class="field-body">
-                        <div class="field">
-                            <label class="label">姓</label>
-                            <div class="control has-icons-left">
-                                <div class="display__edit">
-                                    <input class="input" type="text" placeholder="姓" :value="child.first_name ">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-user"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="label">名</label>
-                            <div class="control has-icons-left">
-                                <div class="display__edit">
-                                    <input class="input" type="text" placeholder="名" :value="child.last_name ">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-user"></i>
-                                    </span>
-                                </div>
+                    <div class="field">
+                        <label class="label">なまえ</label>
+                        <div class="control has-icons-left">
+                            <div class="display__edit">
+                                <input class="input" type="text" placeholder="なまえ" :value="child.first_kana">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
                             </div>
                         </div>
                     </div>
+
                     <div class="field">
                         <label class="label">お誕生日</label>
                         <div class="control has-icons-left">
@@ -52,24 +40,13 @@
                         </div>
                     </div>
                     <div class="field">
-                        <label class="label">年齢</label>
-                        <div class="control has-icons-left">
-                            <div class="display__edit">
-                                <input class="input" type="text" placeholder="3" :value="child.age">
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-user"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="field">
                         <label class="label">性別</label>
                         <div class="control">
-                            <div class="select">
+                            <div class="select" :value="child.sex">
                                 <select>
                                     <option>性別</option>
-                                    <option>男の子</option>
-                                    <option>女の子</option>
+                                    <option value="1">男の子</option>
+                                    <option value="2">女の子</option>
                                 </select>
                             </div>
                         </div>
@@ -85,13 +62,22 @@
     export default {
         name: "UserChildEditCard",
         data() {
-            return {}
+            return {
+                children: {
+                    first_kana: '',
+                    birth_day: '',
+                    sex: ''
+                }
+            }
         },
         props: {
             children: {
                 type: Array,
                 default: () => []
             }
+        },
+        methods: {
+
         }
     }
 </script>

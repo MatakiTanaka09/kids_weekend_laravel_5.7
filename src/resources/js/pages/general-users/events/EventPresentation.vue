@@ -203,11 +203,17 @@
             :activity-name="activity.name"
             :activity-time="event.started_at"
             :activity-price="event.price"
-            :showBookModal=showBookModal
-            :children="user.children"
+            :checked-box="checkedChild"
+            :showBookModal="showBookModal"
+            :children="userDetail.children"
             @action="book"
             @close="bookModalToggle"
         ></event-book-modal>
+        <!--<reject-event-book-modal-->
+            <!--v-if="showBookModal & footerClickables"-->
+            <!--:showBookModal="showBookModal"-->
+            <!--@close="bookModalToggle"-->
+        <!--&gt;</reject-event-book-modal>-->
         <sticky-footer
             @bookActive="bookModalToggle"
             :event-price="event.price"
@@ -230,17 +236,26 @@
         data() {
             return {
                 isLoading: false,
-                showBookModal: false
+                showBookModal: false,
+                // footerClickabels: false,
+                checkedChild: []
             }
         },
         computed: {
             ...mapGetters({
-                user: 'auth/user'
+                user: 'auth/user',
+                userDetail: 'user/user'
             })
         },
         methods: {
             bookModalToggle() {
                 this.showBookModal = !this.showBookModal;
+            },
+            footerClickables() {
+                if(!!userDetail.children) {
+                    return false
+                }
+                return true
             },
             loadingToggle() {
                 return new Promise(resolve => {
@@ -255,16 +270,23 @@
                 this.loadingToggle();
                 this.$router.push("/book/confirm");
             },
-            book() {
+            book(selectedChild) {
+                console.log(selectedChild)
                 this.bookModalToggle();
-                // setTimeout(this.lodingToggle, 1750);
-                this.loading();
-                http.post("/book", {
-                    "event_uuid"      : this.event.uuid,
-                    "school_uuid"     : this.school.uuid,
-                    "child_parent_id" : this.user.child_parent_id[0].id,
-                    "price"           : this.event.price,
-                }, res => {
+                const bookDatas = []
+                selectedChild.forEach(el => {
+                    const event_uuid = this.event.uuid
+                    const school_uuid = this.school.uuid
+                    const price_uuid = this.event.price
+                    const bookData = {
+                        event_uuid  : event_uuid,
+                        school_uuid : school_uuid,
+                        child_uuid  : el,
+                        price       : price_uuid,
+                    }
+                    bookDatas.push(bookData)
+                })
+                http.post("/book", bookDatas, res => {
                     console.log(res);
                     // メール送信
                 }, e => {
@@ -272,9 +294,7 @@
                 });
                 this.loadingToggle();
                 // 予約完了画面に遷移
-                // this.$router.push("/book/confirm");
-            },
-            confirm() {
+                this.$router.push("/book/confirm");
             },
             fetchEventData() {
                 console.log(this.event);

@@ -24,7 +24,7 @@
                         </div>
                         <div class="after__login__buttons" v-else>
                             <div class="after__login__buttons--button">
-                                <router-link to="/" class="">
+                                <router-link to="/users/me/reserve" class="">
                                     <span>予約</span>
                                 </router-link>
                             </div>
@@ -39,9 +39,16 @@
                                 </a>
                             </div>
                             <div class="after__login__buttons--button">
-                                <router-link to="/users" class="">
-                                    <span class="letter--modified">マイアカウント</span>
-                                </router-link>
+                                <template v-if="!user.uuid">
+                                    <router-link to="/users/me" class="">
+                                        <span class="letter--modified">マイアカウント</span>
+                                    </router-link>
+                                </template>
+                                <template v-else>
+                                    <router-link :to="{ name : 'UsersInfo' }" class="">
+                                        <span class="letter--modified">マイアカウント</span>
+                                    </router-link>
+                                </template>
                             </div>
                         </div>
                     </div>
@@ -72,7 +79,8 @@
         },
         computed: {
             ...mapGetters({
-                isLoggedIn: "auth/isLoggedIn"
+                isLoggedIn: 'auth/isLoggedIn',
+                user: 'user/user'
             })
         },
         methods: {

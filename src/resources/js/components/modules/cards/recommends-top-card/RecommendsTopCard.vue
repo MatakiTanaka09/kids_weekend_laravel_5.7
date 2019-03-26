@@ -1,6 +1,6 @@
 <template>
     <div class="column is-one-third">
-        <router-link :to="{ name: 'EventIndividual', params: { id: eventId } }" class="activity__container">
+        <router-link :to="{ name: 'eventIndividual', params: { id: eventId } }" class="activity__container">
             <div class="activity__container__images">
                 <progressive-img class="activity__container__images--image" :src="eventImagePath" />
                 <p class="activity__container__images--title">

@@ -7,11 +7,11 @@ $autoIncrement = bookIncrement();
 $factory->define(Book::class, function (Faker $faker) use ($autoIncrement) {
     $autoIncrement->next();
     return [
-        'uuid'            => $faker->uuid,
-        'child_parent_id' => $autoIncrement->current(),
-        'school_uuid'     => $faker->uuid,
-        'event_uuid'      => $faker->uuid,
-        'price'           => 1000
+        'uuid'        => $faker->uuid,
+        'child_uuid'  => $faker->uuid,
+        'school_uuid' => $faker->uuid,
+        'event_uuid'  => $faker->uuid,
+        'price'       => 1000
     ];
 });
 

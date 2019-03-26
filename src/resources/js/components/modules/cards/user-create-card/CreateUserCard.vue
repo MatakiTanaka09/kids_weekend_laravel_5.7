@@ -13,7 +13,7 @@
                             <label class="label">姓</label>
                             <div class="control has-icons-left">
                                 <div class="display__edit">
-                                    <input class="input" type="text" placeholder="田中" v-model="lastName">
+                                    <input class="input" type="text" placeholder="田中" v-model="userInfo.lastName">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                     </span>
@@ -24,7 +24,7 @@
                             <label class="label">名</label>
                             <div class="control has-icons-left">
                                 <div class="display__edit">
-                                    <input class="input" type="text" placeholder="太郎" v-model="firstName">
+                                    <input class="input" type="text" placeholder="太郎" v-model="userInfo.firstName">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                     </span>
@@ -37,7 +37,7 @@
                             <label class="label">姓ふりがな</label>
                             <div class="control has-icons-left">
                                 <div class="display__edit">
-                                    <input class="input" type="text" placeholder="たなか" v-model="lastNameKana">
+                                    <input class="input" type="text" placeholder="たなか" v-model="userInfo.lastKana">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                     </span>
@@ -48,7 +48,7 @@
                             <label class="label">名ふりがな</label>
                             <div class="control has-icons-left">
                                 <div class="display__edit">
-                                    <input class="input" type="text" placeholder="たろう" v-model="firstNameKana">
+                                    <input class="input" type="text" placeholder="たろう" v-model="userInfo.firstKana">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                     </span>
@@ -71,7 +71,7 @@
                         <label class="label">電話番号</label>
                         <div class="control has-icons-left">
                             <div class="display__edit">
-                                <input class="input" type="tel" placeholder="123-4567-8901" v-model="tel">
+                                <input class="input" type="tel" placeholder="123-4567-8901" v-model="userInfo.tel">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-phone"></i>
                                 </span>
@@ -82,7 +82,7 @@
                         <label class="label">性別</label>
                         <div class="control">
                             <div class="select">
-                                <select v-model="sex">
+                                <select v-model="userInfo.sex">
                                     <option selected>性別</option>
                                     <option value="1">男</option>
                                     <option value="2">女</option>
@@ -96,7 +96,7 @@
                             <label class="label">郵便番号（上3ケタ）</label>
                             <div class="control has-icons-left">
                                 <div class="display__edit">
-                                    <input class="input" type="text" placeholder="123" v-model="zipCode1">
+                                    <input class="input" type="text" placeholder="123" v-model="userInfo.zipCode1">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-map-marker-alt"></i>
                                     </span>
@@ -107,7 +107,7 @@
                             <label class="label">郵便番号（下4ケタ）</label>
                             <div class="control has-icons-left">
                                 <div class="display__edit">
-                                    <input class="input" type="text" placeholder="4567" v-model="zipCode2">
+                                    <input class="input" type="text" placeholder="4567" v-model="userInfo.zipCode2">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-map-marker-alt"></i>
                                     </span>
@@ -120,7 +120,7 @@
                             <label class="label">都道府県</label>
                             <div class="control has-icons-left">
                                 <div class="display__edit">
-                                    <input class="input" type="text" placeholder="例）東京都" v-model="state">
+                                    <input class="input" type="text" placeholder="例）東京都" v-model="userInfo.state">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-location-arrow"></i>
                                     </span>
@@ -131,7 +131,7 @@
                             <label class="label">市町村</label>
                             <div class="control has-icons-left">
                                 <div class="display__edit">
-                                    <input class="input" type="text" placeholder="例）中央区" v-model="city">
+                                    <input class="input" type="text" placeholder="例）中央区" v-model="userInfo.city">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-location-arrow"></i>
                                     </span>
@@ -144,7 +144,7 @@
                             <label class="label">住所(丁目・番地・号)</label>
                             <div class="control has-icons-left">
                                 <div class="display__edit">
-                                    <input class="input" type="text" placeholder="例）月島１−１−１" v-model="address1">
+                                    <input class="input" type="text" placeholder="例）月島１−１−１" v-model="userInfo.address1">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-location-arrow"></i>
                                     </span>
@@ -155,7 +155,7 @@
                             <label class="label">住所(マンション名・号室)</label>
                             <div class="control has-icons-left">
                                 <div class="display__edit">
-                                    <input class="input" type="text" placeholder="例）ガーデンプレイス101号室" v-model="address2">
+                                    <input class="input" type="text" placeholder="例）ガーデンプレイス101号室" v-model="userInfo.address2">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-location-arrow"></i>
                                     </span>
@@ -166,7 +166,7 @@
                 </div>
             </div>
         </div>
-        <router-link to="/users/create/userChild" class="button is-primary button__save" @click="">保存して、次へ</router-link>
+        <!--<router-link to="/users/create/userChild" class="button is-primary button__save" @click="">保存して、次へ</router-link>-->
     </div>
 </template>
 
@@ -175,22 +175,26 @@
         name: "CreateUser",
         data() {
             return {
-                firstName: '',
-                lastName: '',
-                firstNameKana: '',
-                lastNameKana: '',
-                tel: '',
-                sex: '',
-                zipCode1: '',
-                zipCode2: '',
-                state: '',
-                city: '',
-                address1: '',
-                address2: '',
+                // firstName: '',
+                // lastName: '',
+                // firstNameKana: '',
+                // lastNameKana: '',
+                // tel: '',
+                // sex: '',
+                // zipCode1: '',
+                // zipCode2: '',
+                // state: '',
+                // city: '',
+                // address1: '',
+                // address2: '',
             }
         },
         props: {
-            email: String
+            email: String,
+            userInfo: {
+                type: Object,
+                default: () => {}
+            }
         },
         methods: {
             setLocalStrage() {

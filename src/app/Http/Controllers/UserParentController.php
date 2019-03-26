@@ -19,7 +19,7 @@ class UserParentController extends Controller
         $id = auth()->user()->id;
         if(UserParent::where('user_id', '=', $id)->exists()) {
             $user = UserParentResource::collection(
-                UserParent::with(['user', 'userChild', 'childParent'])
+                UserParent::with(['user', 'userChild'])
                     ->where('user_id', '=', $id)
                     ->get()
             );
@@ -54,10 +54,10 @@ class UserParentController extends Controller
      */
     public function store(Request $request)
     {
-        $user_id = optional(auth()->user())->id;
+        $user_id = auth()->user()->id;
         $userParent = new UserParent();
         $userParent->fill($request->json()->all());
-        $userParent->user_id    = $user_id;
+        $userParent->user_id = $user_id;
         $userParent->save();
         return $userParent;
     }

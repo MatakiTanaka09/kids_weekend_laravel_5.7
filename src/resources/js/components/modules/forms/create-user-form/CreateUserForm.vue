@@ -1,24 +1,5 @@
 <template>
-    <div class="section">
-        <div class="container container-expand">
-            <div class="columns edit-wrapper">
-                <div class="column is-one-quarter">
-                    <!--<side-menu-->
-                        <!--@edit="editToggle"-->
-                        <!--@create="createToggle"-->
-                    <!--&gt;</side-menu>-->
-                </div>
-                <div class="column">
-                    <div class="main-edit">
-                        Hello World!
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-        <!--<router-view></router-view>-->
-    </div>
+    <router-view></router-view>
 </template>
 
 <script>
@@ -26,7 +7,7 @@
     export default {
         name: "CreateUserForm",
         components: {
-            SideMenu
+            SideMenu,
         },
         props: {
         },
@@ -37,11 +18,4 @@
 </script>
 
 <style lang="scss" scoped>
-    .section {
-        padding: 128px 24px;
-        @media screen and (max-width: 767px){
-            margin-top: 63px;
-            padding: 36px 24px;
-        }
-    }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <transition name="modal" :class="{ 'is-active': showBookModal }" appear>
+    <transition name="modal" :class="{ 'is-active': showEditUserConfirmModal }" appear>
         <div class="modal-mask">
             <div class="modal-wrapper" @click.self="$emit('close')">
                 <div class="modal-container">
@@ -10,55 +10,57 @@
                     </div>
                     <div class="modal-body">
                         <slot name="body">
-                            <form v-if="!!children">
+                            <form>
                                 <div class="field">
-                                    <label class="label">アクティビティ名</label>
+                                    <label class="label">お名前</label>
                                     <div class="control">
-                                        <p>{{ activityName }}</p>
+                                        <p>{{ userInfo.full_name }}</p>
                                     </div>
                                 </div>
                                 <div class="field">
-                                    <label class="label">日時</label>
+                                    <label class="label">ふりがな</label>
                                     <div class="control">
-                                        <p>{{ activityTime }}</p>
+                                        <p>{{ userInfo.full_kana }}</p>
                                     </div>
                                 </div>
                                 <div class="field">
-                                    <label class="label">料金</label>
+                                    <label class="label">メールアドレス</label>
                                     <div class="control">
-                                        <p><span>¥</span>{{ activityPrice }}</p>
+                                        <p>{{ email }}</p>
                                     </div>
                                 </div>
                                 <div class="field">
-                                    <label class="label">参加されるお子さん</label>
+                                    <label class="label">電話番号</label>
                                     <div class="control">
-                                        <div  v-for="(child,index) in children" :key="child.uuid">
-                                            <input type="checkbox" name="children" :value="child.uuid" :id="'checkout0' + index" v-model="checkedChild">
-                                            <label :for="'checkout0' + index" class="checkbox">{{ child.first_kana }}</label>
-                                        </div>
+                                        <p>{{ userInfo.tel }}</p>
                                     </div>
                                 </div>
-                            </form>
-                            <form  v-else>
                                 <div class="field">
-                                    <label class="label">お子さんの情報が入力されていません。ご記入後、ご予約できます。</label>
+                                    <label class="label">性別</label>
                                     <div class="control">
-                                        <p></p>
+                                        <p>{{ exchangeUserSex(userInfo.sex) }}</p>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">郵便番号</label>
+                                    <div class="control">
+                                        <p>{{ userInfo.zipCode }}</p>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">住所</label>
+                                    <div class="control">
+                                        <p>{{ userInfo.address }}</p>
                                     </div>
                                 </div>
                             </form>
                         </slot>
                     </div>
                     <div class="modal-footer">
-                        <slot name="footer" v-if="!!children">
-                            <button class="button is-block is-info is-fullwidth" @click="selectChild">
-                                予約する
+                        <slot name="footer">
+                            <button class="button is-block is-info is-fullwidth" @click="$emit('')">
+                                保存する
                             </button>
-                        </slot>
-                        <slot name="footer" v-else>
-                            <router-link to="/users/me" class="button is-block is-info is-fullwidth" @click="selectChild">
-                                お子さんの情報を登録する
-                            </router-link>
                         </slot>
                     </div>
                 </div>
@@ -69,31 +71,23 @@
 
 <script>
     // import { mapActions } from 'vuex';
+
     export default {
+        name: "CreateUserConfirmModal",
         data() {
             return {
-                checkedChild: []
             }
         },
         props: {
-            showBookModal: Boolean,
-            // action: {
-            //     type: Function
-            // },
-            activityName: {
+            showEditUserConfirmModal: {
+                type: Boolean
+            },
+            userInfo: {
+                type: Object,
+                default: () => {}
+            },
+            email: {
                 type: String
-            },
-            activityTime: {
-                type: String
-            },
-            activityPrice: {
-                type: Number
-            },
-            checkedBox: {
-                type: Array
-            },
-            children: {
-                type: [Object, Array],
             }
         },
         methods: {
@@ -102,9 +96,15 @@
                 // console.log("book");
                 // this.action();
             },
-            selectChild() {
-                this.$emit('action', this.checkedChild)
-            }
+            exchangeUserSex(sex) {
+                if(sex === '1') {
+                    return '男性'
+                } else if(sex === '2') {
+                    return '女性'
+                } else {
+                    return 'その他'
+                }
+            },
         }
     }
 </script>
@@ -145,6 +145,8 @@
     }
     .modal-body {
         margin: 20px 0;
+        height: 500px;
+        overflow-x: scroll;
     }
     .modal-default-button {
         float: right;

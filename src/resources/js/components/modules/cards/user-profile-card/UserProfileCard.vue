@@ -14,25 +14,13 @@
                 </header>
                 <div class="card-content">
                     <div class="content">
-                        <div class="field-body">
-                            <div class="field">
-                                <label class="label">姓</label>
-                                <span>{{ firstName }}</span>
-                            </div>
-                            <div class="field">
-                                <label class="label">名</label>
-                                <span>{{ lastName }}</span>
-                            </div>
+                        <div class="field">
+                            <label class="label">お名前</label>
+                            <span>{{ fullName }}</span>
                         </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <label class="label">姓ふりがな</label>
-                                <span>{{ firstKana }}</span>
-                            </div>
-                            <div class="field">
-                                <label class="label">名ふりがな</label>
-                                <span>{{ lastKana }}</span>
-                            </div>
+                        <div class="field">
+                            <label class="label">ふりがな</label>
+                            <span>{{ fullKana }}</span>
                         </div>
                         <div class="field">
                             <label class="label">メールアドレス</label>
@@ -44,37 +32,15 @@
                         </div>
                         <div class="field">
                             <label class="label">性別</label>
-                            {{ sex }}
+                            {{ getSex(sex) }}
                         </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <label class="label">郵便番号（上3ケタ）</label>
-                                <span>{{ zipCode1 }}</span>
-                            </div>
-                            <div class="field">
-                                <label class="label">郵便番号（下4ケタ）</label>
-                                <span>{{ zipCode2 }}</span>
-                            </div>
+                        <div class="field">
+                            <label class="label">郵便番号</label>
+                            <span>{{ zipCode }}</span>
                         </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <label class="label">都道府県</label>
-                                <span>{{ state }}</span>
-                            </div>
-                            <div class="field">
-                                <label class="label">市町村</label>
-                                <span>{{ city }}</span>
-                            </div>
-                        </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <label class="label">住所(丁目・番地・号)</label>
-                                <span>{{ address1 }}</span>
-                            </div>
-                            <div class="field">
-                                <label class="label">住所(マンション名・号室)</label>
-                                <span>{{ address2 }}</span>
-                            </div>
+                        <div class="field">
+                            <label class="label">住所</label>
+                            <span>{{ address }}</span>
                         </div>
                     </div>
                 </div>
@@ -95,16 +61,10 @@
                 type: Boolean,
                 default: false
             },
-            firstName: {
+            fullName: {
                 type: String
             },
-            lastName: {
-                type: String
-            },
-            firstKana: {
-                type: String
-            },
-            lastKana: {
+            fullKana: {
                 type: String
             },
             email: {
@@ -116,24 +76,24 @@
             sex: {
                 type: String
             },
-            zipCode1: {
+            zipCode: {
                 type: String
             },
-            zipCode2: {
+            address: {
                 type: String
             },
-            state: {
-                type: String
-            },
-            city: {
-                type: String
-            },
-            address1: {
-                type: String
-            },
-            address2: {
-                type: String
-            },
+        },
+        methods: {
+            getSex(sex) {
+                switch(sex) {
+                    case "1":
+                        return '男性'
+                        break
+                    case "2":
+                        return '女性'
+                        break
+                }
+            }
         }
     }
 </script>

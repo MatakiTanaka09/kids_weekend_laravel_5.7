@@ -71,7 +71,7 @@
                 console.log("start");
                 await this.login({email: email, password: password});
                 this.$router.go(0);
-                this.$router.push('/');
+                // this.$router.push('/');
             },
         }
     }

@@ -1,6 +1,7 @@
 <template>
     <div>
         <top-header></top-header>
+        <!--<router-view name="header"></router-view>-->
         <router-view></router-view>
         <top-footer></top-footer>
     </div>

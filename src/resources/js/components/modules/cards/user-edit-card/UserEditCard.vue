@@ -11,57 +11,31 @@
                             <a class="button is-danger" @click="$emit('cancel')">キャンセル</a>
                         </div>
                         <div class="card__header__buttons--button">
-                            <a class="button is-primary">更新</a>
+                            <a class="button is-primary" @click="activeEditUserConfirmModal">更新</a>
                         </div>
                     </div>
                 </header>
                 <div class="card-content">
                     <div class="content">
-                        <div class="field-body">
-                            <div class="field">
-                                <label class="label">姓</label>
-                                <div class="control has-icons-left">
-                                    <div class="display__edit">
-                                        <input class="input" type="text" placeholder="田中" :value="firstName">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-user"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label class="label">名</label>
-                                <div class="control has-icons-left">
-                                    <div class="display__edit">
-                                        <input class="input" type="text" placeholder="太郎" :value="lastName">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-user"></i>
-                                        </span>
-                                    </div>
+                        <div class="field">
+                            <label class="label">お名前</label>
+                            <div class="control has-icons-left">
+                                <div class="display__edit">
+                                    <input class="input" type="text" placeholder="田中太郎" v-model="userInfo.full_name">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <label class="label">姓ふりがな</label>
-                                <div class="control has-icons-left">
-                                    <div class="display__edit">
-                                        <input class="input" type="text" placeholder="たなか" :value="firstKana">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-user"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label class="label">名ふりがな</label>
-                                <div class="control has-icons-left">
-                                    <div class="display__edit">
-                                        <input class="input" type="text" placeholder="たろう" :value="lastKana">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-user"></i>
-                                        </span>
-                                    </div>
+                        <div class="field">
+                            <label class="label">ふりがな</label>
+                            <div class="control has-icons-left">
+                                <div class="display__edit">
+                                    <input class="input" type="text" placeholder="たなかたろう" v-model="userInfo.full_kana">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +43,7 @@
                             <label class="label">メールアドレス</label>
                             <div class="control has-icons-left">
                                 <div class="display__edit">
-                                    <input class="input" type="email" placeholder="example@example.com" :value="email">
+                                    <input class="input" type="email" placeholder="example@example.com" v-model="userInfo.email" disabled>
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-envelope"></i>
                                     </span>
@@ -80,7 +54,7 @@
                             <label class="label">電話番号(半角英数)</label>
                             <div class="control has-icons-left">
                                 <div class="display__edit">
-                                    <input class="input" type="email" placeholder="123-4567-8901" :value="tel">
+                                    <input class="input" type="email" placeholder="123-4567-8901" v-model="userInfo.tel">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-phone"></i>
                                     </span>
@@ -100,75 +74,25 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <label class="label">郵便番号（上3ケタ）</label>
-                                <div class="control has-icons-left">
-                                    <div class="display__edit">
-                                        <input class="input" type="text" placeholder="123" :value="zipCode1">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label class="label">郵便番号（下4ケタ）</label>
-                                <div class="control has-icons-left">
-                                    <div class="display__edit">
-                                        <input class="input" type="text" placeholder="4567" :value="zipCode2">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                        </span>
-                                    </div>
+                        <div class="field">
+                            <label class="label">郵便番号(半角英数)</label>
+                            <div class="control has-icons-left">
+                                <div class="display__edit">
+                                    <input class="input" type="text" placeholder="123-4567" v-model="userInfo.zip_code">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <label class="label">都道府県</label>
-                                <div class="control has-icons-left">
-                                    <div class="display__edit">
-                                        <input class="input" type="text" placeholder="例）東京都" :value="state">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-location-arrow"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label class="label">市町村</label>
-                                <div class="control has-icons-left">
-                                    <div class="display__edit">
-                                        <input class="input" type="text" placeholder="例）中央区" :value="city">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-location-arrow"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <label class="label">住所(丁目・番地・号)</label>
-                                <div class="control has-icons-left">
-                                    <div class="display__edit">
-                                        <input class="input" type="text" placeholder="例）月島１−１−１" :value="address1">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-location-arrow"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label class="label">住所(マンション名・号室)</label>
-                                <div class="control has-icons-left">
-                                    <div class="display__edit">
-                                        <input class="input" type="text" placeholder="例）ガーデンプレイス101号室" :value="address2">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-location-arrow"></i>
-                                        </span>
-                                    </div>
+                        <div class="field">
+                            <label class="label">住所</label>
+                            <div class="control has-icons-left">
+                                <div class="display__edit">
+                                    <input class="input" type="text" placeholder="例）東京都" v-model="userInfo.address">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-location-arrow"></i>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -177,53 +101,63 @@
             </div>
             <a class="button is-primary button__save">保存する</a>
         </div>
+        <edit-user-confirm-modal
+            v-if="showEditUserConfirmModal"
+            :show-edit-user-confirm-modal="showEditUserConfirmModal"
+            @close="activeEditUserConfirmModal"
+        ></edit-user-confirm-modal>
     </div>
 </template>
 
 <script>
+    import EditUserConfirmModal from '../../modals/edit-user-confirm-modal/EditUserConfirmModal';
     export default {
         name: "EditUser",
+        components: {
+            EditUserConfirmModal
+        },
         data() {
             return {
+                showEditUserConfirmModal: false
             }
         },
         props: {
-            firstName: {
-                type: String
+            userInfo: {
+                type: Object
             },
-            lastName: {
-                type: String
+            // fullName: {
+            //     type: String
+            // },
+            // fullKana: {
+            //     type: String
+            // },
+            // email: {
+            //     type: String
+            // },
+            // tel: {
+            //     type: String
+            // },
+            // zipCode: {
+            //     type: String
+            // },
+            // address: {
+            //     type: String
+            // },
+        },
+        methods: {
+            getSex(sex) {
+                switch(sex) {
+                    case "1":
+                        return '男の子'
+                        break
+                    case "2":
+                        return '女の子'
+                        break
+                }
             },
-            firstKana: {
-                type: String
-            },
-            lastKana: {
-                type: String
-            },
-            email: {
-                type: String
-            },
-            tel: {
-                type: String
-            },
-            zipCode1: {
-                type: String
-            },
-            zipCode2: {
-                type: String
-            },
-            state: {
-                type: String
-            },
-            city: {
-                type: String
-            },
-            address1: {
-                type: String
-            },
-            address2: {
-                type: String
-            },
+            activeEditUserConfirmModal() {
+                this.showEditUserConfirmModal = !this.showEditUserConfirmModal
+            }
         }
     }
 </script>

@@ -6,8 +6,8 @@ class UserChild extends BaseUuid
 {
     protected $table = 'userChildren';
 
-    protected $guarded = [
-        'uuid',
+    protected $fillable = [
+        'child_uuid',
         'parent_uuid'
     ];
 

@@ -1,64 +1,30 @@
 <template>
-    <transition name="modal" :class="{ 'is-active': showBookModal }" appear>
+    <transition name="modal" :class="{ 'is-active': showModal }" appear>
         <div class="modal-mask">
             <div class="modal-wrapper" @click.self="$emit('close')">
                 <div class="modal-container">
                     <div class="modal-header">
                         <slot name="header">
-                            <button class="delete" aria-label="close" @click.self="$emit('close')"></button>
+                            <button class="delete" aria-label="close" @click.self="close"></button>
                         </slot>
                     </div>
                     <div class="modal-body">
                         <slot name="body">
-                            <form v-if="!!children">
+                            <form>
                                 <div class="field">
-                                    <label class="label">アクティビティ名</label>
+                                    <label class="label">完了</label>
                                     <div class="control">
-                                        <p>{{ activityName }}</p>
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <label class="label">日時</label>
-                                    <div class="control">
-                                        <p>{{ activityTime }}</p>
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <label class="label">料金</label>
-                                    <div class="control">
-                                        <p><span>¥</span>{{ activityPrice }}</p>
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <label class="label">参加されるお子さん</label>
-                                    <div class="control">
-                                        <div  v-for="(child,index) in children" :key="child.uuid">
-                                            <input type="checkbox" name="children" :value="child.uuid" :id="'checkout0' + index" v-model="checkedChild">
-                                            <label :for="'checkout0' + index" class="checkbox">{{ child.first_kana }}</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <form  v-else>
-                                <div class="field">
-                                    <label class="label">お子さんの情報が入力されていません。ご記入後、ご予約できます。</label>
-                                    <div class="control">
-                                        <p></p>
+                                        <p>{{  }}</p>
                                     </div>
                                 </div>
                             </form>
                         </slot>
                     </div>
                     <div class="modal-footer">
-                        <slot name="footer" v-if="!!children">
-                            <button class="button is-block is-info is-fullwidth" @click="selectChild">
-                                予約する
+                        <slot name="footer">
+                            <button class="button is-block is-info is-fullwidth" @click="$emit('saveUserInfo')">
+                                お子様の情報を入力してください。
                             </button>
-                        </slot>
-                        <slot name="footer" v-else>
-                            <router-link to="/users/me" class="button is-block is-info is-fullwidth" @click="selectChild">
-                                お子さんの情報を登録する
-                            </router-link>
                         </slot>
                     </div>
                 </div>
@@ -68,42 +34,21 @@
 </template>
 
 <script>
-    // import { mapActions } from 'vuex';
     export default {
+        name: "CreateUserResponseOkModal",
         data() {
             return {
-                checkedChild: []
             }
         },
         props: {
-            showBookModal: Boolean,
-            // action: {
-            //     type: Function
-            // },
-            activityName: {
-                type: String
+            showModal: {
+                type: Boolean
             },
-            activityTime: {
-                type: String
-            },
-            activityPrice: {
-                type: Number
-            },
-            checkedBox: {
-                type: Array
-            },
-            children: {
-                type: [Object, Array],
-            }
         },
         methods: {
-            book() {
-                this.$emit('close');
-                // console.log("book");
-                // this.action();
-            },
-            selectChild() {
-                this.$emit('action', this.checkedChild)
+            async close() {
+                await this.$router.go(0)
+                this.$emit('close')
             }
         }
     }
@@ -145,6 +90,8 @@
     }
     .modal-body {
         margin: 20px 0;
+        height: 500px;
+        overflow-x: scroll;
     }
     .modal-default-button {
         float: right;
