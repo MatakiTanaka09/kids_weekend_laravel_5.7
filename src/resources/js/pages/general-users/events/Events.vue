@@ -4,8 +4,8 @@
             <fade-loader class="loading"></fade-loader>
         </div>
         <section v-else class="section">
-            <search-bar></search-bar>
-            <location-card-list></location-card-list>
+            <!--<search-bar></search-bar>-->
+            <!--<location-card-list></location-card-list>-->
             <recommends-events-card-list
                 :recommends-title="recommendsRecently"
                 :card-display-number="cardDisplayEight"
@@ -59,9 +59,13 @@
 <style lang="scss" scoped>
     .section {
         margin: 0px 96px;
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 768px) {
             margin: 63px 0px 0px;
             padding: 24px;
+        }
+        @media screen and (min-width: 1024px) {
+            max-width: 980px;
+            margin: 0 auto;
         }
     }
 </style>

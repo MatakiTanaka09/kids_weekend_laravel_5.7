@@ -8,6 +8,7 @@ $factory->define(Book::class, function (Faker $faker) use ($autoIncrement) {
     $autoIncrement->next();
     return [
         'uuid'        => $faker->uuid,
+        'parent_uuid' => $faker->uuid,
         'child_uuid'  => $faker->uuid,
         'school_uuid' => $faker->uuid,
         'event_uuid'  => $faker->uuid,

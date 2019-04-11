@@ -21,12 +21,15 @@ const actions = {
                         return
                     }
                     commit(types.USER, res.data);
-                    console.log(res.data);
+                    console.log(res.data)
                 }, err => {
                     commit(types.USER_ERROR, err);
                     reject(err);
                 });
             });
+        }
+        else {
+            console.log("no logged in")
         }
     },
     storeUserInfo({ commit }, payload) {
@@ -45,6 +48,7 @@ const actions = {
         return new Promise((resolve, reject) => {
             commit(types.USER_LOADING)
             http.post(urls.SAVING_USER_CHILD_INFO, payload, res => {
+                console.log(res.data);
                 commit(types.USER_CHILD_SAVED);
                 resolve();
             }, err => {
@@ -67,7 +71,7 @@ const mutations = {
     [types.USER_SAVED](state, payload) {
         state.status = util.AUTH_STATUS_SUCCESS;
         const userData = payload;
-        Object.assign(state, { user: userData });
+        Object.assign(state.user, { user: userData });
     },
     [types.USER_CHILD_SAVED](state) {
         state.status = util.AUTH_STATUS_SUCCESS;

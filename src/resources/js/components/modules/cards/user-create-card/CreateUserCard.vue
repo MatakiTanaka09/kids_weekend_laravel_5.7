@@ -10,10 +10,10 @@
                 <div class="content">
                     <div class="field-body">
                         <div class="field">
-                            <label class="label">姓</label>
+                            <label class="label">お名前</label>
                             <div class="control has-icons-left">
                                 <div class="display__edit">
-                                    <input class="input" type="text" placeholder="田中" v-model="userInfo.lastName">
+                                    <input class="input" type="text" placeholder="田中太郎" v-model="userInfo.fullName">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                     </span>
@@ -21,34 +21,10 @@
                             </div>
                         </div>
                         <div class="field">
-                            <label class="label">名</label>
+                            <label class="label">ふりがな</label>
                             <div class="control has-icons-left">
                                 <div class="display__edit">
-                                    <input class="input" type="text" placeholder="太郎" v-model="userInfo.firstName">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-user"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="field-body">
-                        <div class="field">
-                            <label class="label">姓ふりがな</label>
-                            <div class="control has-icons-left">
-                                <div class="display__edit">
-                                    <input class="input" type="text" placeholder="たなか" v-model="userInfo.lastKana">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-user"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="label">名ふりがな</label>
-                            <div class="control has-icons-left">
-                                <div class="display__edit">
-                                    <input class="input" type="text" placeholder="たろう" v-model="userInfo.firstKana">
+                                    <input class="input" type="text" placeholder="たなかたろう" v-model="userInfo.fullKana">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                     </span>
@@ -91,75 +67,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="field-body">
-                        <div class="field">
-                            <label class="label">郵便番号（上3ケタ）</label>
-                            <div class="control has-icons-left">
-                                <div class="display__edit">
-                                    <input class="input" type="text" placeholder="123" v-model="userInfo.zipCode1">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="label">郵便番号（下4ケタ）</label>
-                            <div class="control has-icons-left">
-                                <div class="display__edit">
-                                    <input class="input" type="text" placeholder="4567" v-model="userInfo.zipCode2">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </span>
-                                </div>
+                    <div class="field">
+                        <label class="label">郵便番号</label>
+                        <div class="control has-icons-left">
+                            <div class="display__edit">
+                                <input class="input" type="text" placeholder="123-4567" v-model="userInfo.zipCode">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </span>
                             </div>
                         </div>
                     </div>
-                    <div class="field-body">
-                        <div class="field">
-                            <label class="label">都道府県</label>
-                            <div class="control has-icons-left">
-                                <div class="display__edit">
-                                    <input class="input" type="text" placeholder="例）東京都" v-model="userInfo.state">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-location-arrow"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="label">市町村</label>
-                            <div class="control has-icons-left">
-                                <div class="display__edit">
-                                    <input class="input" type="text" placeholder="例）中央区" v-model="userInfo.city">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-location-arrow"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="field-body">
-                        <div class="field">
-                            <label class="label">住所(丁目・番地・号)</label>
-                            <div class="control has-icons-left">
-                                <div class="display__edit">
-                                    <input class="input" type="text" placeholder="例）月島１−１−１" v-model="userInfo.address1">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-location-arrow"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="label">住所(マンション名・号室)</label>
-                            <div class="control has-icons-left">
-                                <div class="display__edit">
-                                    <input class="input" type="text" placeholder="例）ガーデンプレイス101号室" v-model="userInfo.address2">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-location-arrow"></i>
-                                    </span>
-                                </div>
+                    <div class="field">
+                        <label class="label">住所</label>
+                        <div class="control has-icons-left">
+                            <div class="display__edit">
+                                <input class="input" type="text" placeholder="例）東京都中央区月島1-1-1" v-model="userInfo.address">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-location-arrow"></i>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -175,18 +101,6 @@
         name: "CreateUser",
         data() {
             return {
-                // firstName: '',
-                // lastName: '',
-                // firstNameKana: '',
-                // lastNameKana: '',
-                // tel: '',
-                // sex: '',
-                // zipCode1: '',
-                // zipCode2: '',
-                // state: '',
-                // city: '',
-                // address1: '',
-                // address2: '',
             }
         },
         props: {

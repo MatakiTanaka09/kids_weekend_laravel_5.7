@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Verified;
-use App\User;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 
 class VerificationController extends Controller
@@ -20,13 +20,14 @@ class VerificationController extends Controller
 
     public function verify(Request $request)
     {
-        $user = User::find($request->route('id'));
+        $user = User::find($request->route('ID'));
         if (!$user->email_verified_at) {
             $user->markEmailAsVerified();
             event(new Verified($user));
             return new JsonResponse('Email Verified');
         }
         return new JsonResponse('Email Verify Failed');
+//        return $user;
     }
 
     public function resend(Request $request)

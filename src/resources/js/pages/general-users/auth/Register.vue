@@ -83,7 +83,12 @@
                 register: 'auth/register'
             }),
             async handleRegister() {
-                await this.register({email: this.email, password: this.password, password_confirmation: this.password_confirmation});
+                const registerData = {
+                    email                 : this.email,
+                    password              : this.password,
+                    password_confirmation : this.password_confirmation
+                }
+                await this.register(registerData);
                 this.$router.push('/register/confirmation');
             },
         }

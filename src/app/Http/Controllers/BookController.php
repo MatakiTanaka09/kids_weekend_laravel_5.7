@@ -6,24 +6,34 @@ use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Http\Resources\Book\Book as BookResource;
 use App\Models\UserParent;
-use App\Http\Resources\Book\BookUser as BookUserResource;
 
 class BookController extends Controller
 {
 
     public function index()
     {
-        return BookResource::collection(
-            Book::with(['userParent', 'Event'])->get()
-        );
-//        return Book::with(['userParent', 'Event', 'School'])->get();
+//        return BookResource::collection(
+//           Book::with(['userParent', 'userChild','Event', 'School'])->get()
+//        );
+        return Book::with(['userParent', 'userChild','Event', 'School'])->get();
     }
 
     public function showBookUser()
     {
-        return BookUserResource::collection(
-            UserParent::with(['user', 'userChild', 'childParent'])->get()
-        );
+        $user_id = optional(auth()->user())->id;
+        $userParentUuid = UserParent::where('user_id', $user_id)->select('uuid')->get();
+        $parent_uuid = $userParentUuid[0]["uuid"];
+        if(UserParent::where('uuid', '=', $parent_uuid)->exists()) {
+            $book = BookResource::collection(
+                Book::with(['userParent', 'userChild','Event.CategoryEvent', 'Event.Activity','School'])
+                    ->where('parent_uuid', '=', $parent_uuid)
+                    ->get()
+            );
+            return response()->json(compact('book'));
+        }
+        else {
+            return null;
+        }
     }
     /**
      * Show the form for creating a new resource.
@@ -50,6 +60,7 @@ class BookController extends Controller
             for($i=0; $i<count($datas); $i++) {
                 $book = new Book();
                 $data = $datas[$i];
+                $book->parent_uuid  = $data["parent_uuid"];
                 $book->child_uuid   = $data["child_uuid"];
                 $book->school_uuid  = $data["school_uuid"];
                 $book->event_uuid   = $data["event_uuid"];

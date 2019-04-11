@@ -12,7 +12,10 @@
                     </div>
                     <div class="column">
                         <div class="main-edit">
-                            aaa
+                            <reserved-card-list
+                                :book="book"
+                            ></reserved-card-list>
+                            <!--:event-id="book[0].uuid"-->
                         </div>
                     </div>
                 </div>
@@ -25,16 +28,22 @@
 <script>
     import FadeLoader from 'vue-spinner/src/FadeLoader.vue'
     import SideMenu from '../../../components/modules/menus/user-reserve-index-side-menu/UserReservedSideMenu'
+    import ReservedCardList from '../../../components/modules/cards/reserved-card/ReservedCardList'
+    import http from '../../../services/http';
     export default {
         name: "ReserveIndex",
         components: {
             FadeLoader,
-            SideMenu
+            SideMenu,
+            ReservedCardList
         },
         data() {
             return {
-                isLoading: false
+                isLoading: false,
+                book: []
             }
+        },
+        computed: {
         },
         methods: {
             isLoadingToggle() {
@@ -42,6 +51,13 @@
             },
             fetchData: function() {
                 this.isLoadingToggle()
+                http.get('/book/user', res => {
+                    this.book = res.data.book
+                    console.log("res.data: ",res.data)
+                    console.log(this.book)
+                }, err => {
+                    console.log(err)
+                })
                 setTimeout(this.isLoadingToggle, 750)
             }
         },

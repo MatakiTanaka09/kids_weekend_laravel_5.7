@@ -5,6 +5,7 @@ import Top from '../pages/general-users/common/TheTop';
 import Login from '../pages/general-users/auth/Login';
 import Register from '../pages/general-users/auth/Register';
 import RegisterConfirmation from '../pages/general-users/auth/RegisterConfirmation';
+import RegisterConfirmed from '../pages/general-users/auth/RegisterConfirmed';
 import Events from '../pages/general-users/events/Events';
 import EventIndividual from '../pages/general-users/events/EventLogic';
 import UserHome from '../pages/general-users/users/UserHome';
@@ -36,6 +37,14 @@ const routes = [
         path: '/register/confirmation',
         name: 'registerConfirmation',
         component: RegisterConfirmation
+    },
+    {
+        path: '/verify',
+        name: 'RegisterConfirmed',
+        component: RegisterConfirmed,
+        // queryURL: route => ({
+        //     url: route.params.query
+        // })
     },
     {
         path: '/events',

@@ -17,51 +17,25 @@
             <div class="card-content">
                 <div v-for="(child, index) in userChild" :key="index">
                     <div class="content">
-                        <div class="field-body">
-                            <div class="field">
-                                <label class="label">姓</label>
-                                <div class="control has-icons-left">
-                                    <div class="display__edit">
-                                        <input class="input" type="text" placeholder="姓" v-model="child.firstName">
-                                        <span class="icon is-small is-left">
-                                        <i class="fas fa-user"></i>
-                                    </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label class="label">名</label>
-                                <div class="control has-icons-left">
-                                    <div class="display__edit">
-                                        <input class="input" type="text" placeholder="名" v-model="child.lastName ">
-                                        <span class="icon is-small is-left">
-                                        <i class="fas fa-user"></i>
-                                    </span>
-                                    </div>
+                        <div class="field">
+                            <label class="label">名字</label>
+                            <div class="control has-icons-left">
+                                <div class="display__edit">
+                                    <input class="input" type="text" placeholder="たなか" v-model="child.firstKana">
+                                    <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
                                 </div>
                             </div>
                         </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <label class="label">姓ふりがな</label>
-                                <div class="control has-icons-left">
-                                    <div class="display__edit">
-                                        <input class="input" type="text" placeholder="たなか" v-model="child.lastKana">
-                                        <span class="icon is-small is-left">
-                                        <i class="fas fa-user"></i>
-                                    </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label class="label">名ふりがな</label>
-                                <div class="control has-icons-left">
-                                    <div class="display__edit">
-                                        <input class="input" type="text" placeholder="たろう" v-model="child.firstKana">
-                                        <span class="icon is-small is-left">
-                                        <i class="fas fa-user"></i>
-                                    </span>
-                                    </div>
+                        <div class="field">
+                            <label class="label">お名前</label>
+                            <div class="control has-icons-left">
+                                <div class="display__edit">
+                                    <input class="input" type="text" placeholder="たろう" v-model="child.lastKana">
+                                    <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
                                 </div>
                             </div>
                         </div>

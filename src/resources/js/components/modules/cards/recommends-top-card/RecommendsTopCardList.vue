@@ -1,13 +1,13 @@
 <template>
     <div class="columns is-multiline">
         <recommends-top-card
-            class="is-hidden-mobile"
+            class="mobile"
             v-for="(data,index) in events" :key="data.event_uuid"
             :event-id="data.event_uuid"
             :event-image-path="eventImagePath[index % 3]"
             :event-time="data.event.time"
             :event-category="data.event.category_event.category.name"
-            :event-title="data.activity.name"
+            :event-title="data.event.activity.name"
             :event-date-time="data.event.started_at"
             :event-price="data.event.price"
             :event-place="eventPlace"
@@ -15,15 +15,14 @@
         ></recommends-top-card>
         <swiper
             :options="swiperOption"
-            class="is-hidden-desktop">
+            class="tablet">
             <swiper-slide v-for="(data,index) in events" :key="data.event_uuid">
                 <recommends-top-card
-                    class="is-hidden-desktop"
                     :event-id="data.event_uuid"
                     :event-image-path="eventImagePath[index % 3]"
                     :event-time="data.event.time"
                     :event-category="data.event.category_event.category.name"
-                    :event-title="data.activity.name"
+                    :event-title="data.event.activity.name"
                     :event-date-time="data.event.started_at"
                     :event-price="data.event.price"
                     :event-place="eventPlace"
@@ -74,5 +73,15 @@
 <style lang="scss" scoped>
     .swiper-wrapper {
         margin-bottom: 8px;
+    }
+    .mobile {
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+    .tablet {
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
     }
 </style>

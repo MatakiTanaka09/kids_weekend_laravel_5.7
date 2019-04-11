@@ -13,8 +13,9 @@ class BooksTableSeeder extends Seeder
     {
         DB::table('books')->insert([
             'uuid'        => '0d5e77b0-3a4a-11e9-8837-4b74282eb869',
-            'school_uuid' => 'd3aa5f2b-4dce-3b3d-bff2-2e90865e89c9',
+            'parent_uuid' => '66482970-38c9-11e9-aa82-a93aabbe9be0',
             'child_uuid'  => 'fcc8da30-3a4b-11e9-87bc-113c5ebb6e88',
+            'school_uuid' => 'd3aa5f2b-4dce-3b3d-bff2-2e90865e89c9',
             'event_uuid'  => '0d5f0e80-3a4a-11e9-bff4-5d4dcf70a1e0',
             'price'       => 2000,
             'created_at'  => now(),

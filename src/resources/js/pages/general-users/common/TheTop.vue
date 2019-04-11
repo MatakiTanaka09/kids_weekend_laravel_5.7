@@ -41,8 +41,7 @@
                   <div class="column is-one-third">
                      <div class="section__howtouse_container_boxes">
                         <div class="section__howtouse_container_box">
-                            <progressive-img class="section__howtouse_container_image is-hidden-mobile" src="./images/sp_find_image.png" />
-                            <progressive-img class="section__howtouse_container_image is-hidden-desktop" src="./images/sp_find_image.png" />
+                            <progressive-img class="section__howtouse_container_image" src="./images/sp_find_image.png" />
                             <h3 class="section__howtouse_container--title">
                                 さがす
                             </h3>
@@ -56,8 +55,7 @@
                   <div class="column is-one-third">
                       <div class="section__howtouse_container_boxes">
                           <div class="section__howtouse_container_box">
-                              <progressive-img class="section__howtouse_container_image is-hidden-mobile" src="./images/sp_reserve_image.png" />
-                              <progressive-img class="section__howtouse_container_image is-hidden-desktop" src="./images/sp_reserve_image.png" />
+                              <progressive-img class="section__howtouse_container_image" src="./images/sp_reserve_image.png" />
                               <h3 class="section__howtouse_container--title">
                                   予約する
                               </h3>
@@ -71,8 +69,7 @@
                   <div class="column is-one-third">
                       <div class="section__howtouse_container_boxes">
                           <div class="section__howtouse_container_box">
-                              <progressive-img class="section__howtouse_container_image is-hidden-mobile" src="./images/sp_experience_image.png" />
-                              <progressive-img class="section__howtouse_container_image is-hidden-desktop" src="./images/sp_experience_image.png" />
+                              <progressive-img class="section__howtouse_container_image" src="./images/sp_experience_image.png" />
                               <h3 class="section__howtouse_container--title">
                                   体験する
                               </h3>
@@ -99,11 +96,11 @@
               </div>
               <div class="app__activity">
                   <recommend-top-card-list></recommend-top-card-list>
-                  <!--<div class="more_button_container">-->
-                      <!--<router-link to="/events" class="button button_category_display">-->
-                          <!--<span>もっとみる</span>-->
-                      <!--</router-link>-->
-                  <!--</div>-->
+                  <div class="more_button_container">
+                      <router-link to="/events" class="button button_category_display">
+                          <span>もっとみる</span>
+                      </router-link>
+                  </div>
               </div>
           </div>
       </section>
@@ -112,13 +109,10 @@
           <div class="end__content content_all_center">
               <h1 class="app__title end__content--title_color">今すぐこどもの好きを発見しよう</h1>
               <p class="end__content--detail">好きなだけ体験できる新しい学びスタイル</p>
-              <router-link to="/register" class="button button__end is-hidden-mobile">
+              <router-link to="/register" class="button button__end">
                   <strong class="button_end_text_color">登録する</strong>
               </router-link>
           </div>
-          <router-link to="/register" class="button button__end is-hidden-desktop">
-              <strong class="button_end_text_color">登録する</strong>
-          </router-link>
       </section>
   </main>
 </template>
@@ -143,7 +137,8 @@
     @import '../../../../sass/variables';
     .top {
         position: relative;
-        @media screen and (max-width: 767px){
+        text-align: center;
+        @media screen and (max-width: 768px){
             margin-top: 63px;
         }
         .top-image {
@@ -158,7 +153,7 @@
             .app__title {
                 font-size: 40px;
                 font-weight: bold;
-                @media screen and (max-width: 767px) {
+                @media screen and (max-width: 768px) {
                     font-size: 23px;
                 }
             }
@@ -166,7 +161,7 @@
                 color: white;
                 font-size: 18px;
                 margin-bottom: 35px;
-                @media screen and (max-width: 767px) {
+                @media screen and (max-width: 768px) {
                     margin-bottom: 12px;
                     font-size: 12px;
                 }
@@ -183,7 +178,7 @@
                     background-color: white;
                     color: $skyBlue;
                     font-size: 18px;
-                    @media screen and (max-width: 767px) {
+                    @media screen and (max-width: 768px) {
                         width: 100px;
                         height: 45px;
                         font-size: 8px;
@@ -199,7 +194,7 @@
                     background-color: white;
                     color: $skyBlue;
                     font-size: 18px;
-                    @media screen and (max-width: 767px) {
+                    @media screen and (max-width: 768px) {
                         width: 100px;
                         height: 45px;
                         font-size: 8px;
@@ -215,7 +210,7 @@
                 height: 53px;
                 background-color: $pink;
                 border: 2px solid $pink;
-                @media screen and (max-width: 767px) {
+                @media screen and (max-width: 768px) {
                     width: 75px;
                     height: 45px;
                     font-size: 12px;
@@ -242,7 +237,7 @@
         }
     }
     .section__about {
-        @media screen and (min-width: 1280px) {
+        @media screen and (min-width: 1024px) {
             margin: 0 auto;
             max-width: 980px;
         }
@@ -251,7 +246,7 @@
             .app_about_text {
                 margin-bottom: 16px;
                 line-height: 32px;
-                @media screen and (max-width: 767px) {
+                @media screen and (max-width: 768px) {
                     font-size: 14px;
                 }
             }
@@ -263,11 +258,10 @@
         padding-bottom: 64px;
         &_container {
             .columns {
-                @media screen and (min-width: 1280px) {
+                @media screen and (min-width: 768px) {
                     margin: 0 auto;
                     max-width: 980px;
                     width: 100%;
-                    color: white;
                     .column.is-one-third {
                         text-align: center;
                         .section__howtouse_container_boxes {
@@ -277,28 +271,31 @@
                             }
                             .section__howtouse_container--title {
                                 font-weight: bold;
-                                font-size: 21px;
-                                margin: 8px 0;
+                                color: #3f9ae5;
+                                font-size: 24px;
+                                margin-bottom: 8px;
                             }
                             .section__howtouse_container--description {
-                                font-size: 13px;
+                                color: #7a7a7a;
+                                font-size: 12px;
                             }
                         }
                     }
                 }
-                @media screen and (max-width: 767px) {
+                @media screen and (max-width: 768px) {
                     .column.is-one-third {
                         text-align: center;
-                        color: white;
                         .section__howtouse_container_boxes {
                             text-align: center;
                         }
                         .section__howtouse_container--title {
                             font-weight: bold;
+                            color: #3f9ae5;
                             font-size: 24px;
                             margin-bottom: 8px;
                         }
                         .section__howtouse_container--description {
+                            color: #7a7a7a;
                             font-size: 16px;
                         }
                     }
@@ -315,19 +312,19 @@
         }
     }
     .section__map {
-         @media screen and (min-width: 1280px) {
+         @media screen and (min-width: 1024px) {
             margin: 0 auto;
             max-width: 980px;
         }
     }
     .section__activity {
-        @media screen and (min-width: 1280px) {
+        @media screen and (min-width: 1024px) {
             margin: 0 auto;
             max-width: 980px;
         }
         .app__activity {
             text-align: center;
-            @media screen and (min-width: 1280px) {
+            @media screen and (min-width: 1024px) {
                 max-width: 980px;
             }
             .column.is-one-third {
@@ -383,7 +380,7 @@
                     border: 2px solid $lightGreen;
                     border-radius: 4px;
                     font-weight: bold;
-                    @media screen and (max-width: 767px) {
+                    @media screen and (max-width: 768px) {
                         width: 100%;
                     }
                     &:hover {
@@ -406,13 +403,13 @@
             font-family :Quicksand, sans-serif;
             z-index: 100;
             width: 100%;
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 768px) {
                 padding: 0px;
             }
             .app__title {
                 font-size: 40px;
                 margin-bottom: 8px;
-                @media screen and (max-width: 767px) {
+                @media screen and (max-width: 768px) {
                     font-size: 23px;
                 }
             }
@@ -424,7 +421,7 @@
                 color: white;
                 font-size: 18px;
                 margin-bottom: 35px;
-                @media screen and (max-width: 767px) {
+                @media screen and (max-width: 768px) {
                     margin-bottom: 12px;
                     font-size: 12px;
                 }
@@ -434,7 +431,7 @@
                 height: 50px;
                 background-color: $pink;
                 border: 2px solid $pink;
-                @media screen and (max-width: 767px) {
+                @media screen and (max-width: 768px) {
                     width: 300px;
                 }
                 .button_end_text_color {
@@ -447,7 +444,7 @@
             height: 36px;
             background-color: $pink;
             border: 2px solid $pink;
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 768px) {
                 width: 300px;
                 margin-top: 8px;
             }
@@ -457,7 +454,7 @@
         }
     }
     .section {
-        @media screen and (min-width: 1280px) {
+        @media screen and (min-width: 1024px) {
             margin: 0 auto;
         }
     }

@@ -122,7 +122,7 @@
                     <div class="column is-one-quarter">
                         <p class="title event__detail--title">体験実施場所の紹介</p>
                     </div>
-                    <div class="column">
+                    <div class="column place">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6483.136778601478!2d139.77721867614565!3d35.66300417079383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018897aedbe5ad5%3A0xc39f1c150c87bb4c!2z44CSMTA0LTAwNTIg5p2x5Lqs6YO95Lit5aSu5Yy65pyI5bO2!5e0!3m2!1sja!2sjp!4v1546488873633" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
@@ -200,7 +200,6 @@
         </div>
         <event-book-modal
             v-if="showBookModal"
-            :activity-name="activity.name"
             :activity-time="event.started_at"
             :activity-price="event.price"
             :checked-box="checkedChild"
@@ -209,13 +208,9 @@
             @action="book"
             @close="bookModalToggle"
         ></event-book-modal>
-        <!--<reject-event-book-modal-->
-            <!--v-if="showBookModal & footerClickables"-->
-            <!--:showBookModal="showBookModal"-->
-            <!--@close="bookModalToggle"-->
-        <!--&gt;</reject-event-book-modal>-->
         <sticky-footer
             @bookActive="bookModalToggle"
+            :school-name="school.name"
             :event-price="event.price"
         ></sticky-footer>
     </div>
@@ -244,7 +239,8 @@
         computed: {
             ...mapGetters({
                 user: 'auth/user',
-                userDetail: 'user/user'
+                userDetail: 'user/user',
+                isLoggedIn: 'auth/isLoggedIn',
             })
         },
         methods: {
@@ -275,12 +271,14 @@
                 this.bookModalToggle();
                 const bookDatas = []
                 selectedChild.forEach(el => {
+                    const parent_uuid = this.userDetail.uuid
                     const event_uuid = this.event.uuid
                     const school_uuid = this.school.uuid
                     const price_uuid = this.event.price
                     const bookData = {
                         event_uuid  : event_uuid,
                         school_uuid : school_uuid,
+                        parent_uuid : parent_uuid,
                         child_uuid  : el,
                         price       : price_uuid,
                     }
@@ -295,38 +293,22 @@
                 this.loadingToggle();
                 // 予約完了画面に遷移
                 this.$router.push("/book/confirm");
-            },
-            fetchEventData() {
-                console.log(this.event);
-                // for(let i = 0; i < this.event.length; i++) {
-                //     console.log(this.event[i]);
-                //     if(ID === this.event.uuid[i]) console.log("same id");
-                //     else {
-                //         console.log("different");
-                //     }
-                // }
             }
         },
         props: {
             event: {
-                type   : [Array, Object],
-                default: () => []
-            },
-            activity: {
-                type   : [Array, Object],
-                default: () => []
+                type   : Object,
+                default: () => {},
             },
             school: {
-                type   : [Array, Object],
-                default: () => []
+                type   : Object,
+                default: () => {}
+            },
+            activity: {
+                type   : Object,
+                default: () => {}
             }
-        },
-        created() {
-            this.fetchEventData();
-        },
-        watch: {
-            '$route': ['fetchEventData']
-        },
+        }
     }
 </script>
 
@@ -352,16 +334,25 @@
         }
     }
     .section {
-        @media screen and (max-width: 767px) {
-            padding: 0px 24px;
+        @media screen and (max-width: 768px) {
+            padding: 0 24px;
         }
         .event__detail {
+            .columns {
+                @media screen and (min-width: 768px) {
+                    width: 980px;
+                    margin: 0 auto;
+                }
+            }
             &__container {
                 margin: 63px 0px;
-                @media screen and (max-width: 767px) {
+                @media screen and (max-width: 768px) {
                 }
             }
             &__wrapper {
+                @media screen and (min-width: 1024px) {
+                    max-width: 900px;
+                }
                 &__main {
                     &--content {
                         .school_name {
@@ -465,8 +456,16 @@
                 }
             }
         }
+        .place {
+            @media screen and (min-width: 1024px) {
+                max-width: 900px;
+            }
+        }
         .schedule__container {
             &__wrapper {
+                @media screen and (min-width: 1024px) {
+                    max-width: 900px;
+                }
                 .schedule {
                     padding-bottom: 40px;
                     border-bottom: 1px solid #EBEBEB;
@@ -507,6 +506,9 @@
             &__wrapper {
                 padding-bottom: 40px;
                 border-bottom: 1px solid #EBEBEB;
+                @media screen and (min-width: 1024px) {
+                    max-width: 900px;
+                }
                 &__about {
                     width: 100%;
                     height: auto;

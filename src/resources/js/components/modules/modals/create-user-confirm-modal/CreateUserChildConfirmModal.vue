@@ -1,5 +1,5 @@
 <template>
-    <transition name="modal" :class="{ 'is-active': showModal }" appear>
+    <transition name="modal" :class="{ 'is-active': showCreateUserChildConfirmModal }" appear>
         <div class="modal-mask">
             <div class="modal-wrapper" @click.self="$emit('close')">
                 <div class="modal-container">
@@ -12,38 +12,27 @@
                         <slot name="body">
                             <form>
                                 <div class="field">
-                                    <label class="label">お子さん</label>
+                                    <label class="label">お名前</label>
                                     <div class="control">
-                                        <!--<div  v-for="(child,index) in children" :key="child.uuid">-->
-                                        <!--<input type="checkbox" name="children" :value="child.last_kana" :id="'checkout0' + index">-->
-                                        <!--<label :for="'checkout0' + index" class="checkbox">{{ child.last_kana }}</label>-->
-                                        <!--</div>-->
+                                        <p>{{ userChildInfo.firstKana }}</p>
                                     </div>
                                 </div>
-                                <div v-for="(child, index) in userChildInfo" :key="index">
-                                    <div class="field">
-                                        <label class="label">お名前</label>
-                                        <div class="control">
-                                            <p>{{ getUserName(child.firstName, child.lastName) }}</p>
-                                        </div>
+                                <div class="field">
+                                    <label class="label">名ふりがな</label>
+                                    <div class="control">
+                                        <p>{{ userChildInfo.lastKana }}</p>
                                     </div>
-                                    <div class="field">
-                                        <label class="label">誕生日</label>
-                                        <div class="control">
-                                            <p>{{ child.birthDay }}</p>
-                                        </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">性別</label>
+                                    <div class="control">
+                                        <p>{{ exchangeUserSex(userInfo.sex) }}</p>
                                     </div>
-                                    <div class="field">
-                                        <label class="label">年齢</label>
-                                        <div class="control">
-                                            <p>{{ child.age }}<span>歳</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label class="label">性別</label>
-                                        <div class="control">
-                                            <p>{{ exchangeUserChildSex(child.sex) }}</p>
-                                        </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">性別</label>
+                                    <div class="control">
+                                        <p>{{ exchangeUserSex(userInfo.sex) }}</p>
                                     </div>
                                 </div>
                             </form>
@@ -51,7 +40,7 @@
                     </div>
                     <div class="modal-footer">
                         <slot name="footer">
-                            <button class="button is-block is-info is-fullwidth" @click="$emit('saveUserChildInfo')">
+                            <button class="button is-block is-info is-fullwidth" @click="$emit('saveUserInfo')">
                                 保存する
                             </button>
                         </slot>
@@ -63,24 +52,37 @@
 </template>
 
 <script>
+    // import { mapActions } from 'vuex';
+
     export default {
-        name: "CreateUserChildConfirmModal",
+        name: "CreateUserConfirmModal",
         data() {
             return {
             }
         },
         props: {
-            showModal: {
+            showCreateUserChildConfirmModal: {
                 type: Boolean
             },
             userChildInfo: {
-                type: Array,
-                default: () => []
-            }
+                type: Object,
+                default: () => {}
+            },
         },
         methods: {
-            getUserName(firstName, lastName) {
-                return firstName + ' ' + lastName
+            book() {
+                this.$emit('close');
+                // console.log("book");
+                // this.action();
+            },
+            exchangeUserSex(sex) {
+                if(sex === '1') {
+                    return '男性'
+                } else if(sex === '2') {
+                    return '女性'
+                } else {
+                    return 'その他'
+                }
             },
             exchangeUserChildSex(sex) {
                 if(sex === '1') {

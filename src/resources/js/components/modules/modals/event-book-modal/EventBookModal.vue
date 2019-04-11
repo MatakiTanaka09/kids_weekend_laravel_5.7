@@ -10,7 +10,7 @@
                     </div>
                     <div class="modal-body">
                         <slot name="body">
-                            <form v-if="!!children">
+                            <form v-if="checkChildren">
                                 <div class="field">
                                     <label class="label">アクティビティ名</label>
                                     <div class="control">
@@ -50,7 +50,7 @@
                         </slot>
                     </div>
                     <div class="modal-footer">
-                        <slot name="footer" v-if="!!children">
+                        <slot name="footer" v-if="checkChildren">
                             <button class="button is-block is-info is-fullwidth" @click="selectChild">
                                 予約する
                             </button>
@@ -97,13 +97,11 @@
             }
         },
         methods: {
-            book() {
-                this.$emit('close');
-                // console.log("book");
-                // this.action();
-            },
             selectChild() {
                 this.$emit('action', this.checkedChild)
+            },
+            checkChildren() {
+                return !!this.children
             }
         }
     }

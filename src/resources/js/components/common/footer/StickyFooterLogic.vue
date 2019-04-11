@@ -1,6 +1,7 @@
 <template>
     <sticky-footer
         @book="bookActive"
+        :school-name="schoolName"
         :event-price="eventPrice"
     ></sticky-footer>
 </template>
@@ -18,6 +19,9 @@
             }
         },
         props: {
+            schoolName: {
+                type: String
+            },
             eventPrice: {
                 type: Number
             }

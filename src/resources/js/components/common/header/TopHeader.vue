@@ -15,7 +15,7 @@
                 <div class="navbar-end">
                     <div class="navbar-item">
                         <div class="buttons" v-if="!isLoggedIn">
-                            <router-link to="register" class="button buttons__btn--register">
+                            <router-link to="/register" class="button buttons__btn--register">
                                 <strong>登録する</strong>
                             </router-link>
                             <router-link to="/login" class="button buttons__btn--login">

@@ -14,13 +14,13 @@
                                 <div class="field">
                                     <label class="label">お名前</label>
                                     <div class="control">
-                                        <p>{{ getUserName(userInfo.firstName, userInfo.lastName) }}</p>
+                                        <p>{{ userInfo.fullName }}</p>
                                     </div>
                                 </div>
                                 <div class="field">
                                     <label class="label">名ふりがな</label>
                                     <div class="control">
-                                        <p>{{ getUserNameKana(userInfo.firstKana, userInfo.lastKana) }}</p>
+                                        <p>{{ userInfo.fullKana }}</p>
                                     </div>
                                 </div>
                                 <div class="field">
@@ -44,48 +44,15 @@
                                 <div class="field">
                                     <label class="label">郵便番号</label>
                                     <div class="control">
-                                        <p>{{ getZipCode(userInfo.zipCode1, userInfo.zipCode2)}}</p>
+                                        <p>{{ userInfo.zipCode}}</p>
                                     </div>
                                 </div>
                                 <div class="field">
-                                    <label class="label">住所</label>
+                                    <label class="label">ご住所</label>
                                     <div class="control">
-                                        <p>{{ getAddress(userInfo.state, userInfo.city, userInfo.address1, userInfo.address2) }}</p>
+                                        <p>{{ userInfo.address }}</p>
                                     </div>
                                 </div>
-                                <!--<div class="field">-->
-                                    <!--<label class="label">お子さん</label>-->
-                                    <!--<div class="control">-->
-                                        <!--&lt;!&ndash;<div  v-for="(child,index) in children" :key="child.uuid">&ndash;&gt;-->
-                                            <!--&lt;!&ndash;<input type="checkbox" name="children" :value="child.last_kana" :id="'checkout0' + index">&ndash;&gt;-->
-                                            <!--&lt;!&ndash;<label :for="'checkout0' + index" class="checkbox">{{ child.last_kana }}</label>&ndash;&gt;-->
-                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="field">-->
-                                    <!--<label class="label">お名前</label>-->
-                                    <!--<div class="control">-->
-                                        <!--<p>{{ getUserName(userChildInfo.firstName, userChildInfo.lastName) }}</p>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="field">-->
-                                    <!--<label class="label">誕生日</label>-->
-                                    <!--<div class="control">-->
-                                        <!--<p>{{ userChildInfo.birthDay }}</p>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="field">-->
-                                    <!--<label class="label">年齢</label>-->
-                                    <!--<div class="control">-->
-                                        <!--<p>{{ userChildInfo.age }}<span>歳</span></p>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="field">-->
-                                    <!--<label class="label">性別</label>-->
-                                    <!--<div class="control">-->
-                                        <!--<p>{{ exchangeUserChildSex(userChildInfo.sex) }}</p>-->
-                                    <!--</div>-->
-                                <!--</div>-->
                             </form>
                         </slot>
                     </div>
@@ -133,12 +100,6 @@
                 // console.log("book");
                 // this.action();
             },
-            getUserName(firstName, lastName) {
-                return firstName + ' ' + lastName
-            },
-            getUserNameKana(firstKana, lastKana) {
-                return firstKana + ' ' + lastKana
-            },
             exchangeUserSex(sex) {
                 if(sex === '1') {
                     return '男性'
@@ -156,12 +117,6 @@
                 } else {
                     return 'その他'
                 }
-            },
-            getZipCode(zipCode1, zipCode2) {
-                return zipCode1 + '-' + zipCode2
-            },
-            getAddress(state, city, address1, address2) {
-                return state + city + address1 + address2
             }
         }
     }

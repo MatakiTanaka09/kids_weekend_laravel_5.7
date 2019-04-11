@@ -24,10 +24,11 @@ const actions = {
         });
     },
     login({ commit }, payload) {
-        return new Promise((reject) => {
+        return new Promise((resolve, reject) => {
             commit(types.AUTH_LOADING);
             http.post(urls.LOGIN, payload, res => {
-                commit(types.AUTH_SUCCESS, res.data);
+                commit(types.AUTH_SUCCESS, res);
+                resolve();
             }, err => {
                 commit(types.AUTH_ERROR, err);
                 localStorage.removeItem(util.JWT_TOKEN);
@@ -71,7 +72,7 @@ const mutations = {
     [types.AUTH_SUCCESS](state, payload) {
         state.status = util.AUTH_STATUS_SUCCESS;
         state.token = payload.token;
-        Object.assign(state, { user: payload.user });
+        Object.assign({}, payload.user);
     },
     [types.AUTH_ERROR](state) {
         state.status = util.AUTH_STATUS_ERROR;

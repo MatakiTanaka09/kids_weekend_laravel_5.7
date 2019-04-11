@@ -133,18 +133,18 @@
                 showCreateUserConfirmModal: false,
                 showCreateUserChildConfirmModal: false,
                 showCreateUserResponseOkModal: false,
+                showCreateUserChildResponseOkModal: false,
                 userParent: {
                     fullName: '',
                     fullKana: '',
                     lastKana: '',
                     tel: '',
+                    sex: '',
                     zipCode: '',
                     address: ''
                 },
                 userChildren: [
                     {
-                        firstName: '',
-                        lastName: '',
                         firstKana: '',
                         lastKana: '',
                         birthDay: '',
@@ -180,8 +180,8 @@
             fetchUserDetail() {
                 this.isLoadingToggle()
                 http.get(url.USER_DETAIL, res => {
-                    this.userDetail = res.data["data"][0];
-                    Object.assign({}, { userDetail: this.userDetail });
+                    console.log(this.userDetail);
+                    Object.assign(this.userDetail, res.data["data"][0]);
                     setTimeout(this.isLoadingToggle, 750);
                 }, err => {
                     console.log("error", err);
@@ -199,6 +199,9 @@
             },
             activeShowCreateUserResponseOkModalToggle() {
                 this.showCreateUserResponseOkModal = !this.showCreateUserResponseOkModal
+            },
+            activeShowCreateUserChildResponseOkModalToggle() {
+                this.showCreateUserChildResponseOkModal = !this.showCreateUserChildResponseOkModal
             },
             setLocalStrage() {
                 const userParentData = {
@@ -233,18 +236,12 @@
             },
             async saveUserInfo() {
                 const userParentData = {
-                    first_name: this.userParent.firstName,
-                    last_name : this.userParent.lastName,
-                    first_kana: this.userParent.firstKana,
-                    last_kana : this.userParent.lastKana,
-                    tel       : this.userParent.tel,
-                    sex       : this.userParent.sex,
-                    zip_code1 : this.userParent.zipCode1,
-                    zip_code2 : this.userParent.zipCode2,
-                    state     : this.userParent.state,
-                    city      : this.userParent.city,
-                    address1  : this.userParent.address1,
-                    address2  : this.userParent.address2
+                    full_name: this.userParent.fullName,
+                    full_kana: this.userParent.fullKana,
+                    tel      : this.userParent.tel,
+                    sex      : this.userParent.sex,
+                    zip_code : this.userParent.zipCode,
+                    address  : this.userParent.address
                 };
                 await this.storeUserInfo(userParentData);
                 this.activeShowCreateUserModalToggle()
@@ -255,8 +252,6 @@
                 const userChild = []
                 this.userChildren.forEach(el => {
                     const userChildData = {
-                        last_name : el.firstName,
-                        first_name: el.lastName,
                         last_kana : el.lastKana,
                         first_kana: el.firstKana,
                         birth_day : el.birthDay,
@@ -264,32 +259,8 @@
                     }
                     userChild.push(userChildData)
                 })
-                // console.log(userChild)
-                const data = [
-                    {
-                        last_name : "a",
-                        first_name: "a",
-                        last_kana : "a",
-                        first_kana: "a",
-                        birth_day : "a",
-                        sex       : "a"
-                    },
-                    {
-                        last_name : "a",
-                        first_name: "a",
-                        last_kana : "a",
-                        first_kana: "a",
-                        birth_day : "a",
-                        sex       : "a"
-                    },
-                ]
-                console.log(data)
-                console.log(userChild);
-                // console.log(JSON.stringify(this.userChildrenInfo));
                 await this.storeUserChildInfo(userChild);
-                // await this.storeUserChildInfo(JSON.stringify(this.userChildrenInfo));
-                console.log("after");
-                // this.$router.go(0);
+
             },
             addUserChild() {
                 const userChild = {

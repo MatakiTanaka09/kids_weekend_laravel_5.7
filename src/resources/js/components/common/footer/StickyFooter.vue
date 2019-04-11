@@ -11,17 +11,17 @@
                         </div>
                         <div class="content">
                             <div class="school-name">
-                                <span>English!</span>
+                                <span>{{ schoolName }}</span>
                             </div>
-                            <div>
-                                <div class="review">
-                                </div>
-                                <div class="review-link">
-                                    <span class="">
-                                        <a>OO件のレビュー</a>
-                                    </span>
-                                </div>
-                            </div>
+                            <!--<div>-->
+                                <!--<div class="review">-->
+                                <!--</div>-->
+                                <!--<div class="review-link">-->
+                                    <!--<span class="">-->
+                                        <!--<a>OO件のレビュー</a>-->
+                                    <!--</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                         </div>
                         <div class="schdule-part">
                             <div>
-                                <a class="button btn-expand" @click="book">
+                                <a class="button btn-expand" @click="book" :class="{ disable: !isLoggedIn}">
                                     <span class="has-text-weight-bold">今すぐ予約する</span>
                                 </a>
                             </div>
@@ -48,11 +48,20 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
     export default {
         props: {
+            schoolName: {
+                type: String
+            },
             eventPrice: {
                 type: Number
             }
+        },
+        computed: {
+            ...mapGetters({
+                isLoggedIn: 'auth/isLoggedIn',
+            })
         },
         methods: {
             book() {

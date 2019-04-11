@@ -11,14 +11,13 @@ class UserChild extends BaseUuid
         'parent_uuid'
     ];
 
-    public function childParent()
-    {
-        return $this->hasOne(ChildParent::class, 'child_uuid');
-    }
-
     public function userParent()
     {
         return $this->belongsToMany(UserParent::class, 'parent_uuid');
+    }
+    public function book()
+    {
+        return $this->hasMany(Book::class, 'uuid');
     }
 
     public function image()

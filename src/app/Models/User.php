@@ -1,15 +1,14 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use App\Models\UserParent;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmailContract;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use App\Notifications\CustomPasswordReset;
-use App\Notifications\VerifyEmail;
 use Illuminate\Auth\MustVerifyEmail;
+use App\Notifications\VerifyEmailJapanese;
 
 class User extends Authenticatable implements JWTSubject, MustVerifyEmailContract
 {
@@ -30,7 +29,9 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmailContrac
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'role',
+        'remember_token',
     ];
 
     public function getJWTIdentifier()
@@ -50,7 +51,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmailContrac
 
     public function sendEmailVerificationNotification()
     {
-        $this->notify(new VerifyEmail);
+        $this->notify(new VerifyEmailJapanese);
     }
 
     public function userParent()

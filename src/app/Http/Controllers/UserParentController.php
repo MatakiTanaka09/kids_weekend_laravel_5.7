@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ChildParent;
 use Illuminate\Http\Request;
-use App\User;
+use App\Models\User;
 use App\Models\UserParent;
 use App\Http\Resources\User\User as UserResource;
 use App\Http\Resources\User\UserParent as UserParentResource;
@@ -16,7 +15,7 @@ class UserParentController extends Controller
 {
     public function me()
     {
-        $id = auth()->user()->id;
+        $id = optional(auth()->user())->id;
         if(UserParent::where('user_id', '=', $id)->exists()) {
             $user = UserParentResource::collection(
                 UserParent::with(['user', 'userChild'])
@@ -124,16 +123,13 @@ class UserParentController extends Controller
 
     public function getAuthenticatedUser()
     {
-        $user_id = auth()->user()->id;
-
+        $user_id = optional(auth()->user())->id;
         if (!$user = JWTAuth::parseToken()->authenticate()) {
             return response()->json(['user_not_found'], 404);
         }
-
         $userParent = UserParentDetailResource::collection(
-            UserParent::with(['user', 'userChild', 'childParent'])->where('user_id', '=', $user_id)->get()
+            UserParent::with(['user', 'userChild'])->where('user_id', '=', $user_id)->get()
         );
-
         return $userParent;
     }
 }

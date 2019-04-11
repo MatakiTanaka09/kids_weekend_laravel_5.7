@@ -30,8 +30,6 @@ class UserChildController extends Controller
             for($i=0; $i<count($datas); $i++) {
                 $userChild = new UserChild();
                 $data = $datas[$i];
-                $userChild->last_name   = $data["last_name"];
-                $userChild->first_name  = $data["first_name"];
                 $userChild->last_kana   = $data["last_kana"];
                 $userChild->first_kana  = $data["first_kana"];
                 $userChild->birth_day   = $data["birth_day"];

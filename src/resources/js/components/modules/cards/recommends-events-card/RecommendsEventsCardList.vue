@@ -9,7 +9,7 @@
         </div>
         <div class="columns is-multiline">
             <recommends-events-card
-                class="is-hidden-mobile"
+                class="mobile"
                 v-for="n in cardDisplayNumber" :key="n"
                 :event-display-type="cardDisplayType"
                 :event-id=n
@@ -24,10 +24,9 @@
             ></recommends-events-card>
             <swiper
                 :options="swiperOption"
-                class="is-hidden-desktop">
+                class="tablet">
                 <swiper-slide v-for="n in cardDisplayNumber" :key="n">
                     <recommends-events-card
-                        class="is-hidden-desktop"
                         :event-id=n
                         :event-image-path="eventImagePath[n % 3]"
                         :event-time="eventTime"
@@ -139,5 +138,14 @@
             }
         }
     }
-
+    .mobile {
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+    .tablet {
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+    }
 </style>

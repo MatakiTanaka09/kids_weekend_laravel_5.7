@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-use App\User;
-
 class UserParent extends BaseUuid
 {
     protected $table = 'userParents';
@@ -31,9 +29,9 @@ class UserParent extends BaseUuid
         return $this->hasMany(UserChild::class, 'parent_uuid');
     }
 
-    public function childParent()
+    public function book()
     {
-        return $this->hasMany(ChildParent::class, 'parent_uuid');
+        return $this->hasMany(Book::class, 'uuid');
     }
 
     public function review()

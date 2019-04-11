@@ -66,12 +66,14 @@
                 login: 'auth/login'
             }),
             async handleLogin() {
-                const email = this.email;
-                const password = this.password;
-                console.log("start");
-                await this.login({email: email, password: password});
+                const loginData = {
+                    email: this.email,
+                    password: this.password
+                }
+                await this.login(loginData);
                 this.$router.go(0);
-                // this.$router.push('/');
+                this.$router.push('/users/me');
+                console.log("start");
             },
         }
     }
@@ -80,7 +82,7 @@
 <style lang="scss" scoped>
     .section {
         padding: 128px 24px;
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 768px) {
             margin: 63px 0px 0px;
             padding: 24px;
         }

@@ -2,10 +2,9 @@
 
 namespace App\Http\Resources\Book;
 
-use App\Http\Resources\Book\BookUserChildren as UserChildrenResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class BookUser extends JsonResource
+class Activity extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,8 +15,8 @@ class BookUser extends JsonResource
     public function toArray($request)
     {
         return [
-            "full_name"=> $this->full_name,
-//            "children" => UserChildrenResource::collection($this->userChild),
+            "pub_state" => $this->pub_state,
+            "name" => $this->name,
         ];
     }
 }
