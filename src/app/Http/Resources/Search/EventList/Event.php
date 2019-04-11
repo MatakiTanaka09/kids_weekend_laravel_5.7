@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Search\EventList;
 
+use App\Http\Resources\Search\Top\Activity as ActivityResource;
 use App\Http\Resources\Search\Common\CategoryEvent as CategoryEventResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -22,7 +23,8 @@ class Event extends JsonResource
             "price"          => $this->price,
             "longitude"      => $this->longitude,
             "latitude"       => $this->latitude,
-            "category_event" => new CategoryEventResource($this->categoryEvent)
+            "category_event" => new CategoryEventResource($this->categoryEvent),
+            "activity"       => new ActivityResource($this->activity)
         ];
     }
 }

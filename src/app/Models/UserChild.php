@@ -6,14 +6,18 @@ class UserChild extends BaseUuid
 {
     protected $table = 'userChildren';
 
-    protected $guarded = [
-        'uuid',
-        'parent_id'
+    protected $fillable = [
+        'child_uuid',
+        'parent_uuid'
     ];
 
     public function userParent()
     {
-        return $this->belongsTo(UserParent::class);
+        return $this->belongsToMany(UserParent::class, 'parent_uuid');
+    }
+    public function book()
+    {
+        return $this->hasMany(Book::class, 'uuid');
     }
 
     public function image()

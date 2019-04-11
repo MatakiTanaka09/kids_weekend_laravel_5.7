@@ -10,11 +10,11 @@ class ChildParent extends Model
 
     public function userChild()
     {
-        return $this->belongsToMany(UserChild::class);
+        return $this->belongsTo(UserChild::class);
     }
 
     public function userParent()
     {
-        return $this->belongsToMany(UserParent::class);
+        return $this->belongsTo(UserParent::class);
     }
 }
