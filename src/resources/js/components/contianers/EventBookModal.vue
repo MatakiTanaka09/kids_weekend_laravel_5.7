@@ -3,9 +3,8 @@
 </template>
 
 <script>
-    import EventBookModal from '../presentations/modules/modals/event-book-modal';
+    import EventBookModal from '../modules/modals/event-book-modal';
     import { mapActions, mapGetters } from 'vuex';
-
     export default {
         components: {
             EventBookModal

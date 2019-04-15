@@ -15,13 +15,11 @@ class UserChild extends JsonResource
     public function toArray($request)
     {
         return [
-            "uuid"       => $this->uuid,
-            "last_name"  => $this->last_name,
-            "first_name" => $this->first_name,
-            "last_kana"  => $this->last_kana,
+            "uuid"      => $this->uuid,
             "first_kana" => $this->first_kana,
-            "sex"        => $this->sex,
-            "birth_day"  => $this->birth_day
+            "last_kana" => $this->last_kana,
+            "sex"       => $this->sex,
+            "birth_day" => $this->birth_day
         ];
     }
 }

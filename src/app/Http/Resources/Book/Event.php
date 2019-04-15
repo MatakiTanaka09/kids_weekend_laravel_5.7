@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Book;
 
+use App\Http\Resources\Search\Common\CategoryEvent as CategoryEventResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class Event extends JsonResource
@@ -15,15 +16,11 @@ class Event extends JsonResource
     public function toArray($request)
     {
         return [
-            "date"             => $this->date,
-            "started_at"       => $this->started_at,
-            "ended_at"         => $this->ended_at,
-            "parent_attendant" => $this->parent_attendant,
-            "price"            => $this->price,
-            "canceled_at"      => $this->canceled_at,
-            "arrived_at"       => $this->arrived_at,
-            "longitude"        => $this->longitude,
-            "latitude"         => $this->latitude
+            "started_at" => $this->started_at,
+            "address1"   => $this->address1,
+            "longitude"  => $this->longitude,
+            "latitude"   => $this->latitude,
+            "category_event" => new CategoryEventResource($this->categoryEvent),
         ];
     }
 }

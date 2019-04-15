@@ -19,11 +19,12 @@ RUN apk --update add --no-cache \
   freetype-dev \
   libpng-dev \
   libjpeg-turbo-dev && \
-  docker-php-ext-install mbstring pdo pdo_pgsql tokenizer xml opcache && \
+  docker-php-ext-install mbstring pdo pdo_mysql tokenizer xml opcache && \
   docker-php-ext-configure gd \
     --with-gd \
     --with-freetype-dir=/usr/include/ \
     --with-png-dir=/usr/include/ \
+    --with-libxml-dir=/usr/include/ \
     --with-jpeg-dir=/usr/include/ && \
   NPROC=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) && \
   docker-php-ext-install -j${NPROC} gd && \

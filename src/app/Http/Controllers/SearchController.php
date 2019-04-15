@@ -10,11 +10,12 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    public function searchTop()
+    public function searchTop($limit)
     {
         return TopMainResource::collection(
-            ActivityEventSchool::with(['Event.CategoryEvent', 'Activity'])->get()
+            ActivityEventSchool::with(['Event.CategoryEvent', 'Event.Activity'])->limit($limit)->get()
         );
+//        return ActivityEventSchool::with(['Event.CategoryEvent', 'Event.Activity'])->limit($limit)->get();
     }
 
     public function searchEventList()
