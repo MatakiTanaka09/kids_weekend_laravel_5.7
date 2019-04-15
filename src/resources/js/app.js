@@ -1,4 +1,3 @@
-
 require('./bootstrap');
 
 // const files = require.context('./', true, /\.vue$/i)

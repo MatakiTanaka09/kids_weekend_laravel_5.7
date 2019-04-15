@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources\User;
 
-use App\Http\Resources\User\UserChild as UserChildResource;
+use App\Http\Resources\Book\BookUserChildren as UserChildResource;
 use Illuminate\Http\Resources\Json\Resource;
 
 class UserParent extends Resource
@@ -16,11 +16,11 @@ class UserParent extends Resource
     public function toArray($request)
     {
         return [
-            "uuid"       => $this->uuid,
-            "first_name" => $this->first_name,
-            "last_name"  => $this->last_name,
-            "email"      => $this->user->email,
-            "children"   => UserChildResource::collection($this->userChild),
+            "uuid"      => $this->uuid,
+            "full_name" => $this->full_name,
+            "full_kana" => $this->full_kana,
+            "email"     => $this->user->email,
+            "children"  => UserChildResource::collection($this->userChild)
         ];
     }
 }

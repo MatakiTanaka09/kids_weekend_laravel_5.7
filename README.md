@@ -1,9 +1,9 @@
 # kidsweekend
 
 ## usage
-
+手動で構築環境
 ```bash
-git clone git@github.com:MatakiTanaka09/kids_weekend_laravel_5.7.git.git
+git clone git@github.com:MatakiTanaka09/kids_weekend_laravel_5.7.git
 cd laradock/
 cp env-example .env
 docker-compose down

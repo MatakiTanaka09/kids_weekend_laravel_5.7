@@ -16,10 +16,8 @@ class BookUser extends JsonResource
     public function toArray($request)
     {
         return [
-            "first_name"=> $this->first_name,
-            "last_name" => $this->last_name,
-            "email" => $this->user->email,
-            "children" => UserChildrenResource::collection($this->userChild),
+            "full_name"=> $this->full_name,
+//            "children" => UserChildrenResource::collection($this->userChild),
         ];
     }
 }
