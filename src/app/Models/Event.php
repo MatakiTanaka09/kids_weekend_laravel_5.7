@@ -17,7 +17,12 @@ class Event extends BaseUuid
 
     public function book()
     {
-        return $this->hasMany(Book::class);
+        return $this->hasMany(Book::class, 'event_uuid');
+    }
+
+    public function activity()
+    {
+        return $this->belongsTo(Activity::class, 'activity_uuid');
     }
 
     public function review()

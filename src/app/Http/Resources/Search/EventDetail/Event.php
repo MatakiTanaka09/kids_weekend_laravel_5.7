@@ -33,7 +33,7 @@ class Event extends JsonResource
             "address2"         => $this->address2,
             "longitude"        => $this->longitude,
             "latitude"         => $this->latitude,
-            "category_event"   => new CategoryEventResource($this->categoryEvent)
+            "category_event"   => new CategoryEventResource($this->categoryEvent),
         ];
     }
 }

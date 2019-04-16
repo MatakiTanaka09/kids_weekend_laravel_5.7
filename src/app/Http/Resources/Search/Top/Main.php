@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources\Search\Top;
 
-use App\Http\Resources\Search\Top\Activity as ActivityResource;
+
 use App\Http\Resources\Search\Top\Event as EventResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -18,8 +18,7 @@ class Main extends JsonResource
     {
         return [
             "event_uuid" => $this->event_uuid,
-            "event"      => new EventResource($this->event),
-            "activity"   => new ActivityResource($this->activity)
+            "event"      => new EventResource($this->event)
         ];
     }
 }

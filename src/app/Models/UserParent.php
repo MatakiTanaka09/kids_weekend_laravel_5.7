@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-use App\User;
-
 class UserParent extends BaseUuid
 {
     protected $table = 'userParents';
@@ -12,28 +10,28 @@ class UserParent extends BaseUuid
         'uuid'
     ];
 
-    protected $hidden = [
-        'zip_code1',
-        'zip_code2',
-        'state',
-        'city',
-        'address1',
-        'address2'
-    ];
+//    protected $hidden = [
+//        'zip_code1',
+//        'zip_code2',
+//        'state',
+//        'city',
+//        'address1',
+//        'address2'
+//    ];
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function userChild()
     {
-        return $this->hasMany(UserChild::class, 'user_parent_uuid');
+        return $this->hasMany(UserChild::class, 'parent_uuid');
     }
 
     public function book()
     {
-        return $this->hasMany(Book::class, 'user_parent_uuid');
+        return $this->hasMany(Book::class, 'uuid');
     }
 
     public function review()

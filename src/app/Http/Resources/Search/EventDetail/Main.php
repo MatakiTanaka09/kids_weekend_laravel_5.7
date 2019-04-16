@@ -19,9 +19,9 @@ class Main extends JsonResource
     {
         return [
             "event_uuid" => $this->event_uuid,
-            "event"    => new EventResource($this->event),
-            "activity" => new ActivityResource($this->activity),
-            "school"   => new SchoolResource($this->school)
+            "event"      => new EventResource($this->event),
+            "school"     => new SchoolResource($this->school),
+            "activity"   => new ActivityResource($this->event->activity),
         ];
     }
 }

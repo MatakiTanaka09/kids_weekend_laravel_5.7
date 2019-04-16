@@ -15,13 +15,8 @@ class BookUserChildren extends JsonResource
     public function toArray($request)
     {
         return [
-//            "uuid" => $this->uuid,
-//            "last_name" => $this->last_name,
-//            "first_name" => $this->first_name,
-            "last_kana" => $this->last_kana,
-//            "first_kana" => $this->first_kana,
-//            "sex" => $this->sex,
-//            "birth_day" => $this->birth_day
+            "uuid" => $this->uuid,
+            "first_kana" => $this->first_kana
         ];
     }
 }
