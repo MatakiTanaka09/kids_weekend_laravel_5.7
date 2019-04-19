@@ -2,11 +2,12 @@
     <div class="searchbar__container">
         <div class="searchbar__container__wrapper">
             <div class="searchbar__container__wrapper--buttons">
-                <base-button
-                    v-for="(n, index) in 5" :key="n"
-                    class="is-hidden-mobile"
-                    :button-name="buttonName[index]"
-                ></base-button>
+                <calendar-button></calendar-button>
+                <!--<base-button-->
+                    <!--v-for="(n, index) in 5" :key="n"-->
+                    <!--class="is-hidden-mobile"-->
+                    <!--:button-name="buttonName[index]"-->
+                <!--&gt;</base-button>-->
             </div>
         </div>
     </div>
@@ -14,10 +15,11 @@
 
 <script>
     import BaseButton from '../../buttons/base-button/BaseButton';
-
+    import CalendarButton from '../../dropdowns/SearchCalendarDropdown/SearchCalendarDropdown';
     export default {
         components: {
-            BaseButton
+            BaseButton,
+            CalendarButton,
         },
         data() {
             return {

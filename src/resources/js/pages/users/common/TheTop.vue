@@ -1,21 +1,23 @@
 <template>
   <main>
       <section class="top">
-          <progressive-img class="top-image" src="./images/app_top_image.jpg" />
+          <div class="top-image" >
+              <progressive-img src="./images/app_top_image.jpg" style="max-width: 100%" />
+          </div>
           <div class="top__content content_all_center">
               <h1 class="app__title top_content_title_color">こどもの好きを見つけよう</h1>
               <p class="top__content--detail">こどもの「やりたい」を好きなだけ体験できる新しい学びスタイル</p>
-              <!--<div class="top__search">-->
-                  <!--<div class="top__search&#45;&#45;calendar_box">-->
-                      <!--<span>カレンダーから探す</span>-->
-                  <!--</div>-->
-                  <!--<div class="top__search&#45;&#45;age_box">-->
-                      <!--こどもの年齢-->
-                  <!--</div>-->
-                  <!--<router-link to="/" class="button button__top">-->
-                      <!--<strong class="button_top_text_color">検索</strong>-->
-                  <!--</router-link>-->
-              <!--</div>-->
+              <div class="top__search">
+                  <div class="top__search--calendar_box">
+                      <span>カレンダーから探す</span>
+                  </div>
+                  <div class="top__search--age_box">
+                      こどもの年齢
+                  </div>
+                  <router-link to="/" class="button button__top">
+                      <strong class="button_top_text_color">検索</strong>
+                  </router-link>
+              </div>
           </div>
       </section>
       <section class="section section__about">
@@ -83,12 +85,12 @@
           </div>
           <div class="howtouse__bottom_design"></div>
       </section>
-      <section class="section section__map">
-          <div class="has-text-centered">
-              <h2 class="heading">さがす</h2>
-          </div>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6483.136778601478!2d139.77721867614565!3d35.66300417079383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018897aedbe5ad5%3A0xc39f1c150c87bb4c!2z44CSMTA0LTAwNTIg5p2x5Lqs6YO95Lit5aSu5Yy65pyI5bO2!5e0!3m2!1sja!2sjp!4v1550132889669" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </section>
+      <!--<section class="section section__map">-->
+          <!--<div class="has-text-centered">-->
+              <!--<h2 class="heading">さがす</h2>-->
+          <!--</div>-->
+          <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6483.136778601478!2d139.77721867614565!3d35.66300417079383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018897aedbe5ad5%3A0xc39f1c150c87bb4c!2z44CSMTA0LTAwNTIg5p2x5Lqs6YO95Lit5aSu5Yy65pyI5bO2!5e0!3m2!1sja!2sjp!4v1550132889669" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+      <!--</section>-->
       <section class="section section__activity">
           <div class="section_activity_container">
               <div class="has-text-centered">
@@ -105,13 +107,15 @@
           </div>
       </section>
       <section class="end">
-          <progressive-img class="end-image" src="./images/app_end_image.jpg" />
+          <div class="end-image">
+              <progressive-img src="./images/app_end_image.jpg" style="max-width: 100%" />
+          </div>
           <div class="end__content content_all_center">
               <h1 class="app__title end__content--title_color">今すぐこどもの好きを発見しよう</h1>
               <p class="end__content--detail">好きなだけ体験できる新しい学びスタイル</p>
-              <router-link to="/register" class="button button__end">
-                  <strong class="button_end_text_color">登録する</strong>
-              </router-link>
+              <!--<router-link to="/register" class="button button__end">-->
+                  <!--<strong class="button_end_text_color">登録する</strong>-->
+              <!--</router-link>-->
           </div>
       </section>
   </main>
@@ -137,12 +141,13 @@
     @import '../../../../sass/variables';
     .top {
         position: relative;
-        text-align: center;
+        /*text-align: center;*/
         @media screen and (max-width: 768px){
             margin-top: 63px;
         }
         .top-image {
             width: 100%;
+            height: auto;
             z-index: 99;
             opacity: 1.5;
         }
@@ -256,6 +261,7 @@
         position: relative;
         background-color: $lightGreen;
         padding-bottom: 64px;
+        color: white;
         &_container {
             .columns {
                 @media screen and (min-width: 768px) {
@@ -271,12 +277,10 @@
                             }
                             .section__howtouse_container--title {
                                 font-weight: bold;
-                                color: #3f9ae5;
                                 font-size: 24px;
                                 margin-bottom: 8px;
                             }
                             .section__howtouse_container--description {
-                                color: #7a7a7a;
                                 font-size: 12px;
                             }
                         }
@@ -285,17 +289,16 @@
                 @media screen and (max-width: 768px) {
                     .column.is-one-third {
                         text-align: center;
+                        margin-bottom: 24px;
                         .section__howtouse_container_boxes {
                             text-align: center;
                         }
                         .section__howtouse_container--title {
                             font-weight: bold;
-                            color: #3f9ae5;
                             font-size: 24px;
                             margin-bottom: 8px;
                         }
                         .section__howtouse_container--description {
-                            color: #7a7a7a;
                             font-size: 16px;
                         }
                     }
@@ -318,6 +321,7 @@
         }
     }
     .section__activity {
+        margin: auto 0;
         @media screen and (min-width: 1024px) {
             margin: 0 auto;
             max-width: 980px;
@@ -394,7 +398,7 @@
         position: relative;
         text-align: center;
         .end-image {
-            width: 100%;
+            max-width: 100%;
             z-index: 99;
         }
         .end__content {
@@ -432,24 +436,13 @@
                 background-color: $pink;
                 border: 2px solid $pink;
                 @media screen and (max-width: 768px) {
-                    width: 300px;
+                    width: 80%;
+                    height: 30px;
+                    font-size: 12px;
                 }
                 .button_end_text_color {
                     color: white;
                 }
-            }
-        }
-        .button__end {
-            width: 350px;
-            height: 36px;
-            background-color: $pink;
-            border: 2px solid $pink;
-            @media screen and (max-width: 768px) {
-                width: 300px;
-                margin-top: 8px;
-            }
-            .button_end_text_color {
-                color: white;
             }
         }
     }

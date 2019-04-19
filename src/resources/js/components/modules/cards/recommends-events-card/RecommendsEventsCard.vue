@@ -4,7 +4,7 @@
             <div class="activity__container__images">
                 <progressive-img class="activity__container__images--image" :src="eventImagePath" />
                 <p class="activity__container__images--title">
-                    {{ eventTime }}
+                    {{ imageTitleFormatDate(eventTime) }}
                 </p>
             </div>
             <div class="container__category">
@@ -21,7 +21,7 @@
                 <div class="container__category--time_place">
                     <p>
                         <span><i class="far fa-calendar-alt"></i></span>
-                        <span>{{ eventDateTime }}</span>
+                        <span>{{ eventTimeFormatDate(eventDateTime) }}</span>
                         <span class="activity_category--right_space"></span>
                         <i class="fas fa-thumbtack"></i>
                         <span>{{ eventPlace }}</span>
@@ -45,6 +45,7 @@
 </template>
 
 <script>
+    import dateFormat from "../../../../utils/dateFormat"
     export default {
         props: {
             eventDisplayType: {
@@ -83,6 +84,14 @@
             return {
                 top_recommend_image_01: '/images/top_recommend_image_01.jpg'
             }
+        },
+        methods: {
+            imageTitleFormatDate(date) {
+                return dateFormat.imageTitleFormatDate(date)
+            },
+            eventTimeFormatDate(date) {
+                return dateFormat.eventTimeFormatDate(date)
+            }
         }
     }
 </script>
@@ -111,9 +120,12 @@
                     z-index: 10;
                     text-align: right;
                     font-weight: bold;
-                    font-size: 36px;
+                    font-size: 24px;
                     letter-spacing: 5px;
                     color: white;
+                    @media screen and (min-width: 768px) {
+                        font-size: 36px;
+                    }
                 }
                 .container__category {
                     &--name {

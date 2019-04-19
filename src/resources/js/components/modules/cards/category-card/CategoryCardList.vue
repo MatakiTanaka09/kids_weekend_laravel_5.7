@@ -9,19 +9,18 @@
         </div>
         <div class="columns is-multiline">
             <category-card
+                class="mobile"
                 v-for="(n, index) in 6"
                 :key="n"
-                class="is-hidden-mobile"
                 :category-id="n"
                 :category-image-path="categoryImages[index]"
                 :category-name="categoryName[index]"
             ></category-card>
             <swiper
                 :options="swiperOption"
-                class="is-hidden-desktop">
+                class="tablet">
                 <swiper-slide v-for="(n, index) in 6" :key="n">
                     <category-card
-                        class="is-hidden-desktop"
                         :category-id="n"
                         :category-image-path="categoryImages[index]"
                         :category-name="categoryName[index]"
@@ -93,6 +92,15 @@
                 }
             }
         }
-
+        .mobile {
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
+        }
+        .tablet {
+            @media screen and (min-width: 768px) {
+                display: none;
+            }
+        }
     }
 </style>
