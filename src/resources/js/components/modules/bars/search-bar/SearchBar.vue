@@ -3,11 +3,12 @@
         <div class="searchbar__container__wrapper">
             <div class="searchbar__container__wrapper--buttons">
                 <calendar-button></calendar-button>
-                <!--<base-button-->
-                    <!--v-for="(n, index) in 5" :key="n"-->
-                    <!--class="is-hidden-mobile"-->
-                    <!--:button-name="buttonName[index]"-->
-                <!--&gt;</base-button>-->
+                <base-button
+                    :button-name="'カテゴリー'"
+                ></base-button>
+                <base-button
+                    :button-name="'年齢'"
+                ></base-button>
             </div>
         </div>
     </div>
@@ -28,12 +29,11 @@
                     spaceBetween: 0,
                 },
                 buttonName: [
-                    "カレンダー",
                     "今日・明日",
                     "場所",
                     "こどもの年齢",
                     "カテゴリー"
-                ]
+                ],
             }
         }
     }
@@ -54,6 +54,16 @@
                 display: flex;
                 align-items: center;
             }
+        }
+    }
+    .mobile {
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+    .tablet {
+        @media screen and (min-width: 768px) {
+            display: none;
         }
     }
 </style>

@@ -3,19 +3,29 @@ export default {
         return date.split(":").slice(null,-1).join(":")
     },
     eventTimeFormatDate: function(date) {
+        const day = (new Date(date)).getDay();
         let [dayTime, time] = date.toString().split(" ")
         dayTime = dayTime.split("-")
         time = time.split(":")
+        const dayNames = ['日', '月', '火', '水', '木', '金', '土'];
         const [year, started_at] = [
-            dayTime[0] + "年" + dayTime[1] + "月" + dayTime[2] + "日",
-            time[0] + "時" + time[1] + "分"
+            dayTime[1] + "月" + dayTime[2] + "日",
+            "(" + dayNames[day] + ")"
         ]
         return [year, started_at].join(" ")
     },
-    customformat(value){
-        const year = value.getFullYear()
-        const month = value.getMonth() + 1
-        const date = value.getDate()
-        return year + "年" + month + "月" + date + "日"
+    customFormat(date){
+        let d = date;
+        const year = d.getFullYear()
+        const month = d.getMonth() + 1
+        const day = d.getDate()
+        return d = year + "年" + month + "月" + day + "日"
+    },
+    searchDateCalendar(date) {
+        let d = date;
+        const year  = d.getFullYear();
+        const month = d.getMonth() + 1;
+        const day   = d.getDate();
+        return d = year + '-' + month + '-' + day
     }
 }

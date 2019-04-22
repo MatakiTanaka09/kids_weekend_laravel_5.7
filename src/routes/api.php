@@ -36,7 +36,8 @@ Route::group(["prefix" => "v1", "middleware" => "api"], function () {
     Route::delete("events/{EVENT_ID}", "EventController@destroy");
     Route::get("events/search/top/{limit}", "SearchController@searchTop");
     Route::get("events/search/eventList", "SearchController@searchEventList");
-    Route::get("events/search/eventDetail/", "SearchController@searchEventDetail");
+    Route::post("events/search/calendar", "SearchController@searchEventForCalendar");
+    Route::get("events/search/eventDetail", "SearchController@searchEventDetail");
 //    Route::get("/events/search/eventDetail", "SearchController@searchEventDetail");
 
     Route::group(["middleware" => ["jwt.auth"]], function () {

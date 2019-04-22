@@ -7,6 +7,7 @@ import Register from '../pages/users/auth/Register';
 import RegisterConfirmation from '../pages/users/auth/RegisterConfirmation';
 import RegisterConfirmed from '../pages/users/auth/RegisterConfirmed';
 import Events from '../pages/users/events/Events';
+import EventSearchResult from '../pages/users/events/EventsSearchResult';
 import EventIndividual from '../pages/users/events/EventLogic';
 import UserHome from '../pages/users/users/UserHome';
 import ReserveIndex from '../pages/users/users/ReserveIndex';
@@ -50,6 +51,11 @@ const routes = [
         path: '/events',
         name: 'events',
         component: Events
+    },
+    {
+        path: '/events/search/result',
+        name: 'eventSearchResult',
+        component: EventSearchResult
     },
     {
         path:'/events/:id',

@@ -11,7 +11,7 @@
                     <div class="dropdown-content">
                         <div class="main__container">
                             <div class="header__container">
-                                検索日：{{ customformat(defaultDate) }}
+                                検索日：{{ customFormat }}
                             </div>
                             <div class="main__container--date">
                                 <datepicker
@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="search__button">
                                     <strong>
-                                        <a class="button">検索</a>
+                                        <a class="button" @click="clickSearchButton">検索</a>
                                     </strong>
                                 </div>
                             </div>
@@ -46,6 +46,8 @@
     import Datepicker from 'vuejs-datepicker'
     import { ja } from 'vuejs-datepicker/dist/locale'
     import dateFormat from '../../../utils/dateFormat'
+    import http from '../../../services/http'
+    import { mapActions } from 'vuex'
     export default {
         name: "BaseDropdown",
         components: {
@@ -64,15 +66,34 @@
                 defaultDate: new Date(),
                 disabledDates: {
                     to: new Date(Date.now() - 8640000)
-                }
+                },
+                selectDate: ''
             }
         },
         methods: {
+            ...mapActions({
+                searchCalendar: 'events/fetchSearchEventForCalendar'
+            }),
             activeDropdown() {
                 this.showDropdown = !this.showDropdown
             },
-            customformat(value){
-                return dateFormat.customformat(value)
+            async clickSearchButton() {
+                /*
+                 * return @params String
+                 * ex:) return 2019-04-19
+                 */
+                this.selectDate = dateFormat.searchDateCalendar(this.defaultDate)
+                const searchData = {
+                    "started_at": this.selectDate
+                }
+                this.searchCalendar(searchData)
+                await this.activeDropdown()
+                this.$router.push('/events/search/result');
+            }
+        },
+        computed: {
+            customFormat(){
+                return dateFormat.customFormat(this.defaultDate)
             }
         }
     }
