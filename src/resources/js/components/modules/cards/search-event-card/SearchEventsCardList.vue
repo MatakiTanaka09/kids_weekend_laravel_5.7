@@ -2,55 +2,47 @@
     <div class="recommends__container">
         <div class="recommends__container__wrapper">
             <h1 class="recommends__container__wrapper--title">{{ recommendsTitle }}</h1>
-            <div class="recommends__container__wrapper--more_button mobile">
-                <span><i class="fas fa-angle-right"></i></span>
-                <a>もっとみる</a>
-            </div>
         </div>
         <div class="columns is-multiline">
             <recommends-events-card
                 class="mobile"
-                v-for="n in cardDisplayNumber" :key="n"
-                :event-display-type="cardDisplayType"
-                :event-id=n
-                :event-image-path="eventImagePath[n % 3]"
-                :event-time="eventTime"
-                :event-category="eventCategory"
-                :event-title="eventTitle"
-                :event-date-time="eventDateTime"
-                :event-price="eventPrice"
+                v-for="(data,index) in events" :key="data.uuid"
+                :event-id="data.uuid"
+                :event-image-path="eventImagePath[index % 3]"
+                :event-time="data.time"
+                :event-category="data.category_event.category.name"
+                :event-title="data.activity.name"
+                :event-date-time="data.started_at"
+                :event-price="data.price"
                 :event-place="eventPlace"
-                :event-min-age="eventMinAge"
+                :event-min-age="data.target_min_age"
             ></recommends-events-card>
             <swiper
                 :options="swiperOption"
                 class="tablet">
-                <swiper-slide v-for="n in cardDisplayNumber" :key="n">
+                <swiper-slide v-for="(data,index) in events" :key="data.uuid">
                     <recommends-events-card
-                        :event-id=n
-                        :event-image-path="eventImagePath[n % 3]"
-                        :event-time="eventTime"
-                        :event-category="eventCategory"
-                        :event-title="eventTitle"
-                        :event-date-time="eventDateTime"
-                        :event-price="eventPrice"
+                        :event-id="data.uuid"
+                        :event-image-path="eventImagePath[index % 3]"
+                        :event-time="data.time"
+                        :event-category="data.category_event.category.name"
+                        :event-title="data.activity.name"
+                        :event-date-time="data.started_at"
+                        :event-price="data.price"
                         :event-place="eventPlace"
-                        :event-min-age="eventMinAge"
+                        :event-min-age="data.target_min_age"
                     ></recommends-events-card>
                 </swiper-slide>
+                <div class="swiper-pagination" slot="pagination"></div>
             </swiper>
-        </div>
-        <div class="recommends__container--more_button tablet">
-            <span><i class="fas fa-angle-right"></i></span>
-            <a>もっとみる</a>
         </div>
     </div>
 </template>
 
 <script>
-    import RecommendsEventsCard from './RecommendsEventsCard';
-    import { mapActions } from 'vuex'
-
+    import RecommendsEventsCard from './SearchEventsCard';
+    // import { mapActions, mapGetters } from 'vuex'
+    import http from '@/services/http';
     export default {
         components: {
             RecommendsEventsCard
@@ -62,10 +54,10 @@
                     '/images/top_recommend_image_02.jpg',
                     '/images/top_recommend_image_03.jpg',
                 ],
-                eventTime: '10:00:00',
+                eventTime: '10:00',
                 eventCategory: 'language',
                 eventTitle: 'プログラミングであそぼう',
-                eventDateTime: '2019-04-16 10:00:00',
+                eventDateTime: '2/15',
                 eventPrice: '3,000',
                 eventPlace: '豊洲',
                 eventMinAge: '3',
@@ -77,30 +69,13 @@
         },
         props: {
             events: {
-                type: Array,
+                type: [Array, Object],
                 default: () => []
-            },
-            recommendsAge: {
-                type: Number
             },
             recommendsTitle: {
                 type: String
-            },
-            cardDisplayNumber: {
-                type: Number
-            },
-            cardDisplayType: {
-                type: String
-            },
-        },
-        // methods: {
-        //     ...mapActions({
-        //         topEvent: 'events/fetchSearchTopEvent'
-        //     }),
-        // },
-        // created() {
-        //     this.topEvent();
-        // }
+            }
+        }
     }
 </script>
 
@@ -132,7 +107,7 @@
             margin-bottom: 8px;
         }
         &--more_button {
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 767px) {
                 width: 100%;
                 text-align: center;
                 margin-top: 24px;

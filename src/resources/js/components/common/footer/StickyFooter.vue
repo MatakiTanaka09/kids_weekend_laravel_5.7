@@ -5,23 +5,23 @@
                 <div class="left__item__container">
                     <div class="left__item__container__wrapper is-hidden-mobile">
                         <div class="image-box">
-                            <figure class="image image-size">
-                                <progressive-img src="http://placehold.jp/48x48.png" />
-                            </figure>
+                            <div class="image image-size" style="width:48px; height:48px">
+                                <img :src="logo" />
+                            </div>
                         </div>
                         <div class="content">
                             <div class="school-name">
                                 <span>{{ schoolName }}</span>
                             </div>
-                            <!--<div>-->
-                                <!--<div class="review">-->
-                                <!--</div>-->
-                                <!--<div class="review-link">-->
-                                    <!--<span class="">-->
-                                        <!--<a>OO件のレビュー</a>-->
-                                    <!--</span>-->
-                                <!--</div>-->
-                            <!--</div>-->
+                            <div>
+                                <div class="review">
+                                </div>
+                                <div class="review-link">
+                                    <span class="">
+                                        <a>100件のレビュー</a>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -50,6 +50,11 @@
 <script>
     import { mapGetters } from 'vuex';
     export default {
+        data() {
+            return {
+                'logo': '/images/sp.png',
+            }
+        },
         props: {
             schoolName: {
                 type: String
@@ -94,6 +99,9 @@
                     &__wrapper {
                         display: flex;
                         height: 50px;
+                        .image-box {
+                            margin-right: 8px;
+                        }
                         .content {
                             width: 100%;
                         }

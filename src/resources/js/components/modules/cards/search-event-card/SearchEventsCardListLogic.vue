@@ -1,13 +1,13 @@
 <template>
     <recommends-events-card-list-render
         :events="events"
+        :recommends-title="'4月23日のアクティビティ'"
     ></recommends-events-card-list-render>
 </template>
 
 <script>
-    import RecommendsEventsCardListRender from "./RecommendsEventsCardList";
+    import RecommendsEventsCardListRender from "./SearchEventsCardList";
     import http from "@/services/http";
-    // import { mapActions } from 'vuex'
     export default {
         components: {
             RecommendsEventsCardListRender
@@ -18,9 +18,6 @@
             }
         },
         methods: {
-            // ...mapActions({
-            //     topEvent: 'event/fetchTopEvent'
-            // }),
             fetchTopEvent() {
                 const payload = {
                     started_at: '2019-04-23'

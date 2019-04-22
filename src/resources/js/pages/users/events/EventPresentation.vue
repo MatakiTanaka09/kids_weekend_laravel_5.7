@@ -45,7 +45,7 @@
                                             <i class="fas fa-weight-hanging"></i>
                                         </div>
                                         <div>
-                                            <p class="">スナック、ドリンク、用具</p>
+                                            <p class="">ノートパソコン、iPadなどの通信機器</p>
                                         </div>
                                     </div>
                                     <div class="icon_group--item">
@@ -78,9 +78,9 @@
                                     </div>
                                     <div class="school_detail--right_part">
                                         <div class="image_box">
-                                            <figure class="image">
-                                                <progressive-img src="http://placehold.jp/48x48.png" />
-                                            </figure>
+                                            <div class="image" style="width:48px; height:48px">
+                                                <img src="/images/sp.png"/>
+                                            </div>
                                         </div>
                                         <div class="school_info">
                                             <p class="heading heading--school">{{ school.name }}</p>
@@ -107,7 +107,7 @@
                                         <div class="about">
                                             <p class="heading">持ち物</p>
                                             <p>
-                                                着物の下に着るためのTシャツなどの薄着をご用意ください。
+                                                簡単なアプリケーションを使ってプログラミングに必要な論理的思考を学びますので、ノートパソコン、iPadなどの通信機器をご用意いただく必要があります。
                                             </p>
                                         </div>
                                     </div>

@@ -1,17 +1,18 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import store from '../store';
-import Top from '../pages/general-users/common/TheTop';
-import Login from '../pages/general-users/auth/Login';
-import Register from '../pages/general-users/auth/Register';
-import RegisterConfirmation from '../pages/general-users/auth/RegisterConfirmation';
-import RegisterConfirmed from '../pages/general-users/auth/RegisterConfirmed';
-import Events from '../pages/general-users/events/Events';
-import EventIndividual from '../pages/general-users/events/EventLogic';
-import UserHome from '../pages/general-users/users/UserHome';
-import ReserveIndex from '../pages/general-users/users/ReserveIndex';
+import Top from '../pages/users/common/TheTop';
+import Login from '../pages/users/auth/Login';
+import Register from '../pages/users/auth/Register';
+import RegisterConfirmation from '../pages/users/auth/RegisterConfirmation';
+import RegisterConfirmed from '../pages/users/auth/RegisterConfirmed';
+import Events from '../pages/users/events/Events';
+import EventSearchResult from '../pages/users/events/EventsSearchResult';
+import EventIndividual from '../pages/users/events/EventLogic';
+import UserHome from '../pages/users/users/UserHome';
+import ReserveIndex from '../pages/users/users/ReserveIndex';
 import ManageTop from '../pages/systems/manage/top/ManageTop';
-import BookConfirm from '../pages/general-users/common/BookConfirm';
+import BookConfirm from '../pages/users/common/BookConfirm';
 
 import TopHeader from '../components/common/header/ManageTopHeader';
 
@@ -50,6 +51,11 @@ const routes = [
         path: '/events',
         name: 'events',
         component: Events
+    },
+    {
+        path: '/events/search/result',
+        name: 'eventSearchResult',
+        component: EventSearchResult
     },
     {
         path:'/events/:id',
