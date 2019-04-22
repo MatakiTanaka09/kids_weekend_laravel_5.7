@@ -3,7 +3,8 @@
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <router-link to="/" class="navbar-item">
-                    <span class="navbar__item--logo">kidsweekend</span>
+                    <img class="navbar__item--logo mobile" :src="logo_pc">
+                    <img class="navbar__item--logo tablet" :src="logo_sp">
                 </router-link>
                 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarHomeHeader"  @click="dropdownToggle">
                     <span aria-hidden="true"></span>
@@ -75,6 +76,8 @@
             return {
                 dropdownActive: false,
                 authLogoutModalActive: false,
+                logo_pc: '/images/pc.jpg',
+                logo_sp: '/images/sp.png',
             }
         },
         computed: {
@@ -116,8 +119,10 @@
         nav.navbar {
             max-width: 1088px;
             margin: 0 auto;
+            .navbar-brand, .navbar-burger {
+                height: 63px;
+            }
             .navbar__item--logo {
-                font-size: 27px;
                 letter-spacing: 5px;
                 color: #03A1EB;
             }
@@ -149,6 +154,16 @@
                     }
                 }
             }
+        }
+    }
+    .mobile {
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+    .tablet {
+        @media screen and (min-width: 768px) {
+            display: none;
         }
     }
 </style>

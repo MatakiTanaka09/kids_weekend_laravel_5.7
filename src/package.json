@@ -33,6 +33,7 @@
         "vuex-router-sync": "^5.0.0"
     },
     "dependencies": {
+        "vuejs-datepicker": "^1.5.4"
         "imagemin-pngquant": "^5.0.1",
         "pngquant-bin": "^3.1.1"
     }

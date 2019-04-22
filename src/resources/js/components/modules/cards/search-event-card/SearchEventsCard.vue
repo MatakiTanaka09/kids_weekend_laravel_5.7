@@ -53,7 +53,7 @@
                 default: 'is-one-quarter'
             },
             eventId: {
-                type: Number,
+                type: String,
             },
             eventImagePath: {
                 type: [String, Array]
@@ -71,7 +71,7 @@
                 type: String,
             },
             eventPrice: {
-                type: String,
+                type: Number,
             },
             eventPlace: {
                 type: String,

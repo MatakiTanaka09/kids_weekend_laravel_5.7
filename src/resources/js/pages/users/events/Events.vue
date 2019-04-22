@@ -7,14 +7,19 @@
             <search-bar></search-bar>
             <location-card-list></location-card-list>
             <recommends-events-card-list
-                :recommends-title="recommendsRecently"
-                :card-display-number="cardDisplayEight"
-            ></recommends-events-card-list>
-            <category-card-list></category-card-list>
-            <recommends-events-card-list
                 :recommends-title="recommendsZeroYearOldChild"
                 :card-display-number="cardDisplayFour"
             ></recommends-events-card-list>
+            <category-card-list></category-card-list>
+            <recommends-events-card-list
+                :recommends-title="recommendsRecently"
+                :card-display-number="cardDisplayEight"
+            ></recommends-events-card-list>
+            <!--<category-card-list></category-card-list>-->
+            <!--<recommends-events-card-list-->
+                <!--:recommends-title="recommendsZeroYearOldChild"-->
+                <!--:card-display-number="cardDisplayFour"-->
+            <!--&gt;</recommends-events-card-list>-->
             <recommends-events-card-list
                 :recommends-title="recommendsOneYearOldChild"
                 :card-display-number="cardDisplayFour"
