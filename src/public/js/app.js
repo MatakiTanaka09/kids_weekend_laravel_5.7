@@ -3751,6 +3751,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "UserReservedSideMenu"
@@ -33913,6 +33916,10 @@ var render = function() {
           "section",
           { staticClass: "section" },
           [
+            _c("search-bar"),
+            _vm._v(" "),
+            _c("location-card-list"),
+            _vm._v(" "),
             _c("recommends-events-card-list", {
               attrs: {
                 "recommends-title": _vm.recommendsRecently,
