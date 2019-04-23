@@ -8,7 +8,7 @@
               <p class="app_about_text">
                   <span>本日は、ジーズアカデミー東京LAB6期<br class="tablet">Global Geek Auditionへお越しいただきまして、<br class="tablet">ありがとうございます。</span><br class="tablet"><br class="tablet">
                   <span>アクティビティ参加型 親の時間づくりサービス<strong>Kidsweekend</strong>です。</span><br><br class="is-hidden-desktop">
-                  <span>現在5月上旬のサービスローンチに向け、ビジネス・開発せっせと準備中です。楽しみにお待ちいただけると幸いです。</span><br class="tablet"><br class="tablet">
+                  <span>現在5月上旬のサービスローンチに向け、ビジネス・開発せっせと準備中です(下にundifinedが...笑)。楽しみにお待ちいただけると幸いです。</span><br class="tablet"><br class="tablet">
                   <span>会場ではKidsweekend Tシャツを着ていますので、懇親会でのお声がけ・名刺交換等をよろしくお願いいたします！</span><br><br class="is-hidden-desktop">
                   <span></span>
               </p>

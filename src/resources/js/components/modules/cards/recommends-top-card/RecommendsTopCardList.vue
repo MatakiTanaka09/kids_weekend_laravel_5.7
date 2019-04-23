@@ -48,7 +48,7 @@
                     '/images/top_recommend_image_02.jpg',
                     '/images/top_recommend_image_03.jpg',
                 ],
-                eventTime: '10:00',
+                eventTime: '10:00:00',
                 eventCategory: 'language',
                 eventTitle: 'プログラミングであそぼう',
                 eventDateTime: '2/15',

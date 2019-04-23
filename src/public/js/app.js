@@ -2839,7 +2839,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             eventImagePath: ['/images/top_recommend_image_01.jpg', '/images/top_recommend_image_02.jpg', '/images/top_recommend_image_03.jpg'],
-            eventTime: '10:00',
+            eventTime: '10:00:00',
             eventCategory: 'language',
             eventTitle: 'プログラミングであそぼう',
             eventDateTime: '2/15',
@@ -38588,7 +38588,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("span", [
             _vm._v(
-              "現在5月上旬のサービスローンチに向け、ビジネス・開発せっせと準備中です。楽しみにお待ちいただけると幸いです。"
+              "現在5月上旬のサービスローンチに向け、ビジネス・開発せっせと準備中です(下にundifinedが...笑)。楽しみにお待ちいただけると幸いです。"
             )
           ]),
           _c("br", { staticClass: "tablet" }),
