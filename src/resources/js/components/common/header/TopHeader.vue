@@ -6,61 +6,61 @@
                     <img class="navbar__item--logo mobile" :src="logo_pc">
                     <img class="navbar__item--logo tablet" :src="logo_sp">
                 </router-link>
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarHomeHeader"  @click="dropdownToggle">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
+                <!--<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarHomeHeader"  @click="dropdownToggle">-->
+                    <!--<span aria-hidden="true"></span>-->
+                    <!--<span aria-hidden="true"></span>-->
+                    <!--<span aria-hidden="true"></span>-->
+                <!--</a>-->
             </div>
-            <div id="navbarHomeHeader" class="navbar-menu" :class="{'is-active': dropdownActive}">
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <div class="buttons" v-if="!isLoggedIn">
-                            <router-link to="/register" class="button buttons__btn--register">
-                                <strong>登録する</strong>
-                            </router-link>
-                            <router-link to="/login" class="button buttons__btn--login">
-                                ログインする
-                            </router-link>
-                        </div>
-                        <div class="after__login__buttons" v-else>
-                            <div class="after__login__buttons--button">
-                                <router-link to="/users/me/reserve" class="">
-                                    <span>予約</span>
-                                </router-link>
-                            </div>
+            <!--<div id="navbarHomeHeader" class="navbar-menu" :class="{'is-active': dropdownActive}">-->
+                <!--<div class="navbar-end">-->
+                    <!--<div class="navbar-item">-->
+                        <!--<div class="buttons" v-if="!isLoggedIn">-->
+                            <!--<router-link to="/register" class="button buttons__btn&#45;&#45;register">-->
+                                <!--<strong>登録する</strong>-->
+                            <!--</router-link>-->
+                            <!--<router-link to="/login" class="button buttons__btn&#45;&#45;login">-->
+                                <!--ログインする-->
+                            <!--</router-link>-->
+                        <!--</div>-->
+                        <!--<div class="after__login__buttons" v-else>-->
                             <!--<div class="after__login__buttons&#45;&#45;button">-->
-                                <!--<router-link to="/" class="">-->
-                                    <!--<span>プロフィール</span>-->
+                                <!--<router-link to="/users/me/reserve" class="">-->
+                                    <!--<span>予約</span>-->
                                 <!--</router-link>-->
                             <!--</div>-->
-                            <div class="after__login__buttons--button">
-                                <a class="" @click="showAuthLogoutModalToggle">
-                                    <span>サインアウト</span>
-                                </a>
-                            </div>
-                            <div class="after__login__buttons--button">
-                                <template v-if="!user.uuid">
-                                    <router-link to="/users/me" class="">
-                                        <span class="letter--modified">マイアカウント</span>
-                                    </router-link>
-                                </template>
-                                <template v-else>
-                                    <router-link :to="{ name : 'UsersInfo' }" class="">
-                                        <span class="letter--modified">マイアカウント</span>
-                                    </router-link>
-                                </template>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <auth-logout-modal
-                v-if="authLogoutModalActive"
-                :authLogoutModalActive="authLogoutModalActive"
-                @logout="handleLogout"
-                @close="showAuthLogoutModalToggle"
-            ></auth-logout-modal>
+                            <!--&lt;!&ndash;<div class="after__login__buttons&#45;&#45;button">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<router-link to="/" class="">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<span>プロフィール</span>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</router-link>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--<div class="after__login__buttons&#45;&#45;button">-->
+                                <!--<a class="" @click="showAuthLogoutModalToggle">-->
+                                    <!--<span>サインアウト</span>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                            <!--<div class="after__login__buttons&#45;&#45;button">-->
+                                <!--<template v-if="!user.uuid">-->
+                                    <!--<router-link to="/users/me" class="">-->
+                                        <!--<span class="letter&#45;&#45;modified">マイアカウント</span>-->
+                                    <!--</router-link>-->
+                                <!--</template>-->
+                                <!--<template v-else>-->
+                                    <!--<router-link :to="{ name : 'UsersInfo' }" class="">-->
+                                        <!--<span class="letter&#45;&#45;modified">マイアカウント</span>-->
+                                    <!--</router-link>-->
+                                <!--</template>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<auth-logout-modal-->
+                <!--v-if="authLogoutModalActive"-->
+                <!--:authLogoutModalActive="authLogoutModalActive"-->
+                <!--@logout="handleLogout"-->
+                <!--@close="showAuthLogoutModalToggle"-->
+            <!--&gt;</auth-logout-modal>-->
         </nav>
     </header>
 </template>

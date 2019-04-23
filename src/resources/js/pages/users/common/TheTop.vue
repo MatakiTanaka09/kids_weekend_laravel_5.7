@@ -1,5 +1,19 @@
 <template>
   <main>
+      <section class="section section__about demo">
+          <div class="has-text-centered">
+              <h2 class="heading">GGA特別サイト</h2>
+          </div>
+          <div class="app__about">
+              <p class="app_about_text">
+                  <span>本日は、ジーズアカデミー東京LAB6期<br class="tablet">Global Geek Auditionへお越しいただきまして、<br class="tablet">ありがとうございます。</span><br class="tablet"><br class="tablet">
+                  <span>アクティビティ参加型 親の時間づくりサービス<strong>Kidsweekend</strong>です。</span><br><br class="is-hidden-desktop">
+                  <span>現在5月上旬のサービスローンチに向け、ビジネス・開発せっせと準備中です。楽しみにお待ちいただけると幸いです。</span><br class="tablet"><br class="tablet">
+                  <span>会場ではKidsweekend Tシャツを着ていますので、懇親会でのお声がけ・名刺交換等をよろしくお願いいたします！</span><br><br class="is-hidden-desktop">
+                  <span></span>
+              </p>
+          </div>
+      </section>
       <section class="top">
           <div class="top-image" >
               <progressive-img src="./images/app_top_image.jpg" style="max-width: 100%" />
@@ -14,7 +28,7 @@
                   <div class="top__search--age_box">
                       こどもの年齢
                   </div>
-                  <router-link to="/" class="button button__top">
+                  <router-link to="/" class="button button__top" disabled>
                       <strong class="button_top_text_color">検索</strong>
                   </router-link>
               </div>
@@ -99,9 +113,9 @@
               <div class="app__activity">
                   <recommend-top-card-list></recommend-top-card-list>
                   <div class="more_button_container">
-                      <router-link to="/events" class="button button_category_display">
+                      <a class="button button_category_display" disabled>
                           <span>もっとみる</span>
-                      </router-link>
+                      </a>
                   </div>
               </div>
           </div>
@@ -139,6 +153,22 @@
 
 <style lang="scss" scoped>
     @import '../../../../sass/variables';
+    .mobile {
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+    .tablet {
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+    }
+    .demo {
+        margin-top: 18px;
+        @media screen and (max-width: 768px){
+            margin-top: 63px;
+        }
+    }
     .top {
         position: relative;
         /*text-align: center;*/

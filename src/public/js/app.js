@@ -5369,6 +5369,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -6864,7 +6878,7 @@ exports.push([module.i, "\n.columns.is-multiline[data-v-b9a2936e] {\n  margin: 0
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "\n.top[data-v-cc8e4c70] {\n  position: relative;\n  /*text-align: center;*/\n}\n@media screen and (max-width: 768px) {\n.top[data-v-cc8e4c70] {\n      margin-top: 63px;\n}\n}\n.top .top-image[data-v-cc8e4c70] {\n    width: 100%;\n    height: auto;\n    z-index: 99;\n    opacity: 1.5;\n}\n.top .top__content[data-v-cc8e4c70] {\n    font-weight: bold;\n    font-family: Quicksand, sans-serif;\n    z-index: 100;\n}\n.top .top__content .app__title[data-v-cc8e4c70] {\n      font-size: 40px;\n      font-weight: bold;\n}\n@media screen and (max-width: 768px) {\n.top .top__content .app__title[data-v-cc8e4c70] {\n          font-size: 23px;\n}\n}\n.top .top__content--detail[data-v-cc8e4c70] {\n      color: white;\n      font-size: 18px;\n      margin-bottom: 35px;\n}\n@media screen and (max-width: 768px) {\n.top .top__content--detail[data-v-cc8e4c70] {\n          margin-bottom: 12px;\n          font-size: 12px;\n}\n}\n.top .top__content .top__search[data-v-cc8e4c70] {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n}\n.top .top__content .top__search--calendar_box[data-v-cc8e4c70] {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        margin: 2px;\n        height: 53px;\n        width: 290px;\n        background-color: white;\n        color: #428fee;\n        font-size: 18px;\n}\n@media screen and (max-width: 768px) {\n.top .top__content .top__search--calendar_box[data-v-cc8e4c70] {\n            width: 100px;\n            height: 45px;\n            font-size: 8px;\n}\n}\n.top .top__content .top__search--age_box[data-v-cc8e4c70] {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        margin: 2px;\n        height: 53px;\n        width: 260px;\n        background-color: white;\n        color: #428fee;\n        font-size: 18px;\n}\n@media screen and (max-width: 768px) {\n.top .top__content .top__search--age_box[data-v-cc8e4c70] {\n            width: 100px;\n            height: 45px;\n            font-size: 8px;\n}\n}\n.top .top__content .top_content_title_color[data-v-cc8e4c70] {\n      color: white;\n}\n.top .top__content .button__top[data-v-cc8e4c70] {\n      margin: 2px;\n      width: 150px;\n      height: 53px;\n      background-color: #e27985;\n      border: 2px solid #e27985;\n}\n@media screen and (max-width: 768px) {\n.top .top__content .button__top[data-v-cc8e4c70] {\n          width: 75px;\n          height: 45px;\n          font-size: 12px;\n}\n}\n.top .top__content .button__top .button_top_text_color[data-v-cc8e4c70] {\n        color: white;\n}\n.content .app_plan_basic[data-v-cc8e4c70] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  color: #084887;\n  padding: 16px 0;\n  border-bottom: 1px solid #EBEBEB;\n}\n.content .app_plan_basic .app_plan_basic_icon[data-v-cc8e4c70] {\n    color: #03cea4;\n    margin-right: 16px;\n}\n.content .no-border-plan[data-v-cc8e4c70] {\n  border-bottom: none;\n}\n@media screen and (min-width: 1024px) {\n.section__about[data-v-cc8e4c70] {\n    margin: 0 auto;\n    max-width: 980px;\n}\n}\n.section__about .app__about[data-v-cc8e4c70] {\n  text-align: center;\n}\n.section__about .app__about .app_about_text[data-v-cc8e4c70] {\n    margin-bottom: 16px;\n    line-height: 32px;\n}\n@media screen and (max-width: 768px) {\n.section__about .app__about .app_about_text[data-v-cc8e4c70] {\n        font-size: 14px;\n}\n}\n.section__howtouse[data-v-cc8e4c70] {\n  position: relative;\n  background-color: #5ecdbd;\n  padding-bottom: 64px;\n  color: white;\n}\n@media screen and (min-width: 768px) {\n.section__howtouse_container .columns[data-v-cc8e4c70] {\n      margin: 0 auto;\n      max-width: 980px;\n      width: 100%;\n}\n.section__howtouse_container .columns .column.is-one-third[data-v-cc8e4c70] {\n        text-align: center;\n}\n.section__howtouse_container .columns .column.is-one-third .section__howtouse_container_boxes[data-v-cc8e4c70] {\n          text-align: center;\n}\n.section__howtouse_container .columns .column.is-one-third .section__howtouse_container_boxes .section__howtouse_container--image[data-v-cc8e4c70] {\n            border-radius: 8px;\n}\n.section__howtouse_container .columns .column.is-one-third .section__howtouse_container_boxes .section__howtouse_container--title[data-v-cc8e4c70] {\n            font-weight: bold;\n            font-size: 24px;\n            margin-bottom: 8px;\n}\n.section__howtouse_container .columns .column.is-one-third .section__howtouse_container_boxes .section__howtouse_container--description[data-v-cc8e4c70] {\n            font-size: 12px;\n}\n}\n@media screen and (max-width: 768px) {\n.section__howtouse_container .columns .column.is-one-third[data-v-cc8e4c70] {\n      text-align: center;\n      margin-bottom: 24px;\n}\n.section__howtouse_container .columns .column.is-one-third .section__howtouse_container_boxes[data-v-cc8e4c70] {\n        text-align: center;\n}\n.section__howtouse_container .columns .column.is-one-third .section__howtouse_container--title[data-v-cc8e4c70] {\n        font-weight: bold;\n        font-size: 24px;\n        margin-bottom: 8px;\n}\n.section__howtouse_container .columns .column.is-one-third .section__howtouse_container--description[data-v-cc8e4c70] {\n        font-size: 16px;\n}\n}\n.section__howtouse .howtouse__bottom_design[data-v-cc8e4c70] {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    width: 100%;\n    padding-bottom: 24px;\n    background-color: #428fee;\n}\n@media screen and (min-width: 1024px) {\n.section__map[data-v-cc8e4c70] {\n    margin: 0 auto;\n    max-width: 980px;\n}\n}\n.section__activity[data-v-cc8e4c70] {\n  margin: auto 0;\n}\n@media screen and (min-width: 1024px) {\n.section__activity[data-v-cc8e4c70] {\n      margin: 0 auto;\n      max-width: 980px;\n}\n}\n.section__activity .app__activity[data-v-cc8e4c70] {\n    text-align: center;\n}\n@media screen and (min-width: 1024px) {\n.section__activity .app__activity[data-v-cc8e4c70] {\n        max-width: 980px;\n}\n}\n.section__activity .app__activity .column.is-one-third[data-v-cc8e4c70] {\n      text-align: center;\n}\n.section__activity .app__activity .column.is-one-third .activity__container[data-v-cc8e4c70] {\n        text-align: left;\n        width: 100%;\n        color: #7a7a7a;\n        font-size: 12px;\n}\n.section__activity .app__activity .column.is-one-third .activity__container .activity_container_images[data-v-cc8e4c70] {\n          position: relative;\n          text-align: center;\n}\n.section__activity .app__activity .column.is-one-third .activity__container .activity_container_images--image[data-v-cc8e4c70] {\n            border-radius: 8px;\n}\n.section__activity .app__activity .column.is-one-third .activity__container .activity_container_images--title[data-v-cc8e4c70] {\n            position: absolute;\n            bottom: 48px;\n            right: 24px;\n            left: 0px;\n            z-index: 10;\n            text-align: right;\n            font-weight: bold;\n            font-size: 36px;\n            letter-spacing: 5px;\n            color: white;\n}\n.section__activity .app__activity .column.is-one-third .activity__container .activity_container_category_name[data-v-cc8e4c70] {\n          color: #5ecdbd;\n}\n.section__activity .app__activity .column.is-one-third .activity__container .activity_container_title--detail[data-v-cc8e4c70] {\n          font-weight: bold;\n          font-size: 18px;\n}\n.section__activity .app__activity .more_button_container .button_category_display[data-v-cc8e4c70] {\n      width: 720px;\n      height: 50px;\n      text-align: center;\n      margin-top: 24px;\n      padding: 8px;\n      color: white;\n      background-color: #5ecdbd;\n      border: 2px solid #5ecdbd;\n      border-radius: 4px;\n      font-weight: bold;\n}\n@media screen and (max-width: 768px) {\n.section__activity .app__activity .more_button_container .button_category_display[data-v-cc8e4c70] {\n          width: 100%;\n}\n}\n.section__activity .app__activity .more_button_container .button_category_display[data-v-cc8e4c70]:hover {\n        opacity: 0.7;\n}\n.end[data-v-cc8e4c70] {\n  position: relative;\n  text-align: center;\n}\n.end .end-image[data-v-cc8e4c70] {\n    max-width: 100%;\n    z-index: 99;\n}\n.end .end__content[data-v-cc8e4c70] {\n    padding: 24px;\n    font-weight: bold;\n    font-family: Quicksand, sans-serif;\n    z-index: 100;\n    width: 100%;\n}\n@media screen and (max-width: 768px) {\n.end .end__content[data-v-cc8e4c70] {\n        padding: 0px;\n}\n}\n.end .end__content .app__title[data-v-cc8e4c70] {\n      font-size: 40px;\n      margin-bottom: 8px;\n}\n@media screen and (max-width: 768px) {\n.end .end__content .app__title[data-v-cc8e4c70] {\n          font-size: 23px;\n}\n}\n.end .end__content--title_color[data-v-cc8e4c70] {\n      color: white;\n      font-weight: bold;\n}\n.end .end__content--detail[data-v-cc8e4c70] {\n      color: white;\n      font-size: 18px;\n      margin-bottom: 35px;\n}\n@media screen and (max-width: 768px) {\n.end .end__content--detail[data-v-cc8e4c70] {\n          margin-bottom: 12px;\n          font-size: 12px;\n}\n}\n.end .end__content .button__end[data-v-cc8e4c70] {\n      width: 350px;\n      height: 50px;\n      background-color: #e27985;\n      border: 2px solid #e27985;\n}\n@media screen and (max-width: 768px) {\n.end .end__content .button__end[data-v-cc8e4c70] {\n          width: 80%;\n          height: 30px;\n          font-size: 12px;\n}\n}\n.end .end__content .button__end .button_end_text_color[data-v-cc8e4c70] {\n        color: white;\n}\n@media screen and (min-width: 1024px) {\n.section[data-v-cc8e4c70] {\n    margin: 0 auto;\n}\n}\n.heading[data-v-cc8e4c70] {\n  position: relative;\n  display: inline-block;\n  margin: 30px 0 45px;\n  padding-bottom: 15px;\n  letter-spacing: 5px;\n  font-size: 36px;\n  color: #1f4fb5;\n  font-weight: bolder;\n}\n.heading[data-v-cc8e4c70]::before {\n    width: 50%;\n    content: '';\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    left: 25%;\n    border-bottom: 2px solid #1f4fb5;\n}\n@media screen and (max-width: 768px) {\n.heading[data-v-cc8e4c70] {\n      font-size: 20px;\n}\n}\n.content_all_center[data-v-cc8e4c70] {\n  position: absolute;\n  text-align: center;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%);\n  margin: 0;\n  padding: 0;\n}\n", ""]);
+exports.push([module.i, "\n@media screen and (max-width: 768px) {\n.mobile[data-v-cc8e4c70] {\n    display: none;\n}\n}\n@media screen and (min-width: 768px) {\n.tablet[data-v-cc8e4c70] {\n    display: none;\n}\n}\n.demo[data-v-cc8e4c70] {\n  margin-top: 18px;\n}\n@media screen and (max-width: 768px) {\n.demo[data-v-cc8e4c70] {\n      margin-top: 63px;\n}\n}\n.top[data-v-cc8e4c70] {\n  position: relative;\n  /*text-align: center;*/\n}\n@media screen and (max-width: 768px) {\n.top[data-v-cc8e4c70] {\n      margin-top: 63px;\n}\n}\n.top .top-image[data-v-cc8e4c70] {\n    width: 100%;\n    height: auto;\n    z-index: 99;\n    opacity: 1.5;\n}\n.top .top__content[data-v-cc8e4c70] {\n    font-weight: bold;\n    font-family: Quicksand, sans-serif;\n    z-index: 100;\n}\n.top .top__content .app__title[data-v-cc8e4c70] {\n      font-size: 40px;\n      font-weight: bold;\n}\n@media screen and (max-width: 768px) {\n.top .top__content .app__title[data-v-cc8e4c70] {\n          font-size: 23px;\n}\n}\n.top .top__content--detail[data-v-cc8e4c70] {\n      color: white;\n      font-size: 18px;\n      margin-bottom: 35px;\n}\n@media screen and (max-width: 768px) {\n.top .top__content--detail[data-v-cc8e4c70] {\n          margin-bottom: 12px;\n          font-size: 12px;\n}\n}\n.top .top__content .top__search[data-v-cc8e4c70] {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n}\n.top .top__content .top__search--calendar_box[data-v-cc8e4c70] {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        margin: 2px;\n        height: 53px;\n        width: 290px;\n        background-color: white;\n        color: #428fee;\n        font-size: 18px;\n}\n@media screen and (max-width: 768px) {\n.top .top__content .top__search--calendar_box[data-v-cc8e4c70] {\n            width: 100px;\n            height: 45px;\n            font-size: 8px;\n}\n}\n.top .top__content .top__search--age_box[data-v-cc8e4c70] {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center;\n        margin: 2px;\n        height: 53px;\n        width: 260px;\n        background-color: white;\n        color: #428fee;\n        font-size: 18px;\n}\n@media screen and (max-width: 768px) {\n.top .top__content .top__search--age_box[data-v-cc8e4c70] {\n            width: 100px;\n            height: 45px;\n            font-size: 8px;\n}\n}\n.top .top__content .top_content_title_color[data-v-cc8e4c70] {\n      color: white;\n}\n.top .top__content .button__top[data-v-cc8e4c70] {\n      margin: 2px;\n      width: 150px;\n      height: 53px;\n      background-color: #e27985;\n      border: 2px solid #e27985;\n}\n@media screen and (max-width: 768px) {\n.top .top__content .button__top[data-v-cc8e4c70] {\n          width: 75px;\n          height: 45px;\n          font-size: 12px;\n}\n}\n.top .top__content .button__top .button_top_text_color[data-v-cc8e4c70] {\n        color: white;\n}\n.content .app_plan_basic[data-v-cc8e4c70] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  color: #084887;\n  padding: 16px 0;\n  border-bottom: 1px solid #EBEBEB;\n}\n.content .app_plan_basic .app_plan_basic_icon[data-v-cc8e4c70] {\n    color: #03cea4;\n    margin-right: 16px;\n}\n.content .no-border-plan[data-v-cc8e4c70] {\n  border-bottom: none;\n}\n@media screen and (min-width: 1024px) {\n.section__about[data-v-cc8e4c70] {\n    margin: 0 auto;\n    max-width: 980px;\n}\n}\n.section__about .app__about[data-v-cc8e4c70] {\n  text-align: center;\n}\n.section__about .app__about .app_about_text[data-v-cc8e4c70] {\n    margin-bottom: 16px;\n    line-height: 32px;\n}\n@media screen and (max-width: 768px) {\n.section__about .app__about .app_about_text[data-v-cc8e4c70] {\n        font-size: 14px;\n}\n}\n.section__howtouse[data-v-cc8e4c70] {\n  position: relative;\n  background-color: #5ecdbd;\n  padding-bottom: 64px;\n  color: white;\n}\n@media screen and (min-width: 768px) {\n.section__howtouse_container .columns[data-v-cc8e4c70] {\n      margin: 0 auto;\n      max-width: 980px;\n      width: 100%;\n}\n.section__howtouse_container .columns .column.is-one-third[data-v-cc8e4c70] {\n        text-align: center;\n}\n.section__howtouse_container .columns .column.is-one-third .section__howtouse_container_boxes[data-v-cc8e4c70] {\n          text-align: center;\n}\n.section__howtouse_container .columns .column.is-one-third .section__howtouse_container_boxes .section__howtouse_container--image[data-v-cc8e4c70] {\n            border-radius: 8px;\n}\n.section__howtouse_container .columns .column.is-one-third .section__howtouse_container_boxes .section__howtouse_container--title[data-v-cc8e4c70] {\n            font-weight: bold;\n            font-size: 24px;\n            margin-bottom: 8px;\n}\n.section__howtouse_container .columns .column.is-one-third .section__howtouse_container_boxes .section__howtouse_container--description[data-v-cc8e4c70] {\n            font-size: 12px;\n}\n}\n@media screen and (max-width: 768px) {\n.section__howtouse_container .columns .column.is-one-third[data-v-cc8e4c70] {\n      text-align: center;\n      margin-bottom: 24px;\n}\n.section__howtouse_container .columns .column.is-one-third .section__howtouse_container_boxes[data-v-cc8e4c70] {\n        text-align: center;\n}\n.section__howtouse_container .columns .column.is-one-third .section__howtouse_container--title[data-v-cc8e4c70] {\n        font-weight: bold;\n        font-size: 24px;\n        margin-bottom: 8px;\n}\n.section__howtouse_container .columns .column.is-one-third .section__howtouse_container--description[data-v-cc8e4c70] {\n        font-size: 16px;\n}\n}\n.section__howtouse .howtouse__bottom_design[data-v-cc8e4c70] {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    width: 100%;\n    padding-bottom: 24px;\n    background-color: #428fee;\n}\n@media screen and (min-width: 1024px) {\n.section__map[data-v-cc8e4c70] {\n    margin: 0 auto;\n    max-width: 980px;\n}\n}\n.section__activity[data-v-cc8e4c70] {\n  margin: auto 0;\n}\n@media screen and (min-width: 1024px) {\n.section__activity[data-v-cc8e4c70] {\n      margin: 0 auto;\n      max-width: 980px;\n}\n}\n.section__activity .app__activity[data-v-cc8e4c70] {\n    text-align: center;\n}\n@media screen and (min-width: 1024px) {\n.section__activity .app__activity[data-v-cc8e4c70] {\n        max-width: 980px;\n}\n}\n.section__activity .app__activity .column.is-one-third[data-v-cc8e4c70] {\n      text-align: center;\n}\n.section__activity .app__activity .column.is-one-third .activity__container[data-v-cc8e4c70] {\n        text-align: left;\n        width: 100%;\n        color: #7a7a7a;\n        font-size: 12px;\n}\n.section__activity .app__activity .column.is-one-third .activity__container .activity_container_images[data-v-cc8e4c70] {\n          position: relative;\n          text-align: center;\n}\n.section__activity .app__activity .column.is-one-third .activity__container .activity_container_images--image[data-v-cc8e4c70] {\n            border-radius: 8px;\n}\n.section__activity .app__activity .column.is-one-third .activity__container .activity_container_images--title[data-v-cc8e4c70] {\n            position: absolute;\n            bottom: 48px;\n            right: 24px;\n            left: 0px;\n            z-index: 10;\n            text-align: right;\n            font-weight: bold;\n            font-size: 36px;\n            letter-spacing: 5px;\n            color: white;\n}\n.section__activity .app__activity .column.is-one-third .activity__container .activity_container_category_name[data-v-cc8e4c70] {\n          color: #5ecdbd;\n}\n.section__activity .app__activity .column.is-one-third .activity__container .activity_container_title--detail[data-v-cc8e4c70] {\n          font-weight: bold;\n          font-size: 18px;\n}\n.section__activity .app__activity .more_button_container .button_category_display[data-v-cc8e4c70] {\n      width: 720px;\n      height: 50px;\n      text-align: center;\n      margin-top: 24px;\n      padding: 8px;\n      color: white;\n      background-color: #5ecdbd;\n      border: 2px solid #5ecdbd;\n      border-radius: 4px;\n      font-weight: bold;\n}\n@media screen and (max-width: 768px) {\n.section__activity .app__activity .more_button_container .button_category_display[data-v-cc8e4c70] {\n          width: 100%;\n}\n}\n.section__activity .app__activity .more_button_container .button_category_display[data-v-cc8e4c70]:hover {\n        opacity: 0.7;\n}\n.end[data-v-cc8e4c70] {\n  position: relative;\n  text-align: center;\n}\n.end .end-image[data-v-cc8e4c70] {\n    max-width: 100%;\n    z-index: 99;\n}\n.end .end__content[data-v-cc8e4c70] {\n    padding: 24px;\n    font-weight: bold;\n    font-family: Quicksand, sans-serif;\n    z-index: 100;\n    width: 100%;\n}\n@media screen and (max-width: 768px) {\n.end .end__content[data-v-cc8e4c70] {\n        padding: 0px;\n}\n}\n.end .end__content .app__title[data-v-cc8e4c70] {\n      font-size: 40px;\n      margin-bottom: 8px;\n}\n@media screen and (max-width: 768px) {\n.end .end__content .app__title[data-v-cc8e4c70] {\n          font-size: 23px;\n}\n}\n.end .end__content--title_color[data-v-cc8e4c70] {\n      color: white;\n      font-weight: bold;\n}\n.end .end__content--detail[data-v-cc8e4c70] {\n      color: white;\n      font-size: 18px;\n      margin-bottom: 35px;\n}\n@media screen and (max-width: 768px) {\n.end .end__content--detail[data-v-cc8e4c70] {\n          margin-bottom: 12px;\n          font-size: 12px;\n}\n}\n.end .end__content .button__end[data-v-cc8e4c70] {\n      width: 350px;\n      height: 50px;\n      background-color: #e27985;\n      border: 2px solid #e27985;\n}\n@media screen and (max-width: 768px) {\n.end .end__content .button__end[data-v-cc8e4c70] {\n          width: 80%;\n          height: 30px;\n          font-size: 12px;\n}\n}\n.end .end__content .button__end .button_end_text_color[data-v-cc8e4c70] {\n        color: white;\n}\n@media screen and (min-width: 1024px) {\n.section[data-v-cc8e4c70] {\n    margin: 0 auto;\n}\n}\n.heading[data-v-cc8e4c70] {\n  position: relative;\n  display: inline-block;\n  margin: 30px 0 45px;\n  padding-bottom: 15px;\n  letter-spacing: 5px;\n  font-size: 36px;\n  color: #1f4fb5;\n  font-weight: bolder;\n}\n.heading[data-v-cc8e4c70]::before {\n    width: 50%;\n    content: '';\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    left: 25%;\n    border-bottom: 2px solid #1f4fb5;\n}\n@media screen and (max-width: 768px) {\n.heading[data-v-cc8e4c70] {\n      font-size: 20px;\n}\n}\n.content_all_center[data-v-cc8e4c70] {\n  position: absolute;\n  text-align: center;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%);\n  margin: 0;\n  padding: 0;\n}\n", ""]);
 
 
 
@@ -34031,117 +34045,122 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "column is-one-third" },
-    [
+  return _c("div", { staticClass: "column is-one-third" }, [
+    _c("a", { staticClass: "activity__container", attrs: { disabled: "" } }, [
       _c(
-        "router-link",
-        {
-          staticClass: "activity__container",
-          attrs: {
-            to: { name: "eventIndividual", params: { id: _vm.eventId } }
-          }
-        },
+        "div",
+        { staticClass: "activity__container__images" },
         [
-          _c(
-            "div",
-            { staticClass: "activity__container__images" },
-            [
-              _c("progressive-img", {
-                staticClass: "activity__container__images--image",
-                attrs: { src: _vm.eventImagePath }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "activity__container__images--title" }, [
-                _vm._v(
-                  "\n                " +
-                    _vm._s(_vm.imageTitleFormatDate(_vm.eventTime)) +
-                    "\n            "
-                )
-              ])
-            ],
-            1
-          ),
+          _c("progressive-img", {
+            staticClass: "activity__container__images--image",
+            attrs: { src: _vm.eventImagePath }
+          }),
           _vm._v(" "),
-          _c("div", { staticClass: "container__category" }, [
-            _c(
-              "div",
-              {
-                staticClass: "container__category--name",
-                staticStyle: { color: "lightgreen" }
-              },
-              [
-                _c("p", [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(_vm.eventCategory) +
-                      "\n                "
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "container__category--title" }, [
-              _c(
-                "p",
-                {
-                  staticClass: "container__category--title_detail",
-                  staticStyle: { "font-weight": "bold", "font-size": "16px" }
-                },
-                [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(_vm.eventTitle) +
-                      "\n                "
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "container__category--time_place" }, [
-              _c("p", [
-                _c("span", [_c("i", { staticClass: "far fa-calendar-alt" })]),
-                _vm._v(" "),
-                _c("span", [
-                  _vm._v(_vm._s(_vm.eventTimeFormatDate(_vm.eventDateTime)))
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "activity_category--right_space" }),
-                _vm._v(" "),
-                _c("i", { staticClass: "fas fa-thumbtack" }),
-                _vm._v(" "),
-                _c("span", [_vm._v(_vm._s(_vm.eventPlace))])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "container__category--child_age" }, [
-              _c("p", [
-                _c("span", [_c("i", { staticClass: "fas fa-child" })]),
-                _vm._v(" "),
-                _c("span", [_vm._v(_vm._s(_vm.eventMinAge))]),
-                _vm._v(" "),
-                _c("span", [_vm._v("歳以上")]),
-                _vm._v(" "),
-                _c("span", { staticClass: "activity_category--right_space" }),
-                _vm._v(" "),
-                _c("span", [_c("i", { staticClass: "fas fa-yen-sign" })]),
-                _vm._v(" "),
-                _c("span", [_vm._v("一人あたり ")]),
-                _vm._v(" "),
-                _c("span", [_vm._v(_vm._s(_vm.eventPrice))]),
-                _vm._v(" "),
-                _c("span", [_vm._v("円")])
-              ])
-            ])
+          _c("p", { staticClass: "activity__container__images--title" }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.imageTitleFormatDate(_vm.eventTime)) +
+                "\n            "
+            )
           ])
-        ]
-      )
-    ],
-    1
-  )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "container__category" }, [
+        _c(
+          "div",
+          {
+            staticClass: "container__category--name",
+            staticStyle: { color: "lightgreen" }
+          },
+          [
+            _c("p", [
+              _vm._v(
+                "\n                    " +
+                  _vm._s(_vm.eventCategory) +
+                  "\n                "
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "container__category--title" }, [
+          _c(
+            "p",
+            {
+              staticClass: "container__category--title_detail",
+              staticStyle: { "font-weight": "bold", "font-size": "16px" }
+            },
+            [
+              _vm._v(
+                "\n                    " +
+                  _vm._s(_vm.eventTitle) +
+                  "\n                "
+              )
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "container__category--time_place" }, [
+          _c("p", [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("span", [
+              _vm._v(_vm._s(_vm.eventTimeFormatDate(_vm.eventDateTime)))
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "activity_category--right_space" }),
+            _vm._v(" "),
+            _c("i", { staticClass: "fas fa-thumbtack" }),
+            _vm._v(" "),
+            _c("span", [_vm._v(_vm._s(_vm.eventPlace))])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "container__category--child_age" }, [
+          _c("p", [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("span", [_vm._v(_vm._s(_vm.eventMinAge))]),
+            _vm._v(" "),
+            _c("span", [_vm._v("歳以上")]),
+            _vm._v(" "),
+            _c("span", { staticClass: "activity_category--right_space" }),
+            _vm._v(" "),
+            _vm._m(2),
+            _vm._v(" "),
+            _c("span", [_vm._v("一人あたり ")]),
+            _vm._v(" "),
+            _c("span", [_vm._v(_vm._s(_vm.eventPrice))]),
+            _vm._v(" "),
+            _c("span", [_vm._v("円")])
+          ])
+        ])
+      ])
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [_c("i", { staticClass: "far fa-calendar-alt" })])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [_c("i", { staticClass: "fas fa-child" })])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [_c("i", { staticClass: "fas fa-yen-sign" })])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -36383,148 +36402,11 @@ var render = function() {
                   attrs: { src: _vm.logo_sp }
                 })
               ]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "navbar-burger burger",
-                attrs: {
-                  role: "button",
-                  "aria-label": "menu",
-                  "aria-expanded": "false",
-                  "data-target": "navbarHomeHeader"
-                },
-                on: { click: _vm.dropdownToggle }
-              },
-              [
-                _c("span", { attrs: { "aria-hidden": "true" } }),
-                _vm._v(" "),
-                _c("span", { attrs: { "aria-hidden": "true" } }),
-                _vm._v(" "),
-                _c("span", { attrs: { "aria-hidden": "true" } })
-              ]
             )
           ],
           1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "navbar-menu",
-            class: { "is-active": _vm.dropdownActive },
-            attrs: { id: "navbarHomeHeader" }
-          },
-          [
-            _c("div", { staticClass: "navbar-end" }, [
-              _c("div", { staticClass: "navbar-item" }, [
-                !_vm.isLoggedIn
-                  ? _c(
-                      "div",
-                      { staticClass: "buttons" },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "button buttons__btn--register",
-                            attrs: { to: "/register" }
-                          },
-                          [_c("strong", [_vm._v("登録する")])]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "button buttons__btn--login",
-                            attrs: { to: "/login" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                            ログインする\n                        "
-                            )
-                          ]
-                        )
-                      ],
-                      1
-                    )
-                  : _c("div", { staticClass: "after__login__buttons" }, [
-                      _c(
-                        "div",
-                        { staticClass: "after__login__buttons--button" },
-                        [
-                          _c(
-                            "router-link",
-                            { attrs: { to: "/users/me/reserve" } },
-                            [_c("span", [_vm._v("予約")])]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "after__login__buttons--button" },
-                        [
-                          _c(
-                            "a",
-                            { on: { click: _vm.showAuthLogoutModalToggle } },
-                            [_c("span", [_vm._v("サインアウト")])]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "after__login__buttons--button" },
-                        [
-                          !_vm.user.uuid
-                            ? [
-                                _c(
-                                  "router-link",
-                                  { attrs: { to: "/users/me" } },
-                                  [
-                                    _c(
-                                      "span",
-                                      { staticClass: "letter--modified" },
-                                      [_vm._v("マイアカウント")]
-                                    )
-                                  ]
-                                )
-                              ]
-                            : [
-                                _c(
-                                  "router-link",
-                                  { attrs: { to: { name: "UsersInfo" } } },
-                                  [
-                                    _c(
-                                      "span",
-                                      { staticClass: "letter--modified" },
-                                      [_vm._v("マイアカウント")]
-                                    )
-                                  ]
-                                )
-                              ]
-                        ],
-                        2
-                      )
-                    ])
-              ])
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _vm.authLogoutModalActive
-          ? _c("auth-logout-modal", {
-              attrs: { authLogoutModalActive: _vm.authLogoutModalActive },
-              on: {
-                logout: _vm.handleLogout,
-                close: _vm.showAuthLogoutModalToggle
-              }
-            })
-          : _vm._e()
-      ],
-      1
+        )
+      ]
     )
   ])
 }
@@ -38496,6 +38378,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("main", [
+    _vm._m(0),
+    _vm._v(" "),
     _c("section", { staticClass: "top" }, [
       _c(
         "div",
@@ -38522,7 +38406,7 @@ var render = function() {
           "div",
           { staticClass: "top__search" },
           [
-            _vm._m(0),
+            _vm._m(1),
             _vm._v(" "),
             _c("div", { staticClass: "top__search--age_box" }, [
               _vm._v("\n                    こどもの年齢\n                ")
@@ -38530,7 +38414,10 @@ var render = function() {
             _vm._v(" "),
             _c(
               "router-link",
-              { staticClass: "button button__top", attrs: { to: "/" } },
+              {
+                staticClass: "button button__top",
+                attrs: { to: "/", disabled: "" }
+              },
               [
                 _c("strong", { staticClass: "button_top_text_color" }, [
                   _vm._v("検索")
@@ -38543,10 +38430,10 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(1),
+    _vm._m(2),
     _vm._v(" "),
     _c("section", { staticClass: "section section__howtouse" }, [
-      _vm._m(2),
+      _vm._m(3),
       _vm._v(" "),
       _c("div", { staticClass: "section__howtouse_container" }, [
         _c("div", { staticClass: "columns" }, [
@@ -38571,7 +38458,7 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _vm._m(3)
+                  _vm._m(4)
                 ],
                 1
               )
@@ -38599,7 +38486,7 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _vm._m(4)
+                  _vm._m(5)
                 ],
                 1
               )
@@ -38627,7 +38514,7 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _vm._m(5)
+                  _vm._m(6)
                 ],
                 1
               )
@@ -38641,30 +38528,12 @@ var render = function() {
     _vm._v(" "),
     _c("section", { staticClass: "section section__activity" }, [
       _c("div", { staticClass: "section_activity_container" }, [
-        _vm._m(6),
+        _vm._m(7),
         _vm._v(" "),
         _c(
           "div",
           { staticClass: "app__activity" },
-          [
-            _c("recommend-top-card-list"),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "more_button_container" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "button button_category_display",
-                    attrs: { to: "/events" }
-                  },
-                  [_c("span", [_vm._v("もっとみる")])]
-                )
-              ],
-              1
-            )
-          ],
+          [_c("recommend-top-card-list"), _vm._v(" "), _vm._m(8)],
           1
         )
       ])
@@ -38683,11 +38552,61 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _vm._m(7)
+      _vm._m(9)
     ])
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "section section__about demo" }, [
+      _c("div", { staticClass: "has-text-centered" }, [
+        _c("h2", { staticClass: "heading" }, [_vm._v("GGA特別サイト")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "app__about" }, [
+        _c("p", { staticClass: "app_about_text" }, [
+          _c("span", [
+            _vm._v("本日は、ジーズアカデミー東京LAB6期"),
+            _c("br", { staticClass: "tablet" }),
+            _vm._v("Global Geek Auditionへお越しいただきまして、"),
+            _c("br", { staticClass: "tablet" }),
+            _vm._v("ありがとうございます。")
+          ]),
+          _c("br", { staticClass: "tablet" }),
+          _c("br", { staticClass: "tablet" }),
+          _vm._v(" "),
+          _c("span", [
+            _vm._v("アクティビティ参加型 親の時間づくりサービス"),
+            _c("strong", [_vm._v("Kidsweekend")]),
+            _vm._v("です。")
+          ]),
+          _c("br"),
+          _c("br", { staticClass: "is-hidden-desktop" }),
+          _vm._v(" "),
+          _c("span", [
+            _vm._v(
+              "現在5月上旬のサービスローンチに向け、ビジネス・開発せっせと準備中です。楽しみにお待ちいただけると幸いです。"
+            )
+          ]),
+          _c("br", { staticClass: "tablet" }),
+          _c("br", { staticClass: "tablet" }),
+          _vm._v(" "),
+          _c("span", [
+            _vm._v(
+              "会場ではKidsweekend Tシャツを着ていますので、懇親会でのお声がけ・名刺交換等をよろしくお願いいたします！"
+            )
+          ]),
+          _c("br"),
+          _c("br", { staticClass: "is-hidden-desktop" }),
+          _vm._v(" "),
+          _c("span")
+        ])
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -38794,6 +38713,21 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "has-text-centered" }, [
       _c("h2", { staticClass: "heading" }, [_vm._v("アクティビティの種類")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "more_button_container" }, [
+      _c(
+        "a",
+        {
+          staticClass: "button button_category_display",
+          attrs: { disabled: "" }
+        },
+        [_c("span", [_vm._v("もっとみる")])]
+      )
     ])
   },
   function() {
