@@ -1,19 +1,5 @@
 <template>
   <main>
-      <section class="section section__about demo">
-          <div class="has-text-centered">
-              <h2 class="heading">GGA特別サイト</h2>
-          </div>
-          <div class="app__about">
-              <p class="app_about_text">
-                  <span>本日は、ジーズアカデミー東京LAB6期<br class="tablet">Global Geek Auditionへお越しいただきまして、<br class="tablet">ありがとうございます。</span><br class="tablet"><br class="tablet">
-                  <span>アクティビティ参加型 親の時間づくりサービス<strong>Kidsweekend</strong>です。</span><br><br class="is-hidden-desktop">
-                  <span>現在5月上旬のサービスローンチに向け、ビジネス・開発せっせと準備中です(下にundifinedが...笑)。楽しみにお待ちいただけると幸いです。</span><br class="tablet"><br class="tablet">
-                  <span>会場ではKidsweekend Tシャツを着ていますので、懇親会でのお声がけ・名刺交換等をよろしくお願いいたします！</span><br><br class="is-hidden-desktop">
-                  <span></span>
-              </p>
-          </div>
-      </section>
       <section class="top">
           <div class="top-image" >
               <progressive-img src="./images/app_top_image.jpg" style="max-width: 100%" />
@@ -105,21 +91,6 @@
           <!--</div>-->
           <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6483.136778601478!2d139.77721867614565!3d35.66300417079383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018897aedbe5ad5%3A0xc39f1c150c87bb4c!2z44CSMTA0LTAwNTIg5p2x5Lqs6YO95Lit5aSu5Yy65pyI5bO2!5e0!3m2!1sja!2sjp!4v1550132889669" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
       <!--</section>-->
-      <section class="section section__activity">
-          <div class="section_activity_container">
-              <div class="has-text-centered">
-                  <h2 class="heading">アクティビティの種類</h2>
-              </div>
-              <div class="app__activity">
-                  <recommend-top-card-list></recommend-top-card-list>
-                  <div class="more_button_container">
-                      <a class="button button_category_display" disabled>
-                          <span>もっとみる</span>
-                      </a>
-                  </div>
-              </div>
-          </div>
-      </section>
       <section class="end">
           <div class="end-image">
               <progressive-img src="./images/app_end_image.jpg" style="max-width: 100%" />
